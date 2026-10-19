@@ -138,9 +138,9 @@ const ledger = `
 const pctIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M18 6 6 18"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>';
 const capIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M6 14l4-4 3 3 5-6"/><path d="M4 5h16" stroke-dasharray="2 2.5"/></svg>';
 const RULES = [
-  { t: 'Per-Item Commissions', d: 'Calculate commissions for each product in an order.', icon: ic.coin, vis: uiPerItem(), chips: ['Order #2481', '3 items'], meter: ['Commission on this order', '$16.50', 100] },
-  { t: 'One Default Rate', d: 'Set one rate that applies across your store.', icon: pctIcon, vis: uiDefaultRate(), chips: ['Default rate', 'All products'], meter: ['Default rate', '10%', 50] },
-  { t: 'Maximum Commission', d: 'Keep every commission within your limits.', icon: capIcon, vis: uiMaxRate(), chips: ['Maximum rate', 'Per item'], meter: ['Commission cap', '20%', 100] },
+  { t: 'Per-Item Commissions', d: 'Calculate commissions for each product in an order.', icon: ic.coin, vis: uiPerItem(), chips: ['3 items'], meter: ['Commission on this order', '$16.50', 100] },
+  { t: 'One Default Rate', d: 'Set one rate that applies across your store.', icon: pctIcon, vis: uiDefaultRate(), chips: ['All products'], meter: ['Default rate', '10%', 50] },
+  { t: 'Maximum Commission', d: 'Keep every commission within your limits.', icon: capIcon, vis: uiMaxRate(), chips: ['Per item'], meter: ['Commission cap', '20%', 100] },
 ];
 const rules = `
 <section class="sec" id="rules" aria-labelledby="rules-h">
