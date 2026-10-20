@@ -18,14 +18,37 @@
   $$('[data-reveal-stagger]').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
   $$('[data-reveal][data-delay]').forEach(el => el.style.setProperty('--i', el.dataset.delay));
 
+  /* auto-reveal: every remaining component fades up out of a blur as it scrolls in,
+     siblings one after another (same motion as the hand-tagged [data-reveal] blocks) */
+  const TAGGED = '[data-reveal], [data-reveal-stagger], [data-split], [data-lines]';
+  const SKIP = 'header, .hdr, .drawer, .uhero, .logos, .faq__a, [class*="__body"], [data-rule-panel], .ui, svg, button';
+  const AUTO = 'h1, h2, h3, h4, h5, h6, p, ul, ol, table, form, figure, img, article, .btn, .ui, .tile, .scard, [class*="__card"], [class*="__row"], [class*="__tile"], [class*="__item"], [class*="__vis"], [class*="__img"], [class*="__thumb"]';
+  $$('main ' + AUTO + ', footer ' + AUTO).forEach(el => {
+    if (el.closest(TAGGED) || el.parentElement.closest(SKIP) || el.matches('header *, .drawer *')) return;
+    const cs = getComputedStyle(el);
+    if (cs.transform !== 'none' || cs.position === 'absolute' || cs.position === 'fixed' || cs.display === 'none') return;
+    if (/^(UL|OL)$/.test(el.tagName) && el.children.length > 1) el.setAttribute('data-reveal-stagger', '');
+    else el.setAttribute('data-reveal', '');
+    el.dataset.rvAuto = '';
+  });
+  /* stagger auto-tagged siblings that share a parent */
+  $$('[data-rv-auto][data-reveal]').forEach(el => {
+    const sibs = [...el.parentElement.children].filter(c => c.hasAttribute('data-rv-auto') && c.hasAttribute('data-reveal'));
+    if (sibs.length > 1 && !el.style.getPropertyValue('--i')) el.style.setProperty('--i', Math.min(sibs.indexOf(el), 6));
+  });
+  $$('[data-reveal-stagger]').forEach(g => [...g.children].forEach((c, i) => c.style.setProperty('--i', Math.min(i, 8))));
+
   /* reveal on scroll */
   const targets = $$('[data-reveal], [data-reveal-stagger], [data-split], [data-lines]');
   if (reduce || !('IntersectionObserver' in window)) targets.forEach(t => t.classList.add('is-in'));
   else {
     const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      if (e.isIntersecting) { const t = e.target; t.classList.add('is-in'); io.unobserve(t); setTimeout(() => t.classList.add('rv-done'), 2200); }
     }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
     targets.forEach(t => io.observe(t));
+    /* the last rows of the footer can sit inside the IO bottom margin: reveal them once the page bottom is reached */
+    const atEnd = () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) targets.forEach(t => { if (!t.classList.contains('is-in')) { t.classList.add('is-in'); io.unobserve(t); setTimeout(() => t.classList.add('rv-done'), 2200); } }); };
+    addEventListener('scroll', atEnd, { passive: true });
   }
 
   /* accordions: services rows + FAQ (one open at a time per group) */
