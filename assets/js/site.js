@@ -51,6 +51,40 @@
     addEventListener('scroll', atEnd, { passive: true });
   }
 
+  /* smart header: glass bar floats in after the hero, hides while scrolling down, returns on scroll up */
+  const hdr = document.querySelector('.hdr');
+  const bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true'); document.body.appendChild(bar);
+  if (hdr) {
+    let lastY = scrollY, ticking = false;
+    const root = document.documentElement;
+    const update = () => {
+      ticking = false;
+      const y = scrollY, h = root.scrollHeight - innerHeight;
+      bar.style.setProperty('--p', h > 0 ? Math.min(1, y / h) : 0);
+      const float = y > (document.body.classList.contains('page-home') ? innerHeight * 0.6 : 80);
+      const hide = float && y > lastY + 2 && y > 240 && !document.body.classList.contains('menu-open');
+      const show = float && y < lastY - 2;
+      hdr.classList.toggle('is-float', float);
+      if (hide) hdr.classList.add('is-hidden'); else if (show || !float) hdr.classList.remove('is-hidden');
+      root.style.setProperty('--hdr-off', float && !hdr.classList.contains('is-hidden') ? '68px' : '0px');
+      lastY = y;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  }
+
+  /* magnetic buttons: drift a few px toward the pointer, spring back on leave */
+  if (!reduce && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    $$('.btn').forEach(b => {
+      b.addEventListener('pointermove', e => {
+        const r = b.getBoundingClientRect();
+        b.style.setProperty('--mx', ((e.clientX - r.left) / r.width - .5) * 10 + 'px');
+        b.style.setProperty('--my', ((e.clientY - r.top) / r.height - .5) * 8 + 'px');
+      });
+      b.addEventListener('pointerleave', () => { b.style.removeProperty('--mx'); b.style.removeProperty('--my'); });
+    });
+  }
+
   /* accordions: services rows + FAQ (one open at a time per group) */
   $$('[data-accordion]').forEach(group => {
     const items = $$('.svc__row, .faq__item', group);
