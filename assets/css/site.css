@@ -550,6 +550,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .tile--dark .tile__big { color: #fff; margin: 0; }
 .tile__big { font-size: var(--h5); font-weight: 500; letter-spacing: -.03em; line-height: 1.12; }
 .clients__media { display: grid; place-items: center; padding: 7%; min-height: 420px; }
+.art--color3 { background-image: url("/assets/img/color-3-hd.jpg"); background-color: #3b2a6b; }
 .clients__media .ui { width: 100%; --u: clamp(10px, 2.15cqi, 15px); }
 
 /* ---------- marketplace ---------- */
