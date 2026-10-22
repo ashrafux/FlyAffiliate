@@ -387,7 +387,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 
 /* ---------- process (horizontal accordion) ---------- */
 .proc { display: flex; gap: 10px; min-height: clamp(420px, 34vw, 490px); }
-.proc__card { position: relative; flex: 0 0 140px; background: var(--card); border-radius: var(--r); padding: 30px; display: flex; flex-direction: column; overflow: hidden; transition: flex-basis .8s var(--ease), flex-grow .8s var(--ease); }
+.proc__card { position: relative; flex: 0 0 140px; background: var(--card); border-radius: var(--r); padding: 30px; display: flex; flex-direction: column; overflow: hidden; transition: flex-grow .9s var(--ease), flex-basis .9s var(--ease), background-color .7s var(--ease), box-shadow .6s var(--ease); will-change: flex-grow; }
 .proc__card.is-active { flex: 1 1 auto; }
 .proc__hit { position: absolute; inset: 0; z-index: 2; cursor: pointer; border-radius: inherit; }
 .proc__card.is-active .proc__hit { pointer-events: none; }
@@ -398,7 +398,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .proc__card:not(.is-active) .proc__top { justify-content: center; }
 .proc__card:not(.is-active) .proc__t, .proc__card:not(.is-active) .proc__meta { position: absolute; pointer-events: none; }
 .proc__card:not(.is-active) .proc__n { margin: 0 auto; }
-.proc__body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; align-items: center; opacity: 0; transition: opacity .3s; min-width: 640px; }
+.proc__body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; align-items: center; opacity: 0; transform: translateY(18px); filter: blur(6px); transition: opacity .3s var(--ease), transform .5s var(--ease), filter .3s var(--ease); min-width: 640px; }
 .proc__d { font-size: var(--t-def); max-width: 440px; }
 .proc__vis { justify-self: end; width: min(100%, 360px); }
 .proc__vis .ui { --u: 13px; }
@@ -412,7 +412,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .proc__card:not(.is-active):hover .proc__btn { background: var(--ink); color: #fff; }
 .proc__card.is-active .proc__btn { background: var(--ink); color: #fff; transform: rotate(45deg); }
 .proc__card.is-active .proc__t, .proc__card.is-active .proc__meta { opacity: 1; transform: none; transition-delay: .3s; }
-.proc__card.is-active .proc__body { opacity: 1; transition: opacity .5s .35s; }
+.proc__card.is-active .proc__body { opacity: 1; transform: none; filter: none; transition: opacity .6s var(--ease) .35s, transform .9s var(--ease) .3s, filter .6s var(--ease) .35s; }
 
 /* ---------- reports (dark slider) ---------- */
 .rev { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 30px; }
@@ -940,17 +940,19 @@ a:hover .bcard__go svg { transform: translateX(3px); }
 .proc--icons .proc__t { white-space: normal; }
 .proc--icons .proc__card:not(.is-active) .proc__top { justify-content: flex-start; }
 .proc--icons .proc__card:not(.is-active) .proc__t { position: static; opacity: 1; transform: none; font-size: var(--h6); pointer-events: none; }
-.proc--icons .proc__card:not(.is-active) .proc__ico { display: none; }
+.proc--icons .proc__ico { transition: width .7s var(--ease), opacity .4s var(--ease), transform .7s var(--ease), background-color .4s var(--ease), color .4s var(--ease); }
+.proc--icons .proc__card:not(.is-active) .proc__ico { width: 0; opacity: 0; transform: scale(.4) rotate(-40deg); }
+.proc--icons .proc__card.is-active .proc__ico { transition-delay: .25s; }
 .proc--icons .proc__card:not(.is-active) .proc__foot { justify-content: flex-end; }
 .proc--icons .proc__card:not(.is-active) .proc__btn { margin: 0 0 0 auto; }
 .proc--icons .proc__head { min-width: 0; }
-.proc--icons .proc__d { margin-top: 14px; max-width: 520px; font-size: var(--t-sm); color: rgba(10, 10, 10, .72); opacity: 0; transition: opacity .4s; }
-.proc--icons .proc__card.is-active .proc__d { opacity: 1; transition-delay: .3s; }
+.proc--icons .proc__d { margin-top: 14px; max-width: 520px; font-size: var(--t-sm); color: rgba(10, 10, 10, .72); opacity: 0; transform: translateY(10px); transition: opacity .25s var(--ease), transform .4s var(--ease); }
+.proc--icons .proc__card.is-active .proc__d { opacity: 1; transform: none; transition: opacity .6s var(--ease) .32s, transform .8s var(--ease) .28s; }
 .proc--icons .proc__card:not(.is-active) .proc__d { position: absolute; pointer-events: none; }
 .proc__ico { width: 64px; height: 64px; flex: none; border-radius: 50%; margin-left: auto; display: grid; place-items: center; background: var(--bg); color: var(--ink); transition: background-color .4s var(--ease), color .4s var(--ease); }
 .proc__ico svg { width: 28px; height: 28px; }
 .proc--icons .proc__card.is-active .proc__ico { background: #fff; color: var(--ink); }
-.proc--icons .proc__card:not(.is-active) .proc__ico { margin: 0 auto; }
+.proc--icons .proc__card:not(.is-active) .proc__ico { margin: 0; }
 .proc--icons .proc__card:not(.is-active):hover .proc__ico { background: var(--accent-soft); color: var(--accent-ink); }
 .proc--icons .proc__body { grid-template-columns: 1fr; justify-items: start; align-items: end; align-content: end; }
 .proc--icons .proc__vis { justify-self: start; }
@@ -1287,7 +1289,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; pointer-events: none; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: linear-gradient(90deg, var(--accent), var(--accent-ink)); }
 
 /* 4. cards lift and their icons pop when hovered */
-.tile, .scard, .vk__card, .mkt__v, .duo__card, .bcard, .dcat, .tcard, .w8__list li, .ad__row, .rb__tile, .own__ln, .faq__item, .svc__row, .proc__card {
+.tile, .scard, .vk__card, .mkt__v, .duo__card, .bcard, .dcat, .tcard, .w8__list li, .ad__row, .rb__tile, .own__ln, .faq__item, .svc__row {
   transition: transform .5s var(--ease), box-shadow .5s var(--ease), background-color .4s var(--ease);
 }
 @media (hover: hover) {

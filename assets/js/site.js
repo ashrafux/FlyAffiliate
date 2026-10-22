@@ -128,7 +128,11 @@
     });
     cards.forEach(c => {
       c.querySelector('.proc__hit').addEventListener('click', () => activate(c));
-      if (matchMedia('(hover: hover) and (min-width: 1025px)').matches) c.addEventListener('mouseenter', () => activate(c));
+      /* hover intent: only switch once the pointer settles, so sweeping across cards doesn't make them jump */
+      if (matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
+        let t; c.addEventListener('mouseenter', () => { clearTimeout(t); t = setTimeout(() => activate(c), 140); });
+        c.addEventListener('mouseleave', () => clearTimeout(t));
+      }
     });
   });
 
