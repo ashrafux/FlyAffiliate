@@ -165,7 +165,7 @@ body.menu-open { overflow: hidden; }
 .sec { padding-block: var(--sec) 0; }
 .sec--dark { background: var(--dark); color: #fff; padding-block: var(--sec); margin-top: var(--sec); }
 .sec--dark + .sec--dark { margin-top: 0; padding-top: 0; }
-.sec--dark + .sec:not(.sec--dark) { padding-top: var(--sec); }
+.sec--dark + .sec:not(.sec--dark), .sec--dk + .sec { padding-top: var(--sec); }
 .sec--dark .muted, .sec--dark .bracket { color: var(--on-dark-2); }
 .sec--dark .giant { color: #fff; }
 .sec--snug { padding-top: clamp(72px, 8.3vw, 120px); }
@@ -516,7 +516,8 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .plan__foot { margin-top: auto; padding-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 
 /* ---------- Features → Dokan: art panel, frosted headline card, glass capability cards ---------- */
-.dk { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; padding: clamp(20px, 3vw, 44px); border-radius: 28px; background-image: url("/assets/img/color-1-hd.jpg"); background-color: #1b3a44; }
+.sec--dk { padding-block: var(--sec); margin-top: var(--sec); border-radius: 0; background-image: url("/assets/img/color-1-hd.jpg"); background-color: #1b3a44; background-position: center; }
+.dk { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; }
 .dk__card { display: flex; flex-direction: column; min-height: 100%; padding: clamp(28px, 3vw, 44px); border-radius: 24px; background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
 .dk__card .soon { align-self: flex-start; }
 .dk__h { margin-top: auto; padding-top: 80px; font-size: var(--h3); }
@@ -533,7 +534,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .dk__c:last-child .dk__ic { background: rgba(255, 255, 255, .16); color: #fff; }
 .dk__c:last-child p { color: rgba(255, 255, 255, .82); }
 @media (max-width: 1024px) { .dk { grid-template-columns: 1fr; } .dk__h { padding-top: 40px; } }
-@media (max-width: 680px) { .dk { padding: 14px; } .dk__g { grid-template-columns: 1fr; } .dk__c { gap: 24px; } }
+@media (max-width: 680px) { .dk__g { grid-template-columns: 1fr; } .dk__c { gap: 24px; } }
 
 /* ---------- Dokan: icon cards, last card in primary ---------- */
 .vk { list-style: none; margin: clamp(40px, 4.2vw, 60px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }

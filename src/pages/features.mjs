@@ -143,9 +143,9 @@ const DOKAN = [
 ];
 // Dokan: colourful art panel, frosted headline card, glass capability cards (design option S6)
 const dokan = `
-<section class="sec" id="dokan" aria-labelledby="fd-h">
+<section class="sec sec--dk art" id="dokan" aria-labelledby="fd-h">
   <div class="wrap">
-    <div class="dk art" data-reveal>
+    <div class="dk" data-reveal>
       <div class="dk__card">
         <p class="soon">Coming Soon</p>
         <h2 id="fd-h" class="h2 dk__h">Specially Built for Dokan Marketplaces</h2>
