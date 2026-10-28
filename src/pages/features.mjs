@@ -29,6 +29,10 @@ const uiOverview = () => `
           </div>
           <div class="hd__top3"><b>Most valuable affiliates</b>${[['MK', 'Maya Khan', '$612', 18, 92], ['AL', 'Ava Lim', '$448', 140, 68], ['JR', 'Jonas Reed', '$305', 200, 46]].map(([i, n, a, h, w]) => `<div><span class="av" style="--h:${h}">${i}</span><span><span>${n}</span><i style="--w:${w}%"></i></span><em>${a}</em></div>`).join('')}</div>
         </div>
+        <div class="hd__row hd__row--b">
+          <div class="hd__list"><div class="hd__ch"><b>Recent commissions</b><span>All →</span></div>${[['MK', 'Maya Khan', 'Order #2481', '$18.40', 'pending', 18], ['AL', 'Ava Lim', 'Order #2470', '$22.00', 'paid', 140], ['JR', 'Jonas Reed', 'Order #2466', '$9.60', 'unpaid', 200]].map(([i, n, o, a, st, h]) => `<div class="hd__li"><span class="av" style="--h:${h}">${i}</span><span>${n}<small>${o}</small></span><b>${a}</b><span class="st st--${st}">${st[0].toUpperCase() + st.slice(1)}</span></div>`).join('')}</div>
+          <div class="hd__list"><div class="hd__ch"><b>Highest converting products</b><span>All →</span></div>${[['Leather Tote', '8.2%'], ['Card Holder', '6.5%'], ['Wool Overshirt', '5.1%']].map(([n, r], k) => `<div class="hd__li hd__li--p"><span class="cb__th cb__th--p${k + 1}">${hi('<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>')}</span><span>${n}<small>Conversion</small></span><b>${r}</b></div>`).join('')}</div>
+        </div>
       </div>
     </div>
   </div>
