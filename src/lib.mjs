@@ -1,7 +1,7 @@
 // Shared building blocks for every page. Pages import these and return plain HTML strings.
 
 export const CTA_URL = 'https://wordpress.org/plugins/search/flyaffiliate/'; // swap for the real plugin listing
-export const V = 123; // asset cache-bust, bump after CSS/JS edits
+export const V = 124; // asset cache-bust, bump after CSS/JS edits
 
 /* ---------- icons ---------- */
 export const ic = {
@@ -229,7 +229,7 @@ export const header = cur => `
 <div class="drawer" id="drawer" data-drawer aria-hidden="true">
   <div class="drawer__top"><a class="logo" href="/" aria-label="FlyAffiliate home">${logoSvg()}</a><button class="drawer__x" type="button" aria-label="Close menu" data-menu-close>${ic.close}</button></div>
   <nav class="drawer__nav" aria-label="Mobile">
-    ${NAV.map(([t, h], i) => `<a href="${h}"${t === cur ? ' aria-current="page"' : ''}><small>${pad(i + 1)}</small>${t}</a>`).join('\n    ')}
+    ${[...NAV, ['Pricing', '/pricing/']].map(([t, h], i) => `<a href="${h}"${t === cur ? ' aria-current="page"' : ''}><small>${pad(i + 1)}</small>${t}</a>`).join('\n    ')}
   </nav>
   <div class="drawer__foot">${btn('Get Started', CTA_URL, '', ' target="_blank" rel="noopener"')}<p>Free WordPress plugin</p></div>
 </div>`;

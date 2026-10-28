@@ -392,7 +392,7 @@ const woo = `
         <article class="tile"><span class="tile__ic">${ic.check}</span><h3>Classic &amp; Block Checkout</h3><p>Works with both WooCommerce checkout types.</p></article>
         <article class="tile tile--dark"><p class="tile__big">Your store stays where it is.</p></article>
       </div>
-      <div class="clients__media art art--color3" data-reveal>${uiWooOrder()}</div>
+      <div class="clients__media art art--woo" data-reveal>${uiWooOrder()}</div>
     </div>
   </div>
 </section>`;

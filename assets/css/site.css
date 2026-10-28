@@ -2048,3 +2048,51 @@ body.page-home .hdr.is-float::after { display: none; }
   .dkw__cols li + li { border-top: 1px solid var(--line); }
   .dkw__cols h3 { margin-top: 20px; }
 }
+
+/* ================= Mobile UX pass ================= */
+@media (max-width: 680px) {
+  /* buttons: one line, comfortable 52px target */
+  .btn { gap: 8px; padding-left: 18px; font-size: 16px; }
+  .btn__i { width: 40px; height: 40px; }
+  .btn__i svg { width: 22px; height: 13px; }
+  .btn.btn--secondary { padding: 0 22px; }
+
+  /* footer CTA: no dead space between copy and button */
+  .ftr__card { min-height: 0; gap: 32px; padding: 26px 24px; }
+
+  /* tall image/empty cards: trim the empty space */
+  .au__photo { min-height: 340px; }
+  .wf { padding-top: 220px; }
+  .tile { min-height: 0; gap: 14px; }
+  .tile--dark { min-height: 120px; }
+  .ad__tag { margin-top: 18px; }
+
+  /* Dokan watermark sits under the content, not behind the text */
+  .dkw { padding-bottom: 120px; }
+  .dkw__mark { font-size: 150px; bottom: -.24em; }
+
+  /* icon-top cards become compact rows: icon left, text right */
+  .pr-why h3, .clients__tiles .tile h3 { font-size: var(--t-def); }
+  .clients__tiles .tile:not(.tile--dark) { aspect-ratio: auto; }
+  .mf__wrap .mf__c, .pr-why li, .pr-pro__cards li, .clients__tiles .tile:not(.tile--dark) { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; align-items: start; min-height: 0; padding: 20px; }
+  .mf__wrap .mf__c > :first-child, .pr-why li > :first-child, .pr-pro__cards li > :first-child, .clients__tiles .tile:not(.tile--dark) > :first-child { grid-row: span 2; width: 44px; height: 44px; }
+  .mf__wrap .mf__c h3, .pr-why h3, .pr-pro__cards h3, .clients__tiles .tile:not(.tile--dark) h3 { margin: 0; padding: 0; align-self: center; }
+  .mf__wrap .mf__c p, .pr-why p, .pr-pro__cards p, .clients__tiles .tile:not(.tile--dark) p { margin-top: 2px; grid-column: 2; }
+  .pr-pro__cards li > div { display: contents; }
+
+  /* collapsed accordion rows show a "+" so they read as tappable */
+  .proc__card:not(.is-active) .proc__foot { display: flex; position: absolute; right: 22px; top: 50%; translate: 0 -50%; }
+  .proc__card:not(.is-active) .proc__top { padding-right: 48px; }
+  .proc--icons .proc__card:not(.is-active) .proc__ico { display: none; }
+
+  /* blog filters: one swipeable row instead of a wrapped block */
+  .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gut) * -1); padding-inline: var(--gut); scroll-padding-inline: var(--gut); }
+  .filters::-webkit-scrollbar { display: none; }
+  .filters button { flex: none; }
+
+  /* about hero pill wraps cleanly */
+  .phero__row .chip-rate { height: auto; min-height: 44px; padding-block: 6px; border-radius: 22px; line-height: 1.35; }
+}
+
+/* Built for WooCommerce: landscape background behind the order mock */
+.art--woo { background-image: url("/assets/img/woo-bg.jpg"); background-color: #6b5a2a; background-size: cover; background-position: center 60%; }
