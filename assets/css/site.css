@@ -1689,3 +1689,9 @@ body.page-home .hdr.is-float::after { display: none; }
 .ab__vis { transform: scale(.8); transform-origin: 50% 50%; }
 .ab__links .ab__vis { padding: 0 6%; }
 @media (max-width: 680px) { .ab__win, .ab__vis { transform: scale(.9); } }
+
+/* Features hero: centred copy above the dashboard */
+.page-features .phero__r { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.page-features .phero__h { margin-inline: auto; }
+.page-features .phero__p { margin-inline: auto; }
+.page-features .phero__row { justify-content: center; }
