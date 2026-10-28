@@ -2031,7 +2031,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .dkw__cols { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(48px, 5.5vw, 80px); border-top: 1px solid var(--line); }
 .dkw__cols li { padding: 36px 30px 8px; border-left: 1px solid var(--line); }
 .dkw__cols li:first-child { border-left: 0; padding-left: 0; }
-.dkw__ic { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 14px; background: var(--accent-soft); color: var(--accent); }
+.dkw__ic { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 14px; background: var(--card); color: var(--accent); }
 .dkw__ic svg { width: 22px; height: 22px; }
 .dkw__cols h3 { margin-top: clamp(32px, 4vw, 60px); font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
 .dkw__cols p { margin-top: 10px; font-size: var(--t-sm); color: var(--ink-2); }
