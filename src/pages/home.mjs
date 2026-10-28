@@ -232,7 +232,7 @@ const pillBars = (rev, cost) => `<div class="pbars" aria-hidden="true">
 </div>`;
 // Visits: smooth gradient area with end dot + tooltip
 const areaChart = (vals, id, tip) => { const W = 600, H = 220, P = pts(vals, W, H); const d = smooth(P); const e = P[P.length - 1];
-  return `<div class="achart" aria-hidden="true"><svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc8ff" stop-opacity=".45"/><stop offset="1" stop-color="#7cc8ff" stop-opacity="0"/></linearGradient></defs>
+  return `<div class="achart" aria-hidden="true"><svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b97ff" stop-opacity=".45"/><stop offset="1" stop-color="#0043DA" stop-opacity="0"/></linearGradient></defs>
   ${[0.25, 0.5, 0.75].map(f => `<line x1="0" x2="${W}" y1="${H * f}" y2="${H * f}" class="achart__grid"/>`).join('')}
   <path d="${d} L${e[0]} ${H} L${P[0][0]} ${H}Z" fill="url(#${id})"/><path d="${d}" class="achart__line"/>
   <circle cx="${e[0]}" cy="${e[1]}" r="14" class="achart__halo"/><circle cx="${e[0]}" cy="${e[1]}" r="6" class="achart__dot"/></svg>
