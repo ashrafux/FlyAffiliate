@@ -26,7 +26,7 @@
   --r-lg: 20px;
   --pill: 500px;
   --gut: clamp(20px, 4.1667vw, 60px);
-  --maxw: 1320px;
+  --maxw: 1496px; /* content area at 1920px screens */
   --sec: clamp(104px, 13.9vw, 200px);
   --font: "Lato", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --ease: cubic-bezier(.22, 1, .36, 1);
@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, blockquote, label, .btn__t { 
 
 /* ---------- header (Upmind style: light bar, mono nav, dark pill CTA) ---------- */
 .hdr { position: relative; z-index: 30; background: var(--bg); }
-.hdr__in { display: flex; align-items: center; gap: 30px; height: 80px; padding: 0 clamp(20px, 3.75vw, 54px); }
+.hdr__in { display: flex; align-items: center; gap: 30px; height: 80px; width: min(100% - 2 * var(--gut), var(--maxw)); margin-inline: auto; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-size: var(--h6); font-weight: 600; letter-spacing: -.035em; line-height: 1; white-space: nowrap; }
 .logo span { color: var(--accent-ink); }
 .logo__svg { display: block; height: 36px; width: auto; }
@@ -2099,3 +2099,10 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* Start card: button sits at the bottom of the blue half */
 .duo__start .btn { margin-top: auto; }
+
+/* Home hero: copy and chips line up with the 1496px content area on wide screens */
+.uhero__panel { container-type: inline-size; --edge: max(var(--gut), (100cqw - var(--maxw)) / 2); }
+@media (min-width: 1025px) {
+  .uhero__copy { padding-left: var(--edge); width: calc(var(--edge) + min(48cqw - 70px, 650px)); }
+  .uhero__chips { right: var(--edge); }
+}
