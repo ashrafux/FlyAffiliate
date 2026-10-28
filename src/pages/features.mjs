@@ -246,7 +246,6 @@ const affSec = (gi) => `
 const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : id === 'hold' ? holdSec(gi, rows, vis) : id === 'affiliates' ? affSec(gi) : `
 <section class="sec fgroup${gi % 2 ? ' fgroup--flip' : ''}" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap">
-    <div class="shead shead--rule" data-reveal>${eyebrow(label)}</div>
     <div class="fg">
       <div class="fg__copy">
         <h2 id="${id}-h" class="h2" data-reveal>${h}</h2>
