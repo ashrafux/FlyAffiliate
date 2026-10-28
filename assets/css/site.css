@@ -212,7 +212,7 @@ body.menu-open { overflow: hidden; }
 .ui__ghost, .ui__solid { display: inline-flex; align-items: center; gap: .4em; font-size: .86em; font-weight: 500; padding: .5em .9em; border-radius: 99px; white-space: nowrap; }
 .ui__ghost { border: 1px solid #e6e6e6; }
 .ui__ghost svg { width: 1.2em; height: 1.2em; }
-.ui__solid { background: var(--ink); color: #fff; }
+.ui__solid { background: var(--accent); color: #fff; }
 .ui__foot { display: flex; justify-content: space-between; align-items: center; gap: .6em; padding: .9em 1.2em; border-top: 1px solid #efefef; background: #fafafa; }
 .ui__foot--chips { justify-content: flex-start; }
 .ui__foot--chips span { display: inline-flex; align-items: center; gap: .35em; font-size: .86em; font-weight: 500; }
@@ -722,6 +722,31 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .mf__float small { font-size: 13px; color: var(--ink-2); }
 @media (max-width: 1024px) { .mf__grid { grid-template-columns: minmax(0, 1fr); } .mf__r { position: static; } .mf__panel { min-height: 480px; } }
 @media (max-width: 680px) { .mf__cards { grid-template-columns: minmax(0, 1fr); } .mf__panel { min-height: 0; padding: 24px 0 96px 18px; } .mf__row { grid-template-columns: 30px 1.2fr .8fr 84px; } .mf__row span:nth-child(3) { display: none; } .mf__ui-hd span .mf__btn:first-child { display: none; } .mf__float { left: 18px; bottom: 20px; } }
+
+/* hero dashboard + new-payout mockups (match the real plugin screens) */
+.ui-side__logo { display: flex; align-items: center; gap: 8px; }
+.ui-side__logo > span:not(.ui-side__mark) { display: none; }
+.ui-side__mark svg { width: 20px; height: 20px; display: block; }
+.ui-sec { margin: 4px 0 8px; font-weight: 700; font-size: calc(var(--u, 14px) * .9); }
+.ui-sec--row { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+.ui-legend { display: inline-flex; align-items: center; gap: 6px; font-weight: 400; color: var(--ink-2); }
+.ui-legend i { width: 9px; height: 9px; border-radius: 3px; background: #9fc0ff; }
+.ui-legend i.on { background: var(--accent); margin-left: 6px; }
+.ui-np { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: calc(var(--u, 14px) * .9); }
+.ui-np__k { margin: 10px 0 6px; font-weight: 700; }
+.ui-np__k:first-child { margin-top: 0; }
+.ui-radio { display: flex; align-items: center; gap: 8px; padding: 4px 0; color: var(--ink-2); }
+.ui-radio::before { content: ""; width: 12px; height: 12px; flex: none; border-radius: 50%; box-shadow: inset 0 0 0 1.5px #c9ced8; }
+.ui-radio.on { color: var(--ink); }
+.ui-radio.on::before { box-shadow: inset 0 0 0 4px var(--accent); }
+.ui-np__in { display: block; padding: 7px 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--line); }
+.ui-np__r { padding: 12px; border-radius: 12px; background: var(--bg); }
+.ui-np__p { display: grid; grid-template-columns: 26px 1fr auto; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.ui-np__p .av { width: 26px; height: 26px; font-size: 10px; }
+.ui-np__tot { display: flex; justify-content: space-between; padding-top: 8px; }
+.ui-np__tot b { color: var(--accent); }
+.ui-np__btn { display: block; margin-top: 10px; text-align: center; }
+.cb__field small { display: block; margin-top: 10px; font-size: 14px; color: var(--ink-3); }
 
 /* ---------- Features → workflow: ring steps on a dashed wave ---------- */
 .wv__head { text-align: center; max-width: 900px; margin: 0 auto; }

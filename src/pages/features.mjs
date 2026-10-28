@@ -4,25 +4,28 @@ import { procCards } from './home.mjs';
 
 const ext = ' target="_blank" rel="noopener"';
 
+const logoMark = '<svg viewBox="0 0 145 145" aria-hidden="true"><rect width="145" height="145" rx="37" fill="#0043DA"/><path d="M69.3 73.4h35.6c-.5 8.9-3.1 16.5-9.6 22.9-10.9 10.2-20.5 9.4-34.3 9.4h-12.4c-3.1 0-8.7-2.5-8.7-8.1V82.2c0-6.2 4.8-8.8 9.3-8.8Zm17.3-35.2c-.8 10.4-7.8 30.2-28.9 32.3H39.9V47.1c0-6.4 5.1-8.9 9.3-8.9Z" fill="#fff"/></svg>';
 const uiOverview = () => `
 <div class="ui ui--app">
   <aside class="ui-side" aria-hidden="true">
-    <p class="ui-side__logo">FlyAffiliate<span>.</span></p>
-    ${['Dashboard', 'Affiliates', 'Referrals', 'Commissions', 'Payouts', 'Reports', 'Settings'].map((t, i) => `<span class="${i === 0 ? 'on' : ''}">${t}</span>`).join('')}
+    <p class="ui-side__logo"><span class="ui-side__mark">${logoMark}</span>FlyAffiliate</p>
+    ${['Dashboard', 'Affiliates', 'Commissions', 'Visits', 'Payouts', 'Extensions', 'Settings', 'License'].map((t, i) => `<span class="${i === 0 ? 'on' : ''}">${t}</span>`).join('')}
   </aside>
   <div class="ui-main">
-    <div class="ui__bar"><span class="ui__title">Program overview</span><span class="ui__actions"><span class="ui__pill">Last 30 days</span><span class="ui__solid">+ Add affiliate</span></span></div>
+    <div class="ui__bar"><span class="ui__title">Dashboard <small>· How the affiliate programme is doing</small></span><span class="ui__actions"><span class="ui__pill">Last 30 days</span></span></div>
     <div class="ui__body">
+      <p class="ui-sec">Earnings &amp; payouts</p>
       <div class="ui-kpis ui-kpis--4">
-        <div><span class="ui-k">Affiliate revenue</span><span class="ui-v">$48,250</span></div>
-        <div><span class="ui-k">Commissions</span><span class="ui-v">$4,825</span></div>
-        <div><span class="ui-k">Visits</span><span class="ui-v">32,410</span></div>
-        <div><span class="ui-k">Conversion</span><span class="ui-v ui-v--acc">3.6%</span></div>
+        <div><span class="ui-k">Referral revenue</span><span class="ui-v">$48,250</span></div>
+        <div><span class="ui-k">Net revenue</span><span class="ui-v">$43,425</span></div>
+        <div><span class="ui-k">Total paid</span><span class="ui-v">$3,960</span></div>
+        <div><span class="ui-k">Total unpaid</span><span class="ui-v ui-v--acc">$865</span></div>
       </div>
-      <div class="ui-chart">${spark([12, 18, 15, 24, 22, 30, 27, 36, 33, 41, 38, 47, 44, 52], 640, 150)}</div>
+      <div class="ui-sec ui-sec--row"><span>Visits per day</span><span class="ui-legend"><i></i>Visits<i class="on"></i>Converted</span></div>
+      <div class="ui-chart">${spark([12, 18, 15, 24, 22, 30, 27, 36, 33, 41, 38, 47, 44, 52], 640, 130)}</div>
       <div class="ui-lines">
-        <div><span class="ui-who"><span class="av" style="--h:18">MK</span>Maya Khan referred order #2481</span><b>$18.40</b><span class="st st--pending">Pending</span></div>
-        <div><span class="ui-who"><span class="av" style="--h:140">AL</span>Ava Lim referred order #2470</span><b>$22.00</b><span class="st st--paid">Paid</span></div>
+        <div><span class="ui-who"><span class="av" style="--h:18">MK</span>Maya Khan · Order #2481</span><b>$18.40</b><span class="st st--pending">Pending</span></div>
+        <div><span class="ui-who"><span class="av" style="--h:140">AL</span>Ava Lim · Order #2470</span><b>$22.00</b><span class="st st--paid">Paid</span></div>
       </div>
     </div>
   </div>
@@ -41,6 +44,27 @@ const hero = `
     <div class="phero__media art art--hero" data-reveal>${uiOverview()}</div>
   </div>
 </section>`;
+
+const uiNewPayout = () => `
+<div class="ui ui--np">
+  <div class="ui__bar"><span class="ui__title">New payout</span><span class="ui__pill">Manual</span></div>
+  <div class="ui__body ui-np">
+    <div class="ui-np__l">
+      <p class="ui-np__k">Who to pay</p>
+      <span class="ui-radio on">Everyone with an unpaid balance</span>
+      <span class="ui-radio">Only the affiliates I choose</span>
+      <span class="ui-radio">Everyone except the affiliates I choose</span>
+      <p class="ui-np__k">Minimum amount</p><span class="ui-np__in">$50.00</span>
+      <p class="ui-np__k">Period</p><span class="ui-np__in">Any time</span>
+    </div>
+    <div class="ui-np__r">
+      <p class="ui-np__k">Preview</p>
+      ${[['MK', 'Maya Khan', '$212.80', 18], ['JR', 'Jonas Reed', '$96.40', 200], ['AL', 'Ava Lim', '$148.00', 140]].map(([i, n, a, h]) => `<div class="ui-np__p"><span class="av" style="--h:${h}">${i}</span><span>${n}</span><b>${a}</b></div>`).join('')}
+      <div class="ui-np__tot"><span>3 affiliates</span><b>$457.20</b></div>
+      <span class="ui__solid ui-np__btn">Create payout</span>
+    </div>
+  </div>
+</div>`;
 
 const GROUPS = [
   ['tracking', 'Tracking', 'Know Where Every Sale Came From', 'sand', [
@@ -72,7 +96,7 @@ const GROUPS = [
     ['Set a Minimum', 'Only include balances above your threshold.'],
     ['Review First', 'Preview amounts before creating payouts.'],
     ['Keep Records', 'Mark payments as paid and export CSV records.'],
-  ], `<div class="fstack">${uiPayout()}</div>`],
+  ], `<div class="fstack">${uiNewPayout()}</div>`],
 ];
 
 
@@ -91,7 +115,7 @@ const trackSec = (gi) => `
         <p class="tk__pill" data-reveal>Tracking</p>
         <h2 id="tracking-h" class="h2 tk__h" data-reveal>Know Where Every Sale <span class="tk__chip" aria-hidden="true">${ic.link}</span> Came From</h2>
       </div>
-      ${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}
+      
     </div>
     <div class="tk__grid" data-reveal-stagger>
       ${TRACK.map(([t, d, icon, strip], k) => `<article class="tk__card${k === 1 ? ' tk__card--dark' : ''}">
@@ -114,7 +138,7 @@ const commSec = (gi) => `
   <div class="wrap">
     <div class="cb__top">
       <div class="cb__card cb__hero" data-reveal>
-        <div class="cb__row"><p class="tk__pill">Commissions</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+        <div class="cb__row"><p class="tk__pill">Commissions</p></div>
         <h2 id="commissions-h" class="h2 cb__h">Calculate Commissions Per Product</h2>
         <div class="cb__order" aria-hidden="true">
           <div class="cb__order-hd"><b>Order #2481</b><span class="st st--pending">Pending</span></div>
@@ -140,7 +164,7 @@ const commSec = (gi) => `
       <div class="cb__card cb__sm">
         <h3 class="cb__t">Global Default Rate</h3>
         <p class="cb__d">Set a default rate for your program.</p>
-        <div class="cb__field" aria-hidden="true"><span>Default rate</span><div class="cb__input">10<em>%</em></div></div>
+        <div class="cb__field" aria-hidden="true"><span>Default rate</span><div class="cb__input">10<em>%</em></div><small>Used when the product doesn’t set its own rate.</small></div>
       </div>
       <div class="cb__card cb__sm">
         <h3 class="cb__t">Maximum Commission</h3>
@@ -160,7 +184,7 @@ const holdSec = (gi, rows, vis) => `
   <div class="wrap hs__grid">
     <div class="hs__media art art--stone" data-reveal>${vis}</div>
     <div class="hs__copy">
-      <div class="cb__row" data-reveal><p class="tk__pill">Hold &amp; status</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+      <div class="cb__row" data-reveal><p class="tk__pill">Hold &amp; status</p></div>
       <h2 id="hold-h" class="h2 hs__h" data-reveal>Pay Commissions When They’re Ready</h2>
       <ul class="hs__list" data-reveal-stagger>
         ${rows.map(([t, d], k) => `<li><span class="hs__ic" aria-hidden="true">${[ic.clock, icSync, icRefund, icList][k]}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}
@@ -185,7 +209,7 @@ const affSec = (gi) => `
         </div>
       </div>
       <div class="ab__copy">
-        <div class="cb__row"><p class="tk__pill">Affiliate dashboard</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+        <div class="cb__row"><p class="tk__pill">Affiliate dashboard</p></div>
         <h2 id="affiliates-h" class="h2 ab__h">Everything Affiliates Need to See</h2>
       </div>
     </div>
@@ -214,7 +238,7 @@ const affSec = (gi) => `
 const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : id === 'hold' ? holdSec(gi, rows, vis) : id === 'affiliates' ? affSec(gi) : `
 <section class="sec fgroup${gi % 2 ? ' fgroup--flip' : ''}" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap">
-    <div class="shead shead--rule" data-reveal>${eyebrow(label)}${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+    <div class="shead shead--rule" data-reveal>${eyebrow(label)}</div>
     <div class="fg">
       <div class="fg__copy">
         <h2 id="${id}-h" class="h2" data-reveal>${h}</h2>
@@ -271,7 +295,7 @@ const more = `
     <div class="mf__r" data-reveal aria-hidden="true">
       <div class="mf__panel">
         <div class="mf__ui">
-          <div class="mf__ui-hd"><b>Commissions</b><span><i class="mf__btn">${ic.download}Export CSV</i><i class="mf__btn mf__btn--p">+ Add commission</i></span></div>
+          <div class="mf__ui-hd"><b>Commissions</b><span><i class="mf__btn mf__btn--p">+ Add commission</i></span></div>
           <div class="mf__tabs"><span class="on">All <em>128</em></span><span>Pending <em>24</em></span><span>Unpaid <em>41</em></span><span>Paid <em>57</em></span><span>Rejected <em>6</em></span></div>
           ${LEDGER.map(([ini, n, o, a, st, h]) => `<div class="mf__row"><span class="av" style="--h:${h}">${ini}</span><b>${n}</b><span>${o}</span><span>${a}</span><span class="st st--${st}">${st[0].toUpperCase() + st.slice(1)}</span></div>`).join('')}
         </div>
@@ -327,7 +351,7 @@ const flowSec = `
     <div class="wv" data-reveal>
       <svg class="wv__path" viewBox="0 0 1200 250" preserveAspectRatio="none" aria-hidden="true"><path d="M164 60 C200.0 60 200.0 190 236 190 M364 190 C400.0 190 400.0 60 436 60 M564 60 C600.0 60 600.0 190 636 190 M764 190 C800.0 190 800.0 60 836 60 M964 60 C1000.0 60 1000.0 190 1036 190" vector-effect="non-scaling-stroke"/></svg>
       <ol class="wv__list">
-        ${STEPS.map(([t, d, , , vis], k) => `<li class="wv__s${k % 2 ? ' wv__s--dn' : ''}"><span class="wv__ring" aria-hidden="true">${vis.replace('proc__glyph', 'wv__ic')}<b>${k + 1}</b></span><h3 class="wv__t">${t}</h3><p>${d}</p></li>`).join('')}
+        ${STEPS.map(([t, d, , , vis], k) => `<li class="wv__s${k % 2 ? ' wv__s--dn' : ''}"><span class="wv__ring" aria-hidden="true">${vis.replace('proc__glyph', 'wv__ic')}</span><h3 class="wv__t">${t}</h3><p>${d}</p></li>`).join('')}
       </ol>
     </div>
     <p class="wv__note" data-reveal><span class="wv__note-ic" aria-hidden="true">${ic.wp || ic.check}</span>One affiliate workflow. One WordPress site.</p>
