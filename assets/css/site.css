@@ -1963,3 +1963,7 @@ body.page-home .hdr.is-float::after { display: none; }
 /* WooCommerce order mockup: narrower, centred */
 .clients__media .ui { width: min(100%, 520px); }
 .clients__media { padding: 7% 9%; }
+
+/* Home workflow card: purple art background */
+.art--workflow { background-image: url("/assets/img/workflow-bg.jpg"); background-color: #2a1b52; background-position: center; }
+.wf.art--workflow::before { background: linear-gradient(90deg, rgba(10, 6, 30, .55) 0%, rgba(10, 6, 30, .25) 50%, rgba(10, 6, 30, .1) 100%); }

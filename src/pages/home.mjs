@@ -452,7 +452,7 @@ const STEPS = [['Recruit', userPlusIc], ['Share', ic.link], ['Track', ic.chart],
 const workflow = `
 <section class="sec sec--snug" id="workflow" aria-labelledby="wf-h">
   <div class="wrap">
-    <div class="wf art art--hero" data-reveal>
+    <div class="wf art art--workflow" data-reveal>
       <div class="wf__l">
         <h2 id="wf-h" class="h2">Everything in One WordPress Dashboard</h2>
         <p class="wf__sub">No spreadsheets. No separate affiliate platform.</p>
