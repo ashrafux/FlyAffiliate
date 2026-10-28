@@ -83,7 +83,82 @@ const jump = `
   </div>
 </nav>`;
 
-const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => `
+// Tracking: card grid after the "Explore our talent" inspiration — badge + heading with an inline icon chip, 2×2 cards with a live detail strip
+const TRACK = [
+  ['Unique Referral Links', 'Give every affiliate a unique tracking link.', ic.link, `<span class="tk__url"><span>yourstore.com/?affiliate=<b>1</b></span><i>${ic.copy}</i></span>`],
+  ['Product &amp; Page Links', 'Create links for specific products or pages.', ic.file, `<span class="tk__chips"><span>/tote?affiliate=1</span><span>/sale?affiliate=1</span></span>`],
+  ['First-Party Tracking', 'Track referrals directly on your WordPress site.', ic.shield, `<span class="tk__chips"><span>${ic.chart}Visits 1,284</span><span>${ic.cart}Orders 46</span></span>`],
+  ['30-Day Attribution', 'Keep referral attribution for 30 days by default.', ic.clock, `<span class="tk__days">${Array.from({ length: 10 }, (_, i) => `<i${i < 10 ? ' class="on"' : ''}></i>`).join('')}<b>30 days</b></span>`],
+];
+const trackSec = (gi) => `
+<section class="sec fgroup tk" id="tracking" aria-labelledby="tracking-h">
+  <div class="wrap">
+    <div class="tk__head">
+      <div>
+        <p class="tk__pill" data-reveal>Tracking</p>
+        <h2 id="tracking-h" class="h2 tk__h" data-reveal>Know Where Every Sale <span class="tk__chip" aria-hidden="true">${ic.link}</span> Came From</h2>
+      </div>
+      ${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}
+    </div>
+    <div class="tk__grid" data-reveal-stagger>
+      ${TRACK.map(([t, d, icon, strip], k) => `<article class="tk__card${k === 1 ? ' tk__card--dark' : ''}">
+        <span class="tk__ic" aria-hidden="true">${icon}</span>
+        <h3 class="tk__t">${t}</h3>
+        <p class="tk__d">${d}</p>
+        <div class="tk__foot">${strip}<a class="tk__go" href="/docs/" aria-label="${t.replace('&amp;', 'and')} in the docs">${ic.arrow}</a></div>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>`;
+
+// Commissions: bento after the "Manage your restaurant" inspiration — headline card with an order mockup, a per-item table card, three small cards
+const svgBag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round"/></svg>';
+const svgCard = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12" rx="2.5"/><path d="M3.5 10h17" /></svg>';
+const svgGift = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18M12 9v11M12 9c-2-4-6-4-6-1.5S10 9 12 9c2 0 6-1 6-1.5S14 5 12 9Z"/></svg>';
+const ITEMS = [['Leather Tote', '$120.00', '10', '$12.00', svgBag, 'p1', true], ['Card Holder', '$40.00', '10', '$4.00', svgCard, 'p2', false], ['Gift Wrap', '$5.00', '10', '$0.50', svgGift, 'p3', false]];
+const commSec = (gi) => `
+<section class="sec fgroup cb" id="commissions" aria-labelledby="commissions-h">
+  <div class="wrap">
+    <div class="cb__top">
+      <div class="cb__card cb__hero" data-reveal>
+        <div class="cb__row"><p class="tk__pill">Commissions</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+        <h2 id="commissions-h" class="h2 cb__h">Calculate Commissions Per Product</h2>
+        <div class="cb__order" aria-hidden="true">
+          <div class="cb__order-hd"><b>Order #2481</b><span class="st st--pending">Pending</span></div>
+          ${ITEMS.map(([n, , r, c, icon, tone]) => `<div class="cb__order-row"><span class="cb__th cb__th--${tone}">${icon}</span><span>${n}<small>${r}% per item</small></span><b>${c}</b></div>`).join('')}
+          <div class="cb__order-tot"><span>Commission</span><b>$16.50</b></div>
+        </div>
+      </div>
+      <div class="cb__card cb__table-card" data-reveal>
+        <h3 class="cb__t">Per-Item Commissions</h3>
+        <p class="cb__d">Calculate earnings for each order item.</p>
+        <div class="cb__table" aria-hidden="true">
+          <div class="cb__tr cb__tr--hd"><i class="cb__cb"></i><span>Item</span><span>Rate</span><span>Commission</span></div>
+          ${ITEMS.map(([n, , r, c, icon, tone, on]) => `<div class="cb__tr"><i class="cb__cb${on ? ' on' : ''}">${on ? ic.check : ''}</i><span class="cb__item"><span class="cb__th cb__th--${tone}">${icon}</span>${n}</span><span class="cb__rate">${r}<em>%</em></span><b>${c}</b></div>`).join('')}
+        </div>
+      </div>
+    </div>
+    <div class="cb__bottom" data-reveal-stagger>
+      <div class="cb__card cb__sm">
+        <h3 class="cb__t">Product-Level Rates</h3>
+        <p class="cb__d">Apply product-specific commission rates where configured.</p>
+        <div class="cb__chips" aria-hidden="true"><span>Leather Tote <b>12%</b></span><span>Canvas Sneakers <b>8%</b></span><span>Wool Overshirt <b>15%</b></span></div>
+      </div>
+      <div class="cb__card cb__sm">
+        <h3 class="cb__t">Global Default Rate</h3>
+        <p class="cb__d">Set a default rate for your program.</p>
+        <div class="cb__field" aria-hidden="true"><span>Default rate</span><div class="cb__input">10<em>%</em></div></div>
+      </div>
+      <div class="cb__card cb__sm">
+        <h3 class="cb__t">Maximum Commission</h3>
+        <p class="cb__d">Keep commissions within your defined limit.</p>
+        <div class="cb__cap" aria-hidden="true"><div><span>Maximum rate</span><b>50%</b></div><i style="--p:20%"></i><small><span>Default 10%</span><span>Cap 50%</span></small></div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : `
 <section class="sec fgroup${gi % 2 ? ' fgroup--flip' : ''}" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap">
     <div class="shead shead--rule" data-reveal>${eyebrow(label)}${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
