@@ -185,31 +185,10 @@ const flowSec = `
   </div>
 </section>`;
 
-const cta = `
-<section class="sec sec--dark contact" id="start" aria-labelledby="fs-h">
-  <div class="wrap contact__grid">
-    <div class="contact__l">
-      ${eyebrow('Get started')}
-      <h2 id="fs-h" class="h2xl" data-reveal>Start Your Affiliate Program</h2>
-      <p class="lead contact__p" data-reveal>Your products already have people talking about them.</p>
-      <p class="muted contact__p2" data-reveal>Give them a way to promote your store and earn from the sales they generate.</p>
-      <div class="contact__meta" data-reveal><p class="muted">Price</p><p class="contact__big">Free WordPress plugin.</p></div>
-    </div>
-    <div class="contact__card" data-reveal>
-      <p class="contact__ct">Everything on this page, in one plugin.</p>
-      <ol class="steps3">
-        <li><span>01</span>Referral links &amp; first-party tracking</li>
-        <li><span>02</span>Per-item commissions &amp; hold periods</li>
-        <li><span>03</span>Affiliate dashboard &amp; payouts</li>
-      </ol>
-      ${btn('Start Your Affiliate Program', CTA_URL, 'block', ext)}
-    </div>
-  </div>
-</section>`;
 
 export default () => page({
   title: 'Features — FlyAffiliate',
   desc: 'Track referrals, manage commissions, and handle payouts from WordPress. Referral links, per-item commissions, hold periods, affiliate dashboards, payouts, and Dokan support.',
   cur: 'Features',
-  body: [hero, `<div class="jump-scope">${jump}${groups}${more}</div>`, dokan, flowSec, cta].join('\n'),
+  body: [hero, `<div class="jump-scope">${jump}${groups}${more}</div>`, dokan, flowSec].join('\n'),
 });
