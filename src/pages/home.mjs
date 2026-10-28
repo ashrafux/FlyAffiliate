@@ -423,26 +423,19 @@ const dokan = `
 </section>
 <section class="sec sec--snug" id="marketplace" aria-labelledby="mkt-h">
   <div class="wrap">
-    <div class="intro__grid intro__grid--top">
-      <div class="intro__l"><p class="soon" data-reveal>Coming Soon</p></div>
-      <div class="intro__r">
-        <h2 id="mkt-h" class="statement" data-reveal>One Marketplace. Many Affiliate Opportunities.</h2>
-        <p class="lead intro__p" data-reveal>One marketplace. Multiple vendor sales networks.</p>
+    <p class="soon" data-reveal>Coming Soon</p>
+    <div class="split-head">
+      <h2 id="mkt-h" class="h2" data-reveal>One Marketplace. Many Affiliate Opportunities.</h2>
+      <p class="lead muted" data-reveal>One marketplace. Multiple vendor sales networks.</p>
+    </div>
+    <div class="mk2" data-reveal aria-hidden="true">
+      <div class="mk2__hub"><span>${ic.store}</span>Your Dokan marketplace</div>
+      <svg class="mk2__ln" viewBox="0 0 200 360" preserveAspectRatio="none"><path d="M0 180C100 180 100 60 200 60M0 180H200M0 180C100 180 100 300 200 300" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <div class="mk2__vs" data-reveal-stagger>
+        ${VENDORS.map(([n, r, affs, h]) => `<div class="mk2__v"><div><b>${n}</b><span>${r} affiliate rate</span></div><span class="mk2__affs">${affs.map(a => `<span class="av" style="--h:${h}">${a}</span>`).join('')}</span><small>${affs.length} affiliates</small></div>`).join('')}
       </div>
     </div>
-    <div class="mkt" data-reveal>
-      <div class="mkt__vis" aria-hidden="true">
-        <div class="mkt__hub"><span>${ic.store}</span>Your Dokan marketplace</div>
-        <div class="mkt__vendors">
-          ${VENDORS.map(([n, r, affs, h]) => `<div class="mkt__v"><div class="mkt__vh"><b>${n}</b><span>${r} affiliate rate</span></div><div class="mkt__affs">${affs.map(a => `<span class="av" style="--h:${h}">${a}</span>`).join('')}<small>${affs.length} affiliates</small></div></div>`).join('')}
-        </div>
-      </div>
-      ${flow(['Vendor', 'Affiliate', 'Product', 'Sale', 'Commission'])}
-    </div>
-    <div class="mkt__foot">
-      <p class="lead" data-reveal>Vendors fund promotion for their own products while your marketplace keeps its structure.</p>
-      <div class="mkt__badge" data-reveal><p class="mkt__badge-t">FlyAffiliate + Dokan</p><p class="muted">Vendor-powered affiliate marketing, coming soon.</p></div>
-    </div>
+    <div class="mk2__flow" data-reveal>${flow(['Vendor', 'Affiliate', 'Product', 'Sale', 'Commission'])}</div>
   </div>
 </section>`;
 
