@@ -1713,3 +1713,5 @@ body.page-home .hdr.is-float::after { display: none; }
 /* Features page: cards have no outline stroke */
 .page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .mf__c.is-on, .dk__c, .hs__ic, .mf__panel),
 .page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .dk__c):hover { box-shadow: none !important; }
+
+.art--payouts { background-image: url("/assets/img/payouts-bg.jpg"); background-color: #1a0a3d; background-position: center 60%; }

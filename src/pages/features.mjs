@@ -100,7 +100,7 @@ const GROUPS = [
     ['Balance', 'Know how much is currently available.'],
     ['Payouts', 'See payout information in one place.'],
   ], `<div class="fstack">${uiAffDash()}</div>`],
-  ['payouts', 'Payouts', 'Pay Affiliates Your Way', 'sand', [
+  ['payouts', 'Payouts', 'Pay Affiliates Your Way', 'payouts', [
     ['Choose Who to Pay', 'Pay everyone or selected affiliates.'],
     ['Set a Minimum', 'Only include balances above your threshold.'],
     ['Review First', 'Preview amounts before creating payouts.'],
