@@ -315,7 +315,7 @@ const dokan = `
   <div class="wrap">
     <div class="dk" data-reveal>
       <div class="dk__card">
-        <p class="soon">Coming Soon</p>
+        <div class="dk__top"><p class="soon">Coming Soon</p><img class="dk__logo" src="/assets/img/dokan-logo.svg" alt="Dokan" width="231" height="63"></div>
         <h2 id="fd-h" class="h2 dk__h">Specially Built for Dokan Marketplaces</h2>
         <p class="dk__sub">Let Vendors Grow With Affiliates</p>
       </div>

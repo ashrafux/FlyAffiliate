@@ -1924,3 +1924,7 @@ body.page-home .hdr.is-float::after { display: none; }
   #payouts .fg { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 10px clamp(32px, 4vw, 64px); align-items: center; }
   #payouts .fg__vis { aspect-ratio: 1.2 / 1; padding: 8% 12%; border-radius: 28px; }
 }
+
+/* Features → Dokan: Dokan logo in the headline card */
+.dk__top { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(28px, 3vw, 44px); }
+.dk__logo { display: block; width: clamp(150px, 13vw, 200px); height: auto; }
