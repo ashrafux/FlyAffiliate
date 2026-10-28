@@ -1715,3 +1715,14 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .dk__c):hover { box-shadow: none !important; }
 
 .art--payouts { background-image: url("/assets/img/payouts-bg.jpg"); background-color: #1a0a3d; background-position: center 60%; }
+
+/* More features: centred head + 4-column icon card grid (no side image) */
+.mf__head { text-align: center; max-width: 760px; margin: 0 auto; }
+.mf__head .mf__sub { margin-inline: auto; }
+.mf__wrap .mf__cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 4.2vw, 60px); }
+.mf__wrap .mf__c { display: flex; flex-direction: column; min-height: 230px; padding: 28px; border-radius: 22px; }
+.mf__wrap .mf__c h3 { margin-top: auto; padding-top: 32px; }
+.mf__wrap .mf__ic { width: 52px; height: 52px; border-radius: 14px; }
+.mf__wrap .mf__ic svg { width: 24px; height: 24px; }
+@media (max-width: 1024px) { .mf__wrap .mf__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .mf__wrap .mf__cards { grid-template-columns: minmax(0, 1fr); } .mf__wrap .mf__c { min-height: 0; } .mf__wrap .mf__c h3 { padding-top: 20px; } }

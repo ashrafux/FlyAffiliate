@@ -198,7 +198,6 @@ const holdSec = (gi, rows, vis) => `
       <ul class="hs__list" data-reveal-stagger>
         ${rows.map(([t, d], k) => `<li><span class="hs__ic" aria-hidden="true">${[ic.clock, icSync, icRefund, icList][k]}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}
       </ul>
-    </div>
   </div>
 </section>`;
 
@@ -291,24 +290,14 @@ const MORE_IC = [
 const LEDGER = [['MK', 'Maya Khan', '#2481', '$18.40', 'pending', 18], ['JR', 'Jonas Reed', '#2476', '$9.60', 'unpaid', 200], ['AL', 'Ava Lim', '#2470', '$22.00', 'paid', 140], ['TO', 'Tomi Ola', '#2463', '$6.25', 'rejected', 280], ['SP', 'Sara Pérez', '#2459', '$4.80', 'unpaid', 30]];
 const more = `
 <section class="sec mf" id="more" aria-labelledby="more-h">
-  <div class="wrap mf__grid">
-    <div class="mf__l">
+  <div class="wrap mf__wrap">
+    <div class="mf__head">
       <h2 id="more-h" class="h2" data-reveal>More Features</h2>
       <p class="lead muted mf__sub" data-reveal>The rest of the toolkit for running your program day to day.</p>
-      <ul class="mf__cards" data-reveal-stagger>
-        ${MORE.map(([t, d], k) => `<li class="mf__c${k === 2 ? ' is-on' : ''}"><span class="mf__ic mf__ic--${k % 6}" aria-hidden="true">${MORE_IC[k]}</span><h3>${t}</h3><p>${d}</p></li>`).join('\n        ')}
-      </ul>
     </div>
-    <div class="mf__r" data-reveal aria-hidden="true">
-      <div class="mf__panel">
-        <div class="mf__ui">
-          <div class="mf__ui-hd"><b>Commissions</b><span><i class="mf__btn mf__btn--p">+ Add commission</i></span></div>
-          <div class="mf__tabs"><span class="on">All <em>128</em></span><span>Pending <em>24</em></span><span>Unpaid <em>41</em></span><span>Paid <em>57</em></span><span>Rejected <em>6</em></span></div>
-          ${LEDGER.map(([ini, n, o, a, st, h]) => `<div class="mf__row"><span class="av" style="--h:${h}">${ini}</span><b>${n}</b><span>${o}</span><span>${a}</span><span class="st st--${st}">${st[0].toUpperCase() + st.slice(1)}</span></div>`).join('')}
-        </div>
-        <div class="mf__float"><span>${ic.check}</span><div><b>Batch paid</b><small>4 affiliates · $531.70</small></div></div>
-      </div>
-    </div>
+    <ul class="mf__cards" data-reveal-stagger>
+        ${MORE.map(([t, d], k) => `<li class="mf__c"><span class="mf__ic mf__ic--${k % 6}" aria-hidden="true">${MORE_IC[k]}</span><h3>${t}</h3><p>${d}</p></li>`).join('\n        ')}
+    </ul>
   </div>
 </section>`;
 
