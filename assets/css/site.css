@@ -2092,3 +2092,7 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* Built for WooCommerce: landscape background behind the order mock */
 .art--woo { background-image: linear-gradient(rgba(8, 8, 10, .45), rgba(8, 8, 10, .45)), url("/assets/img/woo-bg.jpg"); background-color: #6b5a2a; background-size: cover; background-position: center 60%; }
+
+/* Footer CTA: description and note sit quieter than the heading and button */
+.ftr__p { color: rgba(255, 255, 255, .62); }
+.ftr__note { color: rgba(255, 255, 255, .5); }
