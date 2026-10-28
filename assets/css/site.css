@@ -1918,8 +1918,8 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features .dk__card .soon { height: 28px; padding: 0 12px; gap: 8px; margin-bottom: 0; font-size: 14px; background: var(--ink); color: #fff; }
 .page-features .dk__card .soon::before { width: 7px; height: 7px; background: #f6bf43; }
 
-/* Features footer CTA: description on two lines */
-.page-features .ftr__p { max-width: 540px; }
+/* Features footer CTA: description on three lines (Figma 37:2) */
+.page-features .ftr__p { max-width: 440px; }
 
 /* Payouts: wider image card on the right (mirror of Hold & status) */
 @media (min-width: 1025px) {
@@ -1985,3 +1985,10 @@ body.page-home .hdr.is-float::after { display: none; }
 /* workflow connector: neutral dashed line */
 .page-features .wv__path path { stroke: var(--ink); stroke-opacity: .28; }
 @media (max-width: 680px) { .duo__start .btn { box-sizing: border-box; width: 100%; justify-content: space-between; gap: 10px; padding-left: 22px; } .duo__start .btn__t { font-size: 16px; } }
+
+/* Footer CTA split layout (Figma 37:2): copy left, button + note centred on the right, shade darkens to the right */
+@media (min-width: 901px) {
+  .ftr__card--split { flex-direction: row; align-items: center; justify-content: space-between; gap: 48px; padding: 48px clamp(48px, 7vw, 92px); }
+  .ftr__card--split .ftr__cta { flex-direction: column; flex-wrap: nowrap; gap: 30px; flex: none; margin-right: clamp(0px, 4.7vw, 62px); }
+  .ftr__card--split.art--cta::before { background: linear-gradient(90deg, rgba(8, 8, 10, 0), rgba(8, 8, 10, .1) 40%, rgba(8, 8, 10, .45)); }
+}
