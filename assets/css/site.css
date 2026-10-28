@@ -1928,3 +1928,34 @@ body.page-home .hdr.is-float::after { display: none; }
 /* Features → Dokan: Dokan logo in the headline card */
 .dk__top { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(28px, 3vw, 44px); }
 .dk__logo { display: block; width: clamp(150px, 13vw, 200px); height: auto; }
+
+/* ---------- Home → Turn Your Audience Into Sales (photo card + two text cards) ---------- */
+.au__head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.au__head .h2 { max-width: 760px; }
+.au__sub { justify-self: end; max-width: 440px; font-size: var(--t-sm); line-height: 1.6; color: var(--ink-2); }
+.au { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 4.4vw, 64px); }
+.au__card { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: clamp(460px, 42vw, 600px); padding: clamp(26px, 2.6vw, 38px); border-radius: 24px; background: var(--card); }
+.au__photo { position: relative; overflow: hidden; padding: 0; color: #fff; background: #1b1b1b url("/assets/img/art-hero.jpg") 58% 30% / cover no-repeat; }
+.au__photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 10, 12, .05) 30%, rgba(10, 10, 12, .85) 100%); }
+.au__photo-in { position: relative; margin-top: auto; padding: clamp(26px, 2.6vw, 38px); display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.au__big { font-family: var(--font-head); font-size: var(--h4); font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
+.au__pd { font-size: var(--t-sm); color: rgba(255, 255, 255, .78); margin-bottom: 8px; }
+.au__t { font-family: var(--font-head); font-size: var(--h5); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
+.au__d { margin-top: 14px; max-width: 360px; font-size: var(--t-sm); line-height: 1.6; color: var(--ink-2); }
+.au__k { font-family: var(--font-head); font-size: var(--t-sm); font-weight: 500; }
+.au__k span { color: var(--ink-2); font-weight: 400; }
+.au__k b { color: var(--accent); }
+.au__avs { display: flex; margin-top: 16px; }
+.au__avs > * { width: 56px; height: 56px; border-radius: 50%; margin-right: -10px; border: 3px solid var(--card); object-fit: cover; flex: none; }
+.au__avs .av { font-size: 15px; }
+.au__plus { display: grid; place-items: center; background: var(--accent); color: #fff; }
+.au__plus svg { width: 22px; height: 22px; }
+.au__order { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 16px 14px 14px; border-radius: 18px; background: var(--bg); }
+.au__oi { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--accent); color: #fff; }
+.au__oi svg { width: 24px; height: 24px; }
+.au__order b { display: block; font-family: var(--font-head); font-size: var(--t-sm); }
+.au__order small { font-size: 14px; color: var(--ink-2); }
+@media (max-width: 1024px) { .au { grid-template-columns: repeat(2, minmax(0, 1fr)); } .au__photo { grid-column: 1 / -1; min-height: 440px; } .au__card { min-height: 360px; } }
+@media (max-width: 680px) { .au__head { grid-template-columns: 1fr; gap: 16px; } .au__sub { justify-self: start; } .au { grid-template-columns: minmax(0, 1fr); } .au__photo { grid-column: auto; min-height: 420px; } .au__card { min-height: 300px; } }
+.au__order b, .au__order small { white-space: nowrap; }
+@media (max-width: 680px) { .au__photo { min-height: 500px; background-position: 62% 20%; } .au__order { grid-template-columns: 44px minmax(0, 1fr) auto; padding: 12px; } .au__oi { width: 44px; height: 44px; } }

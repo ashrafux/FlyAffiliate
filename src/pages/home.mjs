@@ -102,11 +102,30 @@ const caption = t => `<p class="caption" data-reveal><span class="dot" aria-hidd
 const audience = `
 <section class="sec" id="audience" aria-labelledby="aud-h">
   <div class="wrap">
-    <div class="center-head">
-      <h2 id="aud-h" class="statement" data-reveal>Turn Your Audience Into Sales</h2>
-      <p class="lead" data-reveal>Give the people who recommend your products a way to earn from every sale they bring.</p>
+    <div class="au__head">
+      <h2 id="aud-h" class="h2" data-reveal>Turn Your Audience Into Sales</h2>
+      <p class="au__sub" data-reveal>Give the people who recommend your products a way to earn from every sale they bring.</p>
     </div>
-    ${scards(AUD)}
+    <div class="au" data-reveal-stagger>
+      <article class="au__card au__photo">
+        <div class="au__photo-in">
+          <h3 class="au__big">${AUD[0][0]}</h3>
+          <p class="au__pd">${AUD[0][1]}</p>
+          ${btn('Start Your Affiliate Program', CTA_URL, '', ext)}
+        </div>
+      </article>
+      <article class="au__card">
+        <div><h3 class="au__t">${AUD[1][0]}</h3><p class="au__d">${AUD[1][1]}</p></div>
+        <div class="au__foot">
+          <p class="au__k"><span>yourstore.com/?affiliate=</span><b>1</b></p>
+          <div class="au__avs" aria-hidden="true"><img src="/assets/img/avatar-1.jpg" alt=""><img src="/assets/img/avatar-2.jpg" alt=""><span class="av" style="--h:18">MK</span><span class="av" style="--h:200">JR</span><span class="au__plus">${ic.link}</span></div>
+        </div>
+      </article>
+      <article class="au__card">
+        <div class="au__order" aria-hidden="true"><span class="au__oi">${ic.cart}</span><div><b>Order #2481</b><small>Referred by Maya</small></div><span class="st st--pending">Pending</span></div>
+        <div><h3 class="au__t">${AUD[2][0]}</h3><p class="au__d">${AUD[2][1]}</p></div>
+      </article>
+    </div>
   </div>
 </section>`;
 
