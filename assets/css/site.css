@@ -1984,7 +1984,7 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* workflow connector: neutral dashed line */
 .page-features .wv__path path { stroke: var(--ink); stroke-opacity: .28; }
-@media (max-width: 680px) { .duo__start .btn { box-sizing: border-box; width: 100%; justify-content: space-between; gap: 10px; padding-left: 22px; } .duo__start .btn__t { font-size: 16px; } }
+@media (max-width: 680px) { .duo__built, .duo__start { padding: 32px 24px; } .duo__start .btn { box-sizing: border-box; width: 100%; justify-content: space-between; } }
 
 /* Footer CTA split layout (Figma 37:2): copy left, button + note centred on the right, shade darkens to the right */
 @media (min-width: 901px) {
@@ -2096,3 +2096,6 @@ body.page-home .hdr.is-float::after { display: none; }
 /* Footer CTA: description and note sit quieter than the heading and button */
 .ftr__p { color: rgba(255, 255, 255, .62); }
 .ftr__note { color: rgba(255, 255, 255, .5); }
+
+/* Start card: button sits at the bottom of the blue half */
+.duo__start .btn { margin-top: auto; }
