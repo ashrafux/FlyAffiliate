@@ -926,7 +926,7 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 30px; text-align: left; font-size: var(--t-def); font-weight: 500; letter-spacing: -.015em; line-height: 1.4; }
 .faq__ic { width: 30px; height: 30px; border-radius: 50%; background: #ebebeb; display: grid; place-items: center; flex: none; transition: transform .5s var(--ease), background-color .3s, color .3s; }
 .faq__ic svg { width: 15px; height: 15px; }
-.faq__q:hover .faq__ic { background: var(--ink); color: #fff; }
+.faq__q:hover .faq__ic, .faq__q:focus-visible .faq__ic { background: var(--accent); color: var(--on-accent); }
 .faq__item.is-open .faq__ic { transform: rotate(45deg); background: var(--accent); color: var(--on-accent); }
 .faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
 .faq__a > div { overflow: hidden; }
