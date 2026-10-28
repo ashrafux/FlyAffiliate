@@ -32,9 +32,8 @@ const hero = `
 <section class="phero" aria-labelledby="f-h">
   <div class="wrap">
     <div class="phero__grid">
-      <div class="phero__l">${eyebrow('Complete control')}</div>
       <div class="phero__r">
-        <h1 id="f-h" class="phero__h" data-reveal><span aria-hidden="true">— </span>Features That Give You Complete Control</h1>
+        <h1 id="f-h" class="phero__h" data-reveal>Features That Give You Complete Control</h1>
         <p class="phero__p" data-reveal>Track referrals, manage commissions, and handle payouts from WordPress.</p>
         <div class="phero__row" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ext)}<span class="chip-rate"><i>${ic.bolt}</i>Free WordPress plugin</span></div>
       </div>
