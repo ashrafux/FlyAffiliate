@@ -1918,3 +1918,9 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* Features footer CTA: description on two lines */
 .page-features .ftr__p { max-width: 740px; }
+
+/* Payouts: wider image card on the right (mirror of Hold & status) */
+@media (min-width: 1025px) {
+  #payouts .fg { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 10px clamp(32px, 4vw, 64px); align-items: center; }
+  #payouts .fg__vis { aspect-ratio: 1.2 / 1; padding: 8% 12%; border-radius: 28px; }
+}
