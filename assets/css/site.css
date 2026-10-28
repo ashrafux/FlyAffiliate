@@ -1902,3 +1902,9 @@ body.page-home .hdr.is-float::after { display: none; }
 .cb__table { transform: scale(.86); transform-origin: 50% 100%; }
 .cb__chips, .cb__field, .cb__cap { transform: scale(.88); transform-origin: 0 100%; }
 @media (max-width: 680px) { .cb__order, .cb__table { transform: scale(.94); } .cb__chips, .cb__field, .cb__cap { transform: none; } }
+
+/* Hold & status: wider image card on the left */
+@media (min-width: 1025px) {
+  .hs__grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); }
+  .hs__media { aspect-ratio: 1.2 / 1; padding: 9% 14%; }
+}
