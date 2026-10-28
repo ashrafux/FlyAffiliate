@@ -1971,7 +1971,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .wf.art--workflow::before { background: linear-gradient(90deg, rgba(10, 6, 30, .55) 0%, rgba(10, 6, 30, .25) 50%, rgba(10, 6, 30, .1) 100%); }
 
 /* footer CTA card: abstract dark/amber background on every page */
-.art--cta { background-image: url("/assets/img/cta-bg.jpg"); background-color: #141010; background-position: center; }
+.art--cta { background-image: url("/assets/img/cta-bg-r.jpg"); background-color: #141010; background-position: center; }
 .ftr__card.art--cta::before { background: linear-gradient(90deg, rgba(8, 8, 10, .45), rgba(8, 8, 10, .1) 60%, transparent); }
 
 /* Home audience photo card: purple art background */
