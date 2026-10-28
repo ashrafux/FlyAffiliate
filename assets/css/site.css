@@ -878,6 +878,8 @@ a:hover .bcard__go svg { transform: translateX(3px); }
 /* ---------- homepage content blocks ---------- */
 .soon { display: inline-flex; width: fit-content; align-items: center; gap: 8px; height: 36px; padding: 0 16px; margin-bottom: 24px; border-radius: var(--pill); background: var(--accent-soft); color: var(--accent-ink); font-family: var(--font-head); font-size: var(--t-sm); font-weight: 600; }
 .soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.sec--dark .soon { background: rgba(107, 151, 255, .14); color: var(--accent-bright); }
+.sec--dark .soon::before { background: var(--accent-bright); }
 .contact__note { text-align: center; color: var(--ink-2); font-size: var(--t-sm); margin-top: 4px; }
 .tcard--quote { display: flex; }
 .tcard--quote .tcard__media { flex: 1; aspect-ratio: auto; min-height: 100%; }

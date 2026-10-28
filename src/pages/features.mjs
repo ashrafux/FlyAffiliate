@@ -141,7 +141,7 @@ const DOKAN = [
 const dokan = `
 <section class="sec sec--dark" id="dokan" aria-labelledby="fd-h">
   <div class="wrap">
-    <div class="shead" data-reveal>${eyebrow('Marketplaces')}${bracket('FlyAffiliate + Dokan')}</div>
+    <p class="soon" data-reveal>Coming Soon</p>
     <div class="split-head">
       <h2 id="fd-h" class="h2" data-reveal>Specially Built for Dokan Marketplaces</h2>
       <h3 class="lead muted" data-reveal>Let Vendors Grow With Affiliates</h3>
