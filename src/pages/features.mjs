@@ -194,7 +194,6 @@ const holdSec = (gi, rows, vis) => `
       <ul class="hs__list" data-reveal-stagger>
         ${rows.map(([t, d], k) => `<li><span class="hs__ic" aria-hidden="true">${[ic.clock, icSync, icRefund, icList][k]}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}
       </ul>
-      <div class="hs__cta" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}</div>
     </div>
   </div>
 </section>`;
