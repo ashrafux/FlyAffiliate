@@ -1959,3 +1959,7 @@ body.page-home .hdr.is-float::after { display: none; }
 @media (max-width: 680px) { .au__head { grid-template-columns: 1fr; gap: 16px; } .au__sub { justify-self: start; } .au { grid-template-columns: minmax(0, 1fr); } .au__photo { grid-column: auto; min-height: 420px; } .au__card { min-height: 300px; } }
 .au__order b, .au__order small { white-space: nowrap; }
 @media (max-width: 680px) { .au__photo { min-height: 500px; background-position: 62% 20%; } .au__order { grid-template-columns: 44px minmax(0, 1fr) auto; padding: 12px; } .au__oi { width: 44px; height: 44px; } }
+
+/* WooCommerce order mockup: narrower, centred */
+.clients__media .ui { width: min(100%, 520px); }
+.clients__media { padding: 7% 9%; }
