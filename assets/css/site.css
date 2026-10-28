@@ -1681,3 +1681,5 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* Features: exactly 120px between the hero image card and the Tracking section (scales down on small screens) */
 .page-features #tracking { padding-top: clamp(64px, 8.33vw, 120px); }
+
+.art--hold { background-image: url("/assets/img/hold-bg.jpg"); background-color: #b9a6cf; background-position: center; }

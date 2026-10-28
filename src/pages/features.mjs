@@ -187,7 +187,7 @@ const icList = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strok
 const holdSec = (gi, rows, vis) => `
 <section class="sec fgroup hs" id="hold" aria-labelledby="hold-h">
   <div class="wrap hs__grid">
-    <div class="hs__media art art--stone" data-reveal>${vis}</div>
+    <div class="hs__media art art--hold" data-reveal>${vis}</div>
     <div class="hs__copy">
       <div class="cb__row" data-reveal><p class="tk__pill">Hold &amp; status</p></div>
       <h2 id="hold-h" class="h2 hs__h" data-reveal>Pay Commissions When They’re Ready</h2>
