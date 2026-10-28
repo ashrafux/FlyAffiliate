@@ -167,17 +167,21 @@ const STEPS = [
   ['Hold', 'Commissions stay pending until your hold period ends.', 'Step', 'Pending', big(ic.clock)],
   ['Pay', 'Create payout batches, mark them paid, and export CSV records.', 'Step', 'Payouts', big(ic.wallet)],
 ];
+// workflow: six ring steps on a dashed wave (CartPilot "three steps" pattern)
 const flowSec = `
 <section class="sec" id="workflow" aria-labelledby="fw-h">
   <div class="wrap">
-    <div class="shead" data-reveal>${eyebrow('Click to payout')}${bracket('01 — 06')}</div>
-    <div class="split-head">
+    <div class="wv__head">
       <h2 id="fw-h" class="h2" data-reveal>From Click to Commission to Payout</h2>
       <p class="lead muted" data-reveal>Recruit → Share → Track → Calculate → Hold → Pay</p>
     </div>
-    <div class="proc proc--six" data-proc data-reveal>${procCards(STEPS)}
+    <div class="wv" data-reveal>
+      <svg class="wv__path" viewBox="0 0 1200 250" preserveAspectRatio="none" aria-hidden="true"><path d="M164 60 C200.0 60 200.0 190 236 190 M364 190 C400.0 190 400.0 60 436 60 M564 60 C600.0 60 600.0 190 636 190 M764 190 C800.0 190 800.0 60 836 60 M964 60 C1000.0 60 1000.0 190 1036 190" vector-effect="non-scaling-stroke"/></svg>
+      <ol class="wv__list">
+        ${STEPS.map(([t, d, , , vis], k) => `<li class="wv__s${k % 2 ? ' wv__s--dn' : ''}"><span class="wv__ring" aria-hidden="true">${vis.replace('proc__glyph', 'wv__ic')}<b>${k + 1}</b></span><h3 class="wv__t">${t}</h3><p>${d}</p></li>`).join('')}
+      </ol>
     </div>
-    <p class="caption" data-reveal><span class="dot" aria-hidden="true"></span>One affiliate workflow. One WordPress site.</p>
+    <p class="wv__note" data-reveal><span class="wv__note-ic" aria-hidden="true">${ic.wp || ic.check}</span>One affiliate workflow. One WordPress site.</p>
   </div>
 </section>`;
 

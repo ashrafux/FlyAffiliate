@@ -515,6 +515,33 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .checks p { font-size: var(--t-sm); color: var(--on-dark-2); margin-top: 2px; }
 .plan__foot { margin-top: auto; padding-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 
+/* ---------- Features → workflow: ring steps on a dashed wave ---------- */
+.wv__head { text-align: center; max-width: 900px; margin: 0 auto; }
+.wv__head .lead { margin-top: 20px; }
+.wv { position: relative; margin-top: clamp(48px, 5vw, 72px); }
+.wv__path { position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 250px; pointer-events: none; }
+.wv__path path { fill: none; stroke: var(--accent); stroke-opacity: .45; stroke-width: 2; stroke-dasharray: 6 8; }
+.wv__list { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.wv__s { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.wv__s--dn { margin-top: 130px; }
+.wv__ring { position: relative; width: 120px; height: 120px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--bg); transition: transform .5s var(--ease); }
+.wv__ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 5px; background: conic-gradient(from 200deg, var(--accent) 0deg, #8fb0ff 160deg, #d7e3ff 250deg, var(--accent) 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.wv__ring b { position: absolute; top: 2px; right: 2px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-family: var(--font-head); font-size: 16px; font-weight: 600; }
+.wv__ic { color: var(--accent); display: grid; place-items: center; }
+.wv__ic svg { width: 36px; height: 36px; }
+.wv__s:hover .wv__ring { transform: translateY(-6px); }
+.wv__t { margin-top: 24px; font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; }
+.wv__s p { margin-top: 10px; max-width: 220px; font-size: var(--t-sm); line-height: 1.5; color: var(--ink-2); }
+.wv__note { display: flex; align-items: center; gap: 16px; width: fit-content; max-width: 100%; margin: clamp(48px, 5vw, 72px) auto 0; padding: 16px 28px 16px 16px; border-radius: 20px; background: var(--accent-soft); font-size: var(--t-sm); }
+.wv__note-ic { width: 48px; height: 48px; flex: none; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--accent); }
+.wv__note-ic svg { width: 22px; height: 22px; }
+@media (max-width: 1024px) {
+  .wv__path { display: none; }
+  .wv__list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 48px; }
+  .wv__s--dn { margin-top: 0; }
+}
+@media (max-width: 680px) { .wv__list { grid-template-columns: 1fr 1fr; gap: 40px 16px; } .wv__ring { width: 96px; height: 96px; } .wv__ic svg { width: 30px; height: 30px; } }
+
 /* ---------- Features → Dokan: art panel, frosted headline card, glass capability cards ---------- */
 .sec--dk { padding-block: var(--sec); margin-top: var(--sec); border-radius: 0; background-image: url("/assets/img/color-1-hd.jpg"); background-color: #1b3a44; background-position: center; }
 .dk { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; }
