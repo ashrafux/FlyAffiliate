@@ -1604,10 +1604,8 @@ body.page-home .hdr.is-float::after { display: none; }
 }
 
 /* Features page: cards stay still on hover (no lift, shadow or icon tilt) */
-.page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .dk__c, .tile, .scard, .vk__card, .wv__s, .hs__list li, .proc__card):hover { transform: none !important; box-shadow: inset 0 0 0 1px var(--line) !important; }
-.page-features .dk__c:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7) !important; }
+.page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .dk__c, .tile, .scard, .vk__card, .wv__s, .hs__list li, .proc__card):hover { transform: none !important; }
 .page-features .dk__c:last-child:hover, .page-features .tk__card--dark:hover { box-shadow: none !important; }
-.page-features .mf__c.is-on:hover { box-shadow: inset 0 0 0 1.5px var(--accent) !important; }
 .page-features :is(.tk__card, .dk__c, .cb__card, .ab__card):hover :is(.tk__ic, .dk__ic, .tile__ic, .scard__ic, .wv__ring),
 .page-features .wv__s:hover .wv__ring, .page-features .hs__list li:hover .hs__ic { transform: none !important; }
 .page-features .hs__list li:hover .hs__ic { background: var(--card); color: var(--accent); }
@@ -1711,3 +1709,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .hd__li--p .cb__th { width: 2.4em; height: 2.4em; border-radius: .6em; }
 .hd__li--p .cb__th svg { width: 1.2em; height: 1.2em; }
 @media (max-width: 680px) { .hd__row--b { display: none; } }
+
+/* Features page: cards have no outline stroke */
+.page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .mf__c.is-on, .dk__c, .hs__ic, .mf__panel),
+.page-features :is(.tk__card, .cb__card, .ab__card, .mf__c, .dk__c):hover { box-shadow: none !important; }
