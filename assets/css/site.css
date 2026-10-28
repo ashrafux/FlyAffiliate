@@ -1051,6 +1051,11 @@ a:hover .bcard__go svg { transform: translateX(3px); }
 .ad__thumb > div { position: absolute; left: 18px; top: 18px; width: 300px; transition: transform .6s var(--ease); }
 .ad__row:hover .ad__thumb > div { transform: translate(-6px, -6px); }
 .ad__thumb .ui { --u: 11px; }
+/* light 1px outline in each thumbnail's own tint, drawn above the mock card */
+.ad__thumb::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px var(--ad-line, rgba(10, 10, 10, .08)); }
+.ad__thumb--g1 { --ad-line: #c7e2f2; }
+.ad__thumb--g2 { --ad-line: #e2d3f7; }
+.ad__thumb--g3 { --ad-line: #f4dcc0; }
 .ad__thumb--g1 { background: radial-gradient(120% 90% at 0 0, #d9f4e6, transparent 55%), radial-gradient(100% 100% at 100% 100%, #cfe2ff, transparent 60%), #eef7ff; }
 .ad__thumb--g2 { background: radial-gradient(120% 90% at 100% 0, #fde3f3, transparent 55%), radial-gradient(100% 100% at 0 100%, #dcd6ff, transparent 60%), #f6f0ff; }
 .ad__thumb--g3 { background: radial-gradient(120% 90% at 0 0, #fff1c9, transparent 55%), radial-gradient(100% 100% at 100% 100%, #ffd9c7, transparent 60%), #fff7ee; }
