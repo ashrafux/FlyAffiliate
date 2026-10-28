@@ -183,7 +183,7 @@ export default () => page({
     h: 'Launch Your Affiliate Program Today',
     p: 'Start free, or get PayPal payouts with Pro at launch pricing.',
     btn: btn('Get FlyAffiliate Pro', PRO_URL),
-    btn2: btn('Download Free', CTA_URL, 'glass', ext),
+    btn2: btn('Download Free', CTA_URL, 'secondary', ext),
     note: '',
     trust: ['Every Feature in Every Plan', 'Lifetime Option', 'Money-Back Guarantee', 'Built by weDevs'],
   },

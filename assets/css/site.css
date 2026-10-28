@@ -1619,7 +1619,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .hd__chrome i { width: .75em; height: .75em; border-radius: 50%; background: rgba(255, 255, 255, .65); }
 .hd__chrome span { margin-left: .8em; flex: 1; max-width: 32em; padding: .3em 1em; border-radius: 99px; background: rgba(255, 255, 255, .28); color: rgba(255, 255, 255, .9); font-size: .82em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hd__app { display: grid; grid-template-columns: 13em minmax(0, 1fr); background: #fff; border-radius: 1em 1em 0 0; overflow: hidden; color: var(--ink); line-height: 1.35; }
-.hd__side { padding-bottom: 6em !important; background: #f7f8fb; border-right: 1px solid #eceef3; padding: 1.2em .8em; display: flex; flex-direction: column; gap: .2em; }
+.hd__side { background: #f7f8fb; border-right: 1px solid #eceef3; padding: 1.2em .8em; display: flex; flex-direction: column; gap: .2em; }
 .hd__brand { display: flex; align-items: center; gap: .55em; padding: 0 .5em 1.1em; font-family: var(--font-head); font-weight: 600; font-size: 1.05em; }
 .hd__brand svg { width: 1.6em; height: 1.6em; }
 .hd__brand em { font-style: normal; font-family: var(--font); font-weight: 400; font-size: .7em; padding: .15em .5em; border-radius: 99px; box-shadow: inset 0 0 0 1px #dfe2ea; color: var(--ink-2); }
@@ -1679,7 +1679,7 @@ body.page-home .hdr.is-float::after { display: none; }
 }
 
 /* Features: exactly 120px between the hero image card and the Tracking section (scales down on small screens) */
-.page-features #tracking { padding-top: clamp(64px, 8.33vw, 120px); }
+.page-features #tracking { padding-top: clamp(88px, 11.1vw, 160px); }
 
 .art--hold { background-image: url("/assets/img/hold-bg.jpg"); background-color: #b9a6cf; background-position: center; }
 
@@ -1863,3 +1863,6 @@ body.page-home .hdr.is-float::after { display: none; }
 }
 
 .pr-card .btn--block .btn__t { white-space: nowrap; padding: 0 48px 0 4px; }
+
+.ftr__cta .btn--secondary { color: #fff; height: 52px; }
+.phero__row .btn--secondary { height: 52px; }

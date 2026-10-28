@@ -36,8 +36,7 @@ const uiOverview = () => `
       </div>
     </div>
   </div>
-  <div class="hd__toast hd__toast--a"><span>${ic.check}</span><div><b>New commission</b><small>Maya Khan · Order #2481</small></div><em>+$18.40</em></div>
-  <div class="hd__toast hd__toast--b"><span class="hd__tb">${hi('<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/>')}</span><div><b>Payout ready</b><small>3 affiliates · $457.20</small></div></div>
+  
 </div>`;
 
 const hero = `
@@ -47,7 +46,7 @@ const hero = `
       <div class="phero__r">
         <h1 id="f-h" class="phero__h" data-reveal>Features That Give You Complete Control</h1>
         <p class="phero__p" data-reveal>Track referrals, manage commissions, and handle payouts from WordPress.</p>
-        <div class="phero__row" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ext)}<span class="chip-rate"><i>${ic.bolt}</i>Free WordPress plugin</span></div>
+        <div class="phero__row" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ext)}${btn('Free WordPress plugin', CTA_URL, 'secondary', ext)}</div>
       </div>
     </div>
     <div class="phero__media phero__media--fbg" data-reveal>${uiOverview()}</div>
