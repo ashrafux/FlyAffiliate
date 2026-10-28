@@ -1992,3 +1992,6 @@ body.page-home .hdr.is-float::after { display: none; }
   .ftr__card--split .ftr__cta { flex-direction: column; flex-wrap: nowrap; gap: 30px; flex: none; margin-right: clamp(0px, 4.7vw, 62px); }
   .ftr__card--split.art--cta::before { background: linear-gradient(90deg, rgba(8, 8, 10, 0), rgba(8, 8, 10, .1) 40%, rgba(8, 8, 10, .45)); }
 }
+
+/* Home: workflow card → team/start split card, 30px apart */
+.page-home #team { padding-top: 30px; }
