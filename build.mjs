@@ -1,6 +1,6 @@
 // node build.mjs — renders src/pages/*.mjs into static HTML (one folder per page)
 import fs from 'node:fs';
-const pages = { home: 'index.html', features: 'features/index.html', blog: 'blog/index.html', docs: 'docs/index.html', about: 'about/index.html' };
+const pages = { home: 'index.html', features: 'features/index.html', blog: 'blog/index.html', docs: 'docs/index.html', about: 'about/index.html', pricing: 'pricing/index.html' };
 for (const [name, out] of Object.entries(pages)) {
   const src = new URL(`./src/pages/${name}.mjs`, import.meta.url);
   if (!fs.existsSync(src)) continue;

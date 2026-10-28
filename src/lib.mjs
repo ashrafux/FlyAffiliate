@@ -1,7 +1,7 @@
 // Shared building blocks for every page. Pages import these and return plain HTML strings.
 
 export const CTA_URL = 'https://wordpress.org/plugins/search/flyaffiliate/'; // swap for the real plugin listing
-export const V = 89; // asset cache-bust, bump after CSS/JS edits
+export const V = 92; // asset cache-bust, bump after CSS/JS edits
 
 /* ---------- icons ---------- */
 export const ic = {
@@ -222,7 +222,7 @@ export const header = cur => `
     <nav class="hdr__nav" aria-label="Main">
       ${NAV.map(([t, h]) => `<a class="hdr__link" href="${h}"${t === cur ? ' aria-current="page"' : ''}>${t}</a>`).join('\n      ')}
     </nav>
-    ${btn('Price', '/#start', 'secondary sm').replace('class="btn ', 'class="btn hdr__cta ')}
+    ${btn('Pricing', '/pricing/', 'secondary sm').replace('class="btn ', 'class="btn hdr__cta ')}
     <button class="hdr__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" data-menu>${ic.menu}</button>
   </div>
 </header>
@@ -239,7 +239,7 @@ export const footer = (cta = {}) => `
   <div class="wrap">
     <div class="ftr__card art art--hero" data-reveal>
       <div class="ftr__copy"><h2 class="h3 ftr__tag">${cta.h || 'Your Products. Your Affiliates.<br>Your Program.'}</h2>${cta.p ? `<p class="ftr__p">${cta.p}</p>` : ''}</div>
-      <div class="ftr__cta">${btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}<p class="ftr__note">${cta.note || 'Free WordPress plugin'}</p></div>
+      <div class="ftr__cta">${cta.btn || btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}${cta.btn2 || ''}<p class="ftr__note">${cta.note ?? 'Free WordPress plugin'}</p></div>${cta.trust ? `<ul class="ftr__trust">${cta.trust.map(t => `<li>${ic.check}${t}</li>`).join('')}</ul>` : ''}
     </div>
     <div class="ftr__row">
       <a class="logo ftr__logo" href="/" aria-label="FlyAffiliate home">${logoSvg()}</a>

@@ -85,6 +85,18 @@
     });
   }
 
+  /* pricing: annual / lifetime toggle */
+  $$('[data-billing-toggle]').forEach(t => {
+    const scope = document.querySelector('[data-billing-scope]');
+    t.addEventListener('click', e => {
+      const b = e.target.closest('[data-billing]'); if (!b || !scope) return;
+      const mode = b.dataset.billing;
+      scope.dataset.mode = mode;
+      t.classList.toggle('is-life', mode === 'lifetime');
+      $$('[data-billing]', t).forEach(x => x.setAttribute('aria-selected', String(x === b)));
+    });
+  });
+
   /* accordions: services rows + FAQ (one open at a time per group) */
   $$('[data-accordion]').forEach(group => {
     const items = $$('.svc__row, .faq__item', group);
