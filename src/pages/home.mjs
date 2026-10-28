@@ -411,7 +411,6 @@ const dokan = `
 <section class="sec" id="dokan" aria-labelledby="dokan-h">
   <div class="wrap">
     <div class="dkw" data-reveal>
-      <span class="dkw__mark" aria-hidden="true">dokan</span>
       <div class="dkw__head">
         <p class="soon">Coming Soon</p>
         <h2 id="dokan-h" class="h2">Turn Your Dokan Marketplace Into a Vendor-Powered Affiliate Program</h2>

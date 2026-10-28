@@ -2025,8 +2025,7 @@ body.page-home .hdr.is-float::after { display: none; }
 }
 
 /* ---------- Dokan (D12, light): giant watermark, four ruled columns ---------- */
-.dkw { position: relative; overflow: hidden; padding: clamp(32px, 5vw, 72px); border-radius: 32px; background: var(--card); }
-.dkw__mark { position: absolute; right: -.08em; bottom: -.3em; font-family: var(--font-head); font-weight: 700; font-size: clamp(180px, 29vw, 420px); letter-spacing: -.06em; line-height: 1; color: rgba(10, 10, 10, .035); pointer-events: none; user-select: none; }
+.dkw { position: relative; }
 .dkw__head { position: relative; max-width: 960px; }
 .dkw__head .lead { max-width: 680px; margin-top: 20px; }
 .dkw__cols { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(48px, 5.5vw, 80px); border-top: 1px solid var(--line); }
@@ -2042,7 +2041,6 @@ body.page-home .hdr.is-float::after { display: none; }
   .dkw__cols li:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 680px) {
-  .dkw { border-radius: 24px; }
   .dkw__cols { grid-template-columns: 1fr; }
   .dkw__cols li { border-left: 0; padding: 28px 0 4px; }
   .dkw__cols li + li { border-top: 1px solid var(--line); }
@@ -2068,8 +2066,6 @@ body.page-home .hdr.is-float::after { display: none; }
   .ad__tag { margin-top: 18px; }
 
   /* Dokan watermark sits under the content, not behind the text */
-  .dkw { padding-bottom: 120px; }
-  .dkw__mark { font-size: 150px; bottom: -.24em; }
 
   /* icon-top cards become compact rows: icon left, text right */
   .pr-why h3, .clients__tiles .tile h3 { font-size: var(--t-def); }
