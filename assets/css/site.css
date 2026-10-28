@@ -1678,3 +1678,6 @@ body.page-home .hdr.is-float::after { display: none; }
   .hd__row { grid-template-columns: 1fr; }
   .hd__toast--a { right: 50%; transform: translateX(50%); top: -36px; animation: none; }
 }
+
+/* Features: exactly 120px between the hero image card and the Tracking section (scales down on small screens) */
+.page-features #tracking { padding-top: clamp(64px, 8.33vw, 120px); }
