@@ -72,6 +72,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   text-align: center; margin: 0 0 clamp(44px, 5vw, 72px); white-space: nowrap;
 }
 .giant .ch { display: inline-block; }
+/* balanced line breaks everywhere: no lone word left on the last line of a heading or paragraph */
+h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, blockquote, label, .btn__t { text-wrap: balance; }
 .statement { font-size: var(--h2); font-weight: 600; letter-spacing: -.022em; line-height: 1.07; text-wrap: balance; }
 .statement .dash { font-weight: 500; }
 .h2xl { font-size: var(--h2); font-weight: 600; letter-spacing: -.02em; line-height: 1.07; }
