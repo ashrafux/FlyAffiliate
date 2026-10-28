@@ -515,6 +515,26 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .checks p { font-size: var(--t-sm); color: var(--on-dark-2); margin-top: 2px; }
 .plan__foot { margin-top: auto; padding-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 
+/* ---------- Features → Dokan: art panel, frosted headline card, glass capability cards ---------- */
+.dk { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; padding: clamp(20px, 3vw, 44px); border-radius: 28px; background-image: url("/assets/img/color-1-hd.jpg"); background-color: #1b3a44; }
+.dk__card { display: flex; flex-direction: column; min-height: 100%; padding: clamp(28px, 3vw, 44px); border-radius: 24px; background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.dk__card .soon { align-self: flex-start; }
+.dk__h { margin-top: auto; padding-top: 80px; font-size: var(--h3); }
+.dk__sub { margin-top: 20px; font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; color: var(--ink-2); }
+.dk__g { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dk__c { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: clamp(22px, 2vw, 28px); border-radius: 20px; background: rgba(255, 255, 255, .66); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.dk__c:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7), 0 24px 40px -28px rgba(0, 0, 0, .45); }
+.dk__ic { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--accent); transition: transform .5s var(--ease); }
+.dk__c:hover .dk__ic { transform: scale(1.08) rotate(-6deg); }
+.dk__ic svg { width: 24px; height: 24px; }
+.dk__t { font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+.dk__c p { margin-top: 10px; font-size: var(--t-sm); line-height: 1.5; color: rgba(10, 10, 10, .7); }
+.dk__c:last-child { background: var(--accent); color: var(--on-accent); box-shadow: none; }
+.dk__c:last-child .dk__ic { background: rgba(255, 255, 255, .16); color: #fff; }
+.dk__c:last-child p { color: rgba(255, 255, 255, .82); }
+@media (max-width: 1024px) { .dk { grid-template-columns: 1fr; } .dk__h { padding-top: 40px; } }
+@media (max-width: 680px) { .dk { padding: 14px; } .dk__g { grid-template-columns: 1fr; } .dk__c { gap: 24px; } }
+
 /* ---------- Dokan: icon cards, last card in primary ---------- */
 .vk { list-style: none; margin: clamp(40px, 4.2vw, 60px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .vk__card { background: var(--card); border-radius: var(--r-lg); padding: clamp(24px, 2.2vw, 32px); min-height: 330px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }

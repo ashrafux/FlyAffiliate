@@ -132,22 +132,28 @@ const more = `
   </div>
 </section>`;
 
+const icSliders = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>';
+const icTarget = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>';
+const icToggle = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="5"/><circle cx="16" cy="12" r="3" fill="currentColor"/></svg>';
 const DOKAN = [
-  ['Vendor Affiliate Programs', 'Let vendors promote their own products through affiliates.'],
-  ['Vendor Commission Rules', 'Let vendors define affiliate commission rules.'],
-  ['Vendor-Level Attribution', 'Keep affiliate activity connected to vendor products.'],
-  ['Flexible Participation', 'One vendor can participate while another chooses not to.'],
+  ['Vendor Affiliate Programs', 'Let vendors promote their own products through affiliates.', ic.store],
+  ['Vendor Commission Rules', 'Let vendors define affiliate commission rules.', icSliders],
+  ['Vendor-Level Attribution', 'Keep affiliate activity connected to vendor products.', icTarget],
+  ['Flexible Participation', 'One vendor can participate while another chooses not to.', icToggle],
 ];
+// Dokan: colourful art panel, frosted headline card, glass capability cards (design option S6)
 const dokan = `
-<section class="sec sec--dark" id="dokan" aria-labelledby="fd-h">
+<section class="sec" id="dokan" aria-labelledby="fd-h">
   <div class="wrap">
-    <p class="soon" data-reveal>Coming Soon</p>
-    <div class="split-head">
-      <h2 id="fd-h" class="h2" data-reveal>Specially Built for Dokan Marketplaces</h2>
-      <h3 class="lead muted" data-reveal>Let Vendors Grow With Affiliates</h3>
-    </div>
-    <div class="scards scards--dark" data-reveal-stagger>
-      ${DOKAN.map(([t, d], i) => `<article class="scard"><h3 class="scard__t">${t}</h3><p class="scard__d">${d}</p><div class="scard__foot"><i class="dot" aria-hidden="true"></i><span class="scard__n" aria-hidden="true">${pad(i + 1)}</span></div></article>`).join('')}
+    <div class="dk art" data-reveal>
+      <div class="dk__card">
+        <p class="soon">Coming Soon</p>
+        <h2 id="fd-h" class="h2 dk__h">Specially Built for Dokan Marketplaces</h2>
+        <p class="dk__sub">Let Vendors Grow With Affiliates</p>
+      </div>
+      <ul class="dk__g" data-reveal-stagger>
+        ${DOKAN.map(([t, d, icon]) => `<li class="dk__c"><span class="dk__ic" aria-hidden="true">${icon}</span><div><h3 class="dk__t">${t}</h3><p>${d}</p></div></li>`).join('')}
+      </ul>
     </div>
   </div>
 </section>`;
