@@ -5,30 +5,35 @@ import { procCards } from './home.mjs';
 const ext = ' target="_blank" rel="noopener"';
 
 const logoMark = '<svg viewBox="0 0 145 145" aria-hidden="true"><rect width="145" height="145" rx="37" fill="#0043DA"/><path d="M69.3 73.4h35.6c-.5 8.9-3.1 16.5-9.6 22.9-10.9 10.2-20.5 9.4-34.3 9.4h-12.4c-3.1 0-8.7-2.5-8.7-8.1V82.2c0-6.2 4.8-8.8 9.3-8.8Zm17.3-35.2c-.8 10.4-7.8 30.2-28.9 32.3H39.9V47.1c0-6.4 5.1-8.9 9.3-8.9Z" fill="#fff"/></svg>';
+const hi = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const HERO_NAV = [['Dashboard', hi('<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>')], ['Affiliates', hi('<circle cx="9" cy="9" r="3.2"/><path d="M3 19c.9-2.9 3.1-4.5 6-4.5s5.1 1.6 6 4.5"/><circle cx="17" cy="8" r="2.5"/><path d="M16 13.6c2.3.1 4 1.5 5 4"/>')], ['Commissions', hi('<path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>')], ['Visits', hi('<path d="M4 20V4m0 16h16"/><path d="m7.5 15 3.5-4 3 2.5 5-6.5"/>')], ['Payouts', hi('<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/>')], ['Extensions', hi('<path d="M9 4v4M15 4v4M6 8h12v4a6 6 0 0 1-12 0zM12 18v2"/>')], ['Settings', hi('<circle cx="12" cy="12" r="3"/><path d="M12 3v2.2m0 13.6V21m9-9h-2.2M5.2 12H3m15.4-6.4-1.6 1.6M7.2 16.8l-1.6 1.6m12.8 0-1.6-1.6M7.2 7.2 5.6 5.6"/>')]];
+const HERO_KPI = [['Referral revenue', '$48,250', '+12.4%', hi('<circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.3c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1.1 1.7 2.6 2 2.7.8 2.7 2.1-1.2 2.1-2.7 2.1c-1.2 0-2.3-.6-2.8-1.6M12 6.3v1.6m0 8.3v1.5"/>')], ['Net revenue', '$43,425', '+9.8%', hi('<path d="M12 4v16M5 8h14M7 8l-3 7h6zM17 8l-3 7h6z"/>')], ['Total paid', '$3,960', '+4.1%', hi('<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/><path d="M16 13.5h1.5"/>')], ['Total unpaid', '$865', '', hi('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>')]];
+const heroPts = [14, 20, 17, 26, 23, 31, 28, 37, 33, 42, 39, 48, 45, 54];
+const heroPts2 = [6, 9, 8, 12, 10, 14, 13, 17, 15, 19, 18, 22, 21, 25];
+const hp = (a, w = 640, h = 140) => a.map((v, i) => `${(i / (a.length - 1) * w).toFixed(1)},${(h - v / 60 * h).toFixed(1)}`).join(' ');
 const uiOverview = () => `
-<div class="ui ui--app">
-  <aside class="ui-side" aria-hidden="true">
-    <p class="ui-side__logo"><span class="ui-side__mark">${logoMark}</span>FlyAffiliate</p>
-    ${['Dashboard', 'Affiliates', 'Commissions', 'Visits', 'Payouts', 'Extensions', 'Settings', 'License'].map((t, i) => `<span class="${i === 0 ? 'on' : ''}">${t}</span>`).join('')}
-  </aside>
-  <div class="ui-main">
-    <div class="ui__bar"><span class="ui__title">Dashboard <small>· How the affiliate programme is doing</small></span><span class="ui__actions"><span class="ui__pill">Last 30 days</span></span></div>
-    <div class="ui__body">
-      <p class="ui-sec">Earnings &amp; payouts</p>
-      <div class="ui-kpis ui-kpis--4">
-        <div><span class="ui-k">Referral revenue</span><span class="ui-v">$48,250</span></div>
-        <div><span class="ui-k">Net revenue</span><span class="ui-v">$43,425</span></div>
-        <div><span class="ui-k">Total paid</span><span class="ui-v">$3,960</span></div>
-        <div><span class="ui-k">Total unpaid</span><span class="ui-v ui-v--acc">$865</span></div>
-      </div>
-      <div class="ui-sec ui-sec--row"><span>Visits per day</span><span class="ui-legend"><i></i>Visits<i class="on"></i>Converted</span></div>
-      <div class="ui-chart">${spark([12, 18, 15, 24, 22, 30, 27, 36, 33, 41, 38, 47, 44, 52], 640, 130)}</div>
-      <div class="ui-lines">
-        <div><span class="ui-who"><span class="av" style="--h:18">MK</span>Maya Khan · Order #2481</span><b>$18.40</b><span class="st st--pending">Pending</span></div>
-        <div><span class="ui-who"><span class="av" style="--h:140">AL</span>Ava Lim · Order #2470</span><b>$22.00</b><span class="st st--paid">Paid</span></div>
+<div class="hd" aria-hidden="true">
+  <div class="hd__win">
+    <div class="hd__chrome"><i></i><i></i><i></i><span>yourstore.com/wp-admin/admin.php?page=flyaffiliate</span></div>
+    <div class="hd__app">
+      <aside class="hd__side">
+        <p class="hd__brand">${logoMark}FlyAffiliate <em>1.0.0</em></p>
+        ${HERO_NAV.map(([t, i], k) => `<span class="${k === 0 ? 'on' : ''}">${i}${t}</span>`).join('')}
+      </aside>
+      <div class="hd__main">
+        <div class="hd__top"><div><b>Dashboard</b><small>How the affiliate programme is doing</small></div><span class="hd__range">${hi('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>')}Last 30 days</span></div>
+        <div class="hd__kpis">${HERO_KPI.map(([k, v, d, i]) => `<div><span class="hd__ki">${i}</span><small>${k}</small><b>${v}</b>${d ? `<em>${d}</em>` : '<em class="hd__muted">Awaiting payout</em>'}</div>`).join('')}</div>
+        <div class="hd__row">
+          <div class="hd__chart"><div class="hd__ch"><b>Visits per day</b><span><i></i>Visits<i class="on"></i>Converted</span></div>
+            <svg viewBox="0 0 640 140" preserveAspectRatio="none"><defs><linearGradient id="hdg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0043DA" stop-opacity=".28"/><stop offset="1" stop-color="#0043DA" stop-opacity="0"/></linearGradient></defs><polygon points="0,140 ${hp(heroPts)} 640,140" fill="url(#hdg)"/><polyline points="${hp(heroPts)}" fill="none" stroke="#0043DA" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><polyline points="${hp(heroPts2)}" fill="none" stroke="#9fc0ff" stroke-width="2" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"/></svg>
+          </div>
+          <div class="hd__top3"><b>Most valuable affiliates</b>${[['MK', 'Maya Khan', '$612', 18, 92], ['AL', 'Ava Lim', '$448', 140, 68], ['JR', 'Jonas Reed', '$305', 200, 46]].map(([i, n, a, h, w]) => `<div><span class="av" style="--h:${h}">${i}</span><span><span>${n}</span><i style="--w:${w}%"></i></span><em>${a}</em></div>`).join('')}</div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="hd__toast hd__toast--a"><span>${ic.check}</span><div><b>New commission</b><small>Maya Khan · Order #2481</small></div><em>+$18.40</em></div>
+  <div class="hd__toast hd__toast--b"><span class="hd__tb">${hi('<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/>')}</span><div><b>Payout ready</b><small>3 affiliates · $457.20</small></div></div>
 </div>`;
 
 const hero = `
@@ -41,7 +46,7 @@ const hero = `
         <div class="phero__row" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ext)}<span class="chip-rate"><i>${ic.bolt}</i>Free WordPress plugin</span></div>
       </div>
     </div>
-    <div class="phero__media art art--hero" data-reveal>${uiOverview()}</div>
+    <div class="phero__media phero__media--fbg" data-reveal>${uiOverview()}</div>
   </div>
 </section>`;
 
