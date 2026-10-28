@@ -75,13 +75,6 @@ const GROUPS = [
   ], `<div class="fstack">${uiPayout()}</div>`],
 ];
 
-const jump = `
-<nav class="jump" aria-label="Feature groups" data-spy>
-  <div class="jump__in">
-    ${GROUPS.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}
-    <a href="#more">More</a><a href="#dokan">Dokan</a>
-  </div>
-</nav>`;
 
 // Tracking: card grid after the "Explore our talent" inspiration — badge + heading with an inline icon chip, 2×2 cards with a live detail strip
 const TRACK = [
@@ -285,5 +278,5 @@ export default () => page({
   desc: 'Track referrals, manage commissions, and handle payouts from WordPress. Referral links, per-item commissions, hold periods, affiliate dashboards, payouts, and Dokan support.',
   cur: 'Features',
   cta: { h: 'Start Your Affiliate Program', p: 'Your products already have people talking about them. Give them a way to promote your store and earn from the sales they generate.', note: 'Free WordPress plugin.' },
-  body: [hero, `<div class="jump-scope">${jump}${groups}${more}</div>`, dokan, flowSec].join('\n'),
+  body: [hero, `<div class="jump-scope">${groups}${more}</div>`, dokan, flowSec].join('\n'),
 });
