@@ -158,7 +158,26 @@ const commSec = (gi) => `
   </div>
 </section>`;
 
-const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : `
+// Hold & status: image card left, heading + icon rows + CTA right (after the "Tailored services" inspiration)
+const icSync = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5M4 13a8 8 0 0 0 14.6 4.5"/><path d="M5 3v4h4M19 21v-4h-4"/></svg>';
+const icRefund = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>';
+const icList = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.3"/><circle cx="4.5" cy="12" r="1.3"/><circle cx="4.5" cy="18" r="1.3"/></svg>';
+const holdSec = (gi, rows, vis) => `
+<section class="sec fgroup hs" id="hold" aria-labelledby="hold-h">
+  <div class="wrap hs__grid">
+    <div class="hs__media art art--stone" data-reveal>${vis}</div>
+    <div class="hs__copy">
+      <div class="cb__row" data-reveal><p class="tk__pill">Hold &amp; status</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+      <h2 id="hold-h" class="h2 hs__h" data-reveal>Pay Commissions When They’re Ready</h2>
+      <ul class="hs__list" data-reveal-stagger>
+        ${rows.map(([t, d], k) => `<li><span class="hs__ic" aria-hidden="true">${[ic.clock, icSync, icRefund, icList][k]}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}
+      </ul>
+      <div class="hs__cta" data-reveal>${btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}</div>
+    </div>
+  </div>
+</section>`;
+
+const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : id === 'hold' ? holdSec(gi, rows, vis) : `
 <section class="sec fgroup${gi % 2 ? ' fgroup--flip' : ''}" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap">
     <div class="shead shead--rule" data-reveal>${eyebrow(label)}${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
