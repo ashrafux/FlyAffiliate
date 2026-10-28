@@ -117,7 +117,7 @@ const audience = `
         <div><h3 class="au__t">${AUD[1][0]}</h3><p class="au__d">${AUD[1][1]}</p></div>
         <div class="au__foot">
           <p class="au__k"><span>yourstore.com/?affiliate=</span><b>1</b></p>
-          <div class="au__avs" aria-hidden="true"><img src="/assets/img/avatar-1.jpg" alt=""><img src="/assets/img/avatar-2.jpg" alt=""><span class="av" style="--h:18">MK</span><span class="av" style="--h:200">JR</span><span class="au__plus">${ic.link}</span></div>
+          <div class="au__avs" aria-hidden="true">${[1, 2, 3, 4].map(n => `<img src="/assets/img/demo-avatar-${n}.jpg" alt="" width="56" height="56">`).join('')}<span class="au__plus">${ic.link}</span></div>
         </div>
       </article>
       <article class="au__card">
