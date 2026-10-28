@@ -108,6 +108,7 @@ const audience = `
     </div>
     <div class="au" data-reveal-stagger>
       <article class="au__card au__photo">
+        <span class="au__pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="8.5" r="3.6"/><path d="M3.5 19.5c1.1-3.3 3.6-5 6.5-5s5.4 1.7 6.5 5M18.5 7v6M15.5 10h6"/></svg></span>
         <div class="au__photo-in">
           <h3 class="au__big">${AUD[0][0]}</h3>
           <p class="au__pd">${AUD[0][1]}</p>

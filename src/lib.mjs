@@ -1,7 +1,7 @@
 // Shared building blocks for every page. Pages import these and return plain HTML strings.
 
 export const CTA_URL = 'https://wordpress.org/plugins/search/flyaffiliate/'; // swap for the real plugin listing
-export const V = 113; // asset cache-bust, bump after CSS/JS edits
+export const V = 114; // asset cache-bust, bump after CSS/JS edits
 
 /* ---------- icons ---------- */
 export const ic = {
