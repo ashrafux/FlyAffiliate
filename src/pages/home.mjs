@@ -410,15 +410,17 @@ const VENDORS = [['Urban Leather', '12%', ['MK', 'AL', 'JR'], 18], ['Northwind H
 const dokan = `
 <section class="sec" id="dokan" aria-labelledby="dokan-h">
   <div class="wrap">
-    <p class="soon" data-reveal>Coming Soon</p>
-    <div class="split-head">
-      <h2 id="dokan-h" class="h2" data-reveal>Turn Your Dokan Marketplace Into a Vendor-Powered Affiliate Program</h2>
-      <p class="lead muted" data-reveal>Let vendors build their own sales networks. FlyAffiliate + Dokan will give vendors a way to promote their products through affiliates.</p>
+    <div class="dkw" data-reveal>
+      <span class="dkw__mark" aria-hidden="true">dokan</span>
+      <div class="dkw__head">
+        <p class="soon">Coming Soon</p>
+        <h2 id="dokan-h" class="h2">Turn Your Dokan Marketplace Into a Vendor-Powered Affiliate Program</h2>
+        <p class="lead muted">Let vendors build their own sales networks. FlyAffiliate + Dokan will give vendors a way to promote their products through affiliates.</p>
+      </div>
+      <ul class="dkw__cols" data-reveal-stagger>
+        ${DOKAN.map(([t, d, icon]) => `<li><span class="dkw__ic" aria-hidden="true">${icon}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}
+      </ul>
     </div>
-    <ul class="vk" data-reveal-stagger>
-      ${DOKAN.map(([t, d, icon]) => `<li class="vk__card"><span class="vk__ic" aria-hidden="true">${icon}</span><div><h3 class="vk__t">${t}</h3><p>${d}</p></div></li>`).join('')}
-    </ul>
-    ${caption('More ways for vendors to grow.')}
   </div>
 </section>
 <section class="sec sec--snug" id="marketplace" aria-labelledby="mkt-h">
