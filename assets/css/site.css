@@ -2007,8 +2007,8 @@ body.page-home .hdr.is-float::after { display: none; }
 .mk2__v b { display: block; font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; }
 .mk2__v div span { display: block; margin-top: 4px; font-size: var(--t-sm); color: var(--accent-ink); }
 .mk2__affs { display: inline-flex; }
-.mk2__affs .av { width: 36px; height: 36px; font-size: 12px; box-shadow: 0 0 0 2px var(--bg); }
-.mk2__affs .av + .av { margin-left: -8px; }
+.mk2__affs img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--bg); }
+.mk2__affs img + img { margin-left: -10px; }
 .mk2__v small { font-size: var(--t-sm); color: var(--ink-2); white-space: nowrap; }
 .mk2__flow .flow { justify-content: center; margin: 40px 0 0; }
 @media (max-width: 1100px) {

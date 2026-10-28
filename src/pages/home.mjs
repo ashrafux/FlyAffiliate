@@ -406,6 +406,7 @@ const DOKAN = [
   ['Vendor-Level Attribution', 'Commissions stay tied to the right vendor’s products.', icTarget],
   ['Clear Vendor Earnings', 'Affiliate commissions come out of the relevant vendor’s earnings.', ic.wallet],
 ];
+const MK_FACES = { 'Urban Leather': [1, 2, 3], 'Northwind Home': [4, 1], 'Kiln &amp; Clay': [2, 3, 4, 1] };
 const VENDORS = [['Urban Leather', '12%', ['MK', 'AL', 'JR'], 18], ['Northwind Home', '8%', ['DN', 'SP'], 200], ['Kiln &amp; Clay', '15%', ['TO', 'AL', 'DN', 'MK'], 320]];
 const dokan = `
 <section class="sec" id="dokan" aria-labelledby="dokan-h">
@@ -433,7 +434,7 @@ const dokan = `
       <div class="mk2__hub"><span>${ic.store}</span>Your Dokan marketplace</div>
       <svg class="mk2__ln" viewBox="0 0 200 360" preserveAspectRatio="none"><path d="M0 180C100 180 100 60 200 60M0 180H200M0 180C100 180 100 300 200 300" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
       <div class="mk2__vs" data-reveal-stagger>
-        ${VENDORS.map(([n, r, affs, h]) => `<div class="mk2__v"><div><b>${n}</b><span>${r} affiliate rate</span></div><span class="mk2__affs">${affs.map(a => `<span class="av" style="--h:${h}">${a}</span>`).join('')}</span><small>${affs.length} affiliates</small></div>`).join('')}
+        ${VENDORS.map(([n, r, affs, h]) => `<div class="mk2__v"><div><b>${n}</b><span>${r} affiliate rate</span></div><span class="mk2__affs">${affs.map((a, k) => `<img src="/assets/img/demo-avatar-${MK_FACES[n][k]}.jpg" alt="" width="36" height="36" loading="lazy">`).join('')}</span><small>${affs.length} affiliates</small></div>`).join('')}
       </div>
     </div>
     <div class="mk2__flow" data-reveal>${flow(['Vendor', 'Affiliate', 'Product', 'Sale', 'Commission'])}</div>
