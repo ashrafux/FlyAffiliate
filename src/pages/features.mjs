@@ -170,7 +170,48 @@ const holdSec = (gi, rows, vis) => `
   </div>
 </section>`;
 
-const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : id === 'hold' ? holdSec(gi, rows, vis) : `
+// Affiliate dashboard: bento after the "Design simple and fast" inspiration — visual on top, title + text below
+const pts = [8, 14, 11, 18, 15, 24, 20, 30, 26, 22, 31, 28, 38, 34, 44];
+const line = (arr, h = 120, w = 520) => arr.map((v, i) => `${(i / (arr.length - 1) * w).toFixed(1)},${(h - v / 48 * h).toFixed(1)}`).join(' ');
+const affSec = (gi) => `
+<section class="sec fgroup ab" id="affiliates" aria-labelledby="affiliates-h">
+  <div class="wrap ab__grid" data-reveal-stagger>
+    <div class="ab__card ab__hero">
+      <div class="ab__win" aria-hidden="true">
+        <div class="ab__chrome"><i></i><i></i><i></i><span>yourstore.com/affiliate-dashboard</span></div>
+        <div class="ab__body">
+          <aside>${['Dashboard', 'Referral links', 'Commissions', 'Visits', 'Payouts', 'Settings'].map((t, k) => `<span class="${k === 0 ? 'on' : ''}">${t}</span>`).join('')}</aside>
+          <div class="ab__main"><b>Welcome back, Maya</b><small>Here’s how your links are doing</small><div class="ab__kpis"><span><small>Balance</small>$212.80</span><span><small>Visits</small>1,284</span><span><small>Commissions</small>46</span></div></div>
+        </div>
+      </div>
+      <div class="ab__copy">
+        <div class="cb__row"><p class="tk__pill">Affiliate dashboard</p>${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
+        <h2 id="affiliates-h" class="h2 ab__h">Everything Affiliates Need to See</h2>
+      </div>
+    </div>
+    <div class="ab__card ab__links">
+      <div class="ab__vis" aria-hidden="true">${['/?affiliate=1', '/tote?affiliate=1', '/sale?affiliate=1'].map(u => `<span class="ab__lk">${ic.link}${u}</span>`).join('')}<span class="ab__copybtn">${ic.copy}Copy link</span></div>
+      <h3 class="ab__t">Referral Links</h3><p class="ab__d">Access and generate links to share.</p>
+    </div>
+    <div class="ab__card ab__pay">
+      <div class="ab__vis" aria-hidden="true"><div class="ab__ticket"><small>Payout history</small><div><span>Sep 30 payout</span><b>$184.00</b></div><div><span>Aug 31 payout</span><b>$146.50</b></div><em class="st st--paid">Paid</em></div><span class="ab__badge">${ic.wallet}<b>2</b></span></div>
+      <h3 class="ab__t">Payouts</h3><p class="ab__d">See payout information in one place.</p>
+    </div>
+    <div class="ab__card ab__bal">
+      <div class="ab__vis" aria-hidden="true"><div class="ab__amount"><small>Available balance</small><b>$212.80</b><div><span class="st st--unpaid">Unpaid $212.80</span><span class="st st--pending">Pending $48.20</span></div></div></div>
+      <h3 class="ab__t">Balance</h3><p class="ab__d">Know how much is currently available.</p>
+    </div>
+    <div class="ab__card ab__vc">
+      <div class="ab__vis" aria-hidden="true">
+        <div class="ab__stats">${[[ic.chart, '1,284', 'Visits'], [ic.check, '3.6%', 'Conversion'], [ic.coin, '46', 'Commissions'], [ic.wallet, '$612.40', 'Earned']].map(([i, v, l]) => `<span>${i}<b>${v}</b><small>${l}</small></span>`).join('')}</div>
+        <div class="ab__chart"><svg viewBox="0 0 520 120" preserveAspectRatio="none"><polyline class="ab__l2" points="${line([6, 9, 8, 12, 10, 14, 13, 17, 15, 14, 18, 16, 21, 19, 24])}"/><polygon class="ab__area" points="0,120 ${line(pts)} 520,120"/><polyline class="ab__l1" points="${line(pts)}"/></svg><span class="ab__tip">1,284 visits</span></div>
+      </div>
+      <h3 class="ab__t">Visits &amp; Commissions</h3><p class="ab__d">See referral activity and earnings.</p>
+    </div>
+  </div>
+</section>`;
+
+const groups = GROUPS.map(([id, label, h, art, rows, vis], gi) => id === 'tracking' ? trackSec(gi) : id === 'commissions' ? commSec(gi) : id === 'hold' ? holdSec(gi, rows, vis) : id === 'affiliates' ? affSec(gi) : `
 <section class="sec fgroup${gi % 2 ? ' fgroup--flip' : ''}" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap">
     <div class="shead shead--rule" data-reveal>${eyebrow(label)}${bracket(`${pad(gi + 1)} / ${pad(GROUPS.length)}`)}</div>
@@ -200,22 +241,43 @@ const MORE = [
   ['No Affiliate Network Required', 'Run your program without a third-party affiliate network.'],
   ['Commission Statuses', 'Track commissions from pending to paid or rejected.'],
 ];
+// More features (light take on the "AI tools" inspiration): icon cards left, a sticky product view right
+const mi = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const MORE_IC = [
+  mi('<circle cx="10" cy="8.5" r="3.6"/><path d="M3.5 19.5c1.1-3.3 3.6-5 6.5-5s5.4 1.7 6.5 5M18.5 7v6M15.5 10h6"/>'),
+  mi('<circle cx="9" cy="9" r="3.2"/><path d="M3 19c.9-2.9 3.1-4.5 6-4.5s5.1 1.6 6 4.5"/><circle cx="17" cy="8" r="2.5"/><path d="M16 13.6c2.3.1 4 1.5 5 4"/>'),
+  mi('<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/>'),
+  mi('<path d="M12 5v14M5 12h14"/>'),
+  mi('<path d="m14.5 5.5 4 4L9 19H5v-4z"/><path d="m12.5 7.5 4 4"/>'),
+  mi('<path d="M3 4h2.2l2.2 11h10.8L20.5 7H6.4"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/>'),
+  mi('<rect x="3.5" y="6" width="17" height="12" rx="2.5"/><path d="M3.5 10h17M7 14.5h4"/>'),
+  mi('<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/><path d="M16 13.5h1.5"/>'),
+  mi('<path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19h14"/>'),
+  mi('<path d="M12 3.5 19 6v5.5c0 4.3-2.9 7.7-7 9-4.1-1.3-7-4.7-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>'),
+  mi('<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6M3 3l18 18"/>'),
+  mi('<path d="M20.5 13.5 13.5 20.5a1.5 1.5 0 0 1-2.1 0L4 13.1V4h9.1l7.4 7.4a1.5 1.5 0 0 1 0 2.1Z"/><circle cx="8.5" cy="8.5" r="1.3"/>'),
+];
+const LEDGER = [['MK', 'Maya Khan', '#2481', '$18.40', 'pending', 18], ['JR', 'Jonas Reed', '#2476', '$9.60', 'unpaid', 200], ['AL', 'Ava Lim', '#2470', '$22.00', 'paid', 140], ['TO', 'Tomi Ola', '#2463', '$6.25', 'rejected', 280], ['SP', 'Sara Pérez', '#2459', '$4.80', 'unpaid', 30]];
 const more = `
-<section class="sec" id="more" aria-labelledby="more-h">
-  <div class="wrap mlist">
-    <div class="mlist__l">
-      <p class="mlist__big" aria-hidden="true">(${MORE.length})</p>
-      ${eyebrow('Everything else')}
-      <h2 id="more-h" class="h3" data-reveal>More Features</h2>
-      <p class="muted" data-reveal>The rest of the toolkit for running your program day to day.</p>
+<section class="sec mf" id="more" aria-labelledby="more-h">
+  <div class="wrap mf__grid">
+    <div class="mf__l">
+      <h2 id="more-h" class="h2" data-reveal>More Features</h2>
+      <p class="lead muted mf__sub" data-reveal>The rest of the toolkit for running your program day to day.</p>
+      <ul class="mf__cards" data-reveal-stagger>
+        ${MORE.map(([t, d], k) => `<li class="mf__c${k === 2 ? ' is-on' : ''}"><span class="mf__ic mf__ic--${k % 6}" aria-hidden="true">${MORE_IC[k]}</span><h3>${t}</h3><p>${d}</p></li>`).join('\n        ')}
+      </ul>
     </div>
-    <table class="mlist__t">
-      <caption class="sr-only">More FlyAffiliate features</caption>
-      <thead class="sr-only"><tr><th scope="col">#</th><th scope="col">Feature</th><th scope="col">Description</th></tr></thead>
-      <tbody data-reveal-stagger>
-        ${MORE.map(([t, d], i) => `<tr><td class="mlist__n">${pad(i + 1)}</td><th scope="row">${t}</th><td class="mlist__d">${d}</td></tr>`).join('\n        ')}
-      </tbody>
-    </table>
+    <div class="mf__r" data-reveal aria-hidden="true">
+      <div class="mf__panel">
+        <div class="mf__ui">
+          <div class="mf__ui-hd"><b>Commissions</b><span><i class="mf__btn">${ic.download}Export CSV</i><i class="mf__btn mf__btn--p">+ Add commission</i></span></div>
+          <div class="mf__tabs"><span class="on">All <em>128</em></span><span>Pending <em>24</em></span><span>Unpaid <em>41</em></span><span>Paid <em>57</em></span><span>Rejected <em>6</em></span></div>
+          ${LEDGER.map(([ini, n, o, a, st, h]) => `<div class="mf__row"><span class="av" style="--h:${h}">${ini}</span><b>${n}</b><span>${o}</span><span>${a}</span><span class="st st--${st}">${st[0].toUpperCase() + st.slice(1)}</span></div>`).join('')}
+        </div>
+        <div class="mf__float"><span>${ic.check}</span><div><b>Batch paid</b><small>4 affiliates · $531.70</small></div></div>
+      </div>
+    </div>
   </div>
 </section>`;
 
