@@ -1918,8 +1918,8 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features .dk__card .soon { height: 28px; padding: 0 12px; gap: 8px; margin-bottom: 0; font-size: 14px; background: var(--ink); color: #fff; }
 .page-features .dk__card .soon::before { width: 7px; height: 7px; background: #f6bf43; }
 
-/* Features footer CTA: description on three lines (Figma 37:2) */
-.page-features .ftr__p { max-width: 440px; }
+/* Footer CTA: description on three lines (Figma 37:2) */
+.ftr__card--split .ftr__p { max-width: 440px; }
 
 /* Payouts: wider image card on the right (mirror of Hold & status) */
 @media (min-width: 1025px) {

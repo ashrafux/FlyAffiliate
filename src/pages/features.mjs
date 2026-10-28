@@ -357,7 +357,6 @@ export default () => page({
   title: 'Features — FlyAffiliate',
   desc: 'Track referrals, manage commissions, and handle payouts from WordPress. Referral links, per-item commissions, hold periods, affiliate dashboards, payouts, and Dokan support.',
   cur: 'Features',
-  cta: { h: 'Start Your Affiliate<br>Program', p: 'Your products already have people talking about them. Give them a way to promote your store and earn from the sales they generate.', note: 'Free WordPress plugin.' },
   bodyClass: 'page-features',
   body: [hero, `<div class="jump-scope">${groups}${more}</div>`, dokan, flowSec].join('\n'),
 });

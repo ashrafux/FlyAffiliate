@@ -179,13 +179,5 @@ export default () => page({
   desc: 'Simple pricing for FlyAffiliate. Every feature in every plan, a free plugin forever, and a one-time lifetime option.',
   cur: 'Pricing',
   bodyClass: 'page-pricing',
-  cta: {
-    h: 'Launch Your Affiliate Program Today',
-    p: 'Start free, or get PayPal payouts with Pro at launch pricing.',
-    btn: btn('Get FlyAffiliate Pro', PRO_URL),
-    btn2: btn('Download Free', CTA_URL, 'secondary', ext),
-    note: '',
-    trust: ['Every Feature in Every Plan', 'Lifetime Option', 'Money-Back Guarantee', 'Built by weDevs'],
-  },
   body: [hero, plans, free, pro, compare, why, math, guarantee, faqBlock({ id: 'faq', title: 'Pricing Questions', items: FAQ })].join('\n'),
 });
