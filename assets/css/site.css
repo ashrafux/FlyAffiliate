@@ -1896,3 +1896,9 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features .hs__ic { background: var(--card); }
 .page-features .dk__ic { color: var(--ink); }
 .page-features .dk__c:last-child .dk__ic { color: #fff; }
+
+/* Commissions bento: smaller illustrations, same card sizes */
+.cb__order { transform: scale(.84); transform-origin: 50% 100%; }
+.cb__table { transform: scale(.86); transform-origin: 50% 100%; }
+.cb__chips, .cb__field, .cb__cap { transform: scale(.88); transform-origin: 0 100%; }
+@media (max-width: 680px) { .cb__order, .cb__table { transform: scale(.94); } .cb__chips, .cb__field, .cb__cap { transform: none; } }
