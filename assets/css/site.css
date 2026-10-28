@@ -1971,3 +1971,8 @@ body.page-home .hdr.is-float::after { display: none; }
 /* footer CTA card: abstract dark/amber background on every page */
 .art--cta { background-image: url("/assets/img/cta-bg.jpg"); background-color: #141010; background-position: center; }
 .ftr__card.art--cta::before { background: linear-gradient(90deg, rgba(8, 8, 10, .45), rgba(8, 8, 10, .1) 60%, transparent); }
+
+/* Home audience photo card: purple art background */
+.au__photo { background: #2a1b52 url("/assets/img/audience-bg.jpg") center / cover no-repeat; }
+.au__photo::before { background: linear-gradient(180deg, rgba(10, 6, 30, 0) 35%, rgba(10, 6, 30, .6) 100%); }
+@media (max-width: 680px) { .au__photo { background-position: center; } }
