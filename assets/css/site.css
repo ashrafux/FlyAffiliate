@@ -1866,3 +1866,33 @@ body.page-home .hdr.is-float::after { display: none; }
 
 .ftr__cta .btn--secondary { color: #fff; height: 52px; }
 .phero__row .btn--secondary { height: 52px; }
+
+/* Features page: primary blue only for CTAs and key highlights — icon wells, chips and small accents go neutral */
+.page-features .tk__ic, .page-features .hs__ic { background: var(--bg); color: var(--ink); }
+.page-features .tk__card--dark .tk__ic { background: #fff; color: var(--ink); }
+.page-features .tk__url b { color: var(--ink); }
+.page-features .tk__chips svg { color: var(--ink-2); }
+.page-features .tk__card--dark .tk__chips svg { color: rgba(255, 255, 255, .7); }
+.page-features .tk__days i { background: var(--ink); }
+.page-features .tk__days b { color: var(--ink); }
+.page-features .tk__chip { background: var(--ink); }
+.page-features .cb__chips b { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.page-features .cb__input { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.page-features .cb__cap i { background: linear-gradient(90deg, #9a9a9a, var(--ink)) 0 0 / var(--p) 100% no-repeat, #eceef2; }
+.page-features .cb__order-tot b { color: var(--ink); }
+.page-features .ab__lk { background: var(--ink); }
+.page-features .ab__stats span { background: var(--bg); }
+.page-features .ab__stats svg { color: var(--ink-2); }
+.page-features .ab__ticket { background: var(--bg); }
+.page-features .ab__badge { background: var(--ink); box-shadow: 0 18px 30px -16px rgba(0, 0, 0, .5); }
+.page-features .ab__amount { background: linear-gradient(150deg, #fff, #f2f2f2); }
+.page-features .ab__tip { background: var(--ink); }
+.page-features .wv__ic { color: var(--ink); }
+.page-features .wv__ring::before { background: conic-gradient(from 200deg, var(--ink) 0deg, #9a9a9a 160deg, #e2e2e2 250deg, var(--ink) 360deg); }
+.page-features .wv__path path { stroke: var(--ink); stroke-opacity: .3; }
+.page-features .wv__note { background: var(--card); }
+.page-features .wv__note-ic { background: var(--bg); color: var(--ink); }
+.page-features .phero__media--fbg ~ * .x { }
+.page-features .hs__ic { background: var(--card); }
+.page-features .dk__ic { color: var(--ink); }
+.page-features .dk__c:last-child .dk__ic { color: #fff; }
