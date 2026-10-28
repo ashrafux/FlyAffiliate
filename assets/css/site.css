@@ -1887,9 +1887,6 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features .ab__badge { background: var(--ink); box-shadow: 0 18px 30px -16px rgba(0, 0, 0, .5); }
 .page-features .ab__amount { background: linear-gradient(150deg, #fff, #f2f2f2); }
 .page-features .ab__tip { background: var(--ink); }
-.page-features .wv__ic { color: var(--ink); }
-.page-features .wv__ring::before { background: conic-gradient(from 200deg, var(--ink) 0deg, #9a9a9a 160deg, #e2e2e2 250deg, var(--ink) 360deg); }
-.page-features .wv__path path { stroke: var(--ink); stroke-opacity: .3; }
 .page-features .wv__note { background: var(--card); }
 .page-features .wv__note-ic { background: var(--bg); color: var(--ink); }
 .page-features .phero__media--fbg ~ * .x { }
