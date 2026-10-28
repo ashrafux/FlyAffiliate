@@ -1,7 +1,7 @@
 // Shared building blocks for every page. Pages import these and return plain HTML strings.
 
 export const CTA_URL = 'https://wordpress.org/plugins/search/flyaffiliate/'; // swap for the real plugin listing
-export const V = 65; // asset cache-bust, bump after CSS/JS edits
+export const V = 66; // asset cache-bust, bump after CSS/JS edits
 
 /* ---------- icons ---------- */
 export const ic = {
@@ -234,12 +234,12 @@ export const header = cur => `
   <div class="drawer__foot">${btn('Get Started', CTA_URL, '', ' target="_blank" rel="noopener"')}<p>Free WordPress plugin</p></div>
 </div>`;
 
-export const footer = () => `
+export const footer = (cta = {}) => `
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__card art art--hero" data-reveal>
-      <h2 class="h3 ftr__tag">Your Products. Your Affiliates.<br>Your Program.</h2>
-      <div class="ftr__cta">${btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}<p class="ftr__note">Free WordPress plugin</p></div>
+      <div class="ftr__copy"><h2 class="h3 ftr__tag">${cta.h || 'Your Products. Your Affiliates.<br>Your Program.'}</h2>${cta.p ? `<p class="ftr__p">${cta.p}</p>` : ''}</div>
+      <div class="ftr__cta">${btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}<p class="ftr__note">${cta.note || 'Free WordPress plugin'}</p></div>
     </div>
     <div class="ftr__row">
       <a class="logo ftr__logo" href="/" aria-label="FlyAffiliate home">${logoSvg()}</a>
@@ -255,7 +255,7 @@ export const footer = () => `
 </footer>`;
 
 /* ---------- page shell ---------- */
-export const page = ({ title, desc, cur, body, bodyClass = '', path = '/' }) => `<!doctype html>
+export const page = ({ title, desc, cur, body, bodyClass = '', path = '/', cta }) => `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -278,7 +278,7 @@ ${header(cur)}
 <main id="main">
 ${body}
 </main>
-${footer()}
+${footer(cta)}
 <script src="/assets/js/site.js?v=${V}" defer></script>
 </body>
 </html>
