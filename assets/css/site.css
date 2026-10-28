@@ -1915,3 +1915,6 @@ body.page-home .hdr.is-float::after { display: none; }
 /* Features → Dokan: neutral "Coming Soon" tag (matches the other section tags) */
 .page-features .dk__card .soon { height: 28px; padding: 0 12px; gap: 8px; margin-bottom: 0; font-size: 14px; background: var(--ink); color: #fff; }
 .page-features .dk__card .soon::before { width: 7px; height: 7px; background: #f6bf43; }
+
+/* Features footer CTA: description on two lines */
+.page-features .ftr__p { max-width: 740px; }
