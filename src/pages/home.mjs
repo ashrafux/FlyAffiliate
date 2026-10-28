@@ -464,25 +464,24 @@ const workflow = `
   </div>
 </section>`;
 
-// 16. Built by + 17. Start — one row, two cards
+// 16. Built by + 17. Start — one split card: white team half, blue CTA half
 const team = `
 <section class="sec" id="team" aria-label="Built by weDevs and getting started">
-  <div class="wrap duo">
-    <div class="duo__card duo__built" data-reveal>
-      <h2 id="team-h" class="duo__h">Built by the Team Behind Dokan</h2>
-      <p class="built__q"><b>FlyAffiliate</b> is built by <b>weDevs</b>, the team behind <b>Dokan</b> and other WordPress products.</p>
-      <ul class="built__pills" data-reveal-stagger><li>Built for WordPress.</li><li>Built for WooCommerce.</li><li>Built for Dokan.</li></ul>
-    </div>
-    <div class="duo__card duo__start" id="start" data-reveal>
-      <h2 id="start-h" class="duo__h">Start Your Affiliate Program</h2>
-      <p class="lead duo__p">Turn recommendations into revenue.</p>
-      <ol class="steps3">
-        <li>Give your affiliates a link.</li>
-        <li>Track the sales.</li>
-        <li>Manage the commissions.</li>
-      </ol>
-      ${btn('Start Your Affiliate Program', CTA_URL, 'block', ext)}
-      <p class="contact__note">Free WordPress plugin</p>
+  <div class="wrap">
+    <div class="duo" data-reveal>
+      <div class="duo__built">
+        <img class="duo__dokan" src="/assets/img/dokan-logo.svg" alt="Dokan" width="150" height="40">
+        <h2 id="team-h" class="duo__h">Built by the Team <br>Behind Dokan</h2>
+        <p class="built__q"><b>FlyAffiliate</b> is built by <b>weDevs</b>, the team behind <b>Dokan</b> and other WordPress products.</p>
+        <ul class="built__pills" data-reveal-stagger>${['Built for WordPress.', 'Built for WooCommerce.', 'Built for Dokan.'].map(t => `<li>${ic.check}${t}</li>`).join('')}</ul>
+      </div>
+      <div class="duo__start" id="start">
+        <h2 id="start-h" class="duo__h">Start Your <br>Affiliate Program</h2>
+        <p class="duo__p">Turn recommendations into revenue.</p>
+        <ol class="duo__steps" data-reveal-stagger>${[['Give your affiliates a link.', ic.link], ['Track the sales.', ic.chart], ['Manage the commissions.', ic.coin]].map(([t, i]) => `<li><span aria-hidden="true">${i}</span>${t}</li>`).join('')}</ol>
+        ${btn('Start Your Affiliate Program', CTA_URL, 'white', ext)}
+        <p class="duo__note">Free WordPress plugin</p>
+      </div>
     </div>
   </div>
 </section>`;
