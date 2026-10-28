@@ -111,7 +111,6 @@ const audience = `
         <div class="au__photo-in">
           <h3 class="au__big">${AUD[0][0]}</h3>
           <p class="au__pd">${AUD[0][1]}</p>
-          ${btn('Start Your Affiliate Program', CTA_URL, '', ext)}
         </div>
       </article>
       <article class="au__card">
