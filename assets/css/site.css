@@ -1683,3 +1683,9 @@ body.page-home .hdr.is-float::after { display: none; }
 .page-features #tracking { padding-top: clamp(64px, 8.33vw, 120px); }
 
 .art--hold { background-image: url("/assets/img/hold-bg.jpg"); background-color: #b9a6cf; background-position: center; }
+
+/* Affiliate dashboard bento: smaller illustrations, card sizes unchanged (scale keeps the layout box) */
+.ab__win { transform: scale(.84); transform-origin: 50% 0; }
+.ab__vis { transform: scale(.8); transform-origin: 50% 50%; }
+.ab__links .ab__vis { padding: 0 6%; }
+@media (max-width: 680px) { .ab__win, .ab__vis { transform: scale(.9); } }
