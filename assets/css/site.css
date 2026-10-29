@@ -2182,3 +2182,5 @@ body.page-home .hdr.is-float::after { display: none; }
 .dk__card .dk__logo { width: clamp(120px, 10vw, 150px); }
 /* Pricing plan checks (light cards): green, matching the Save 50% pill */
 .pr-card:not(.pr-card--pop) .pr-card__list svg { background: #e3f6ea; color: #1f8a4c; }
+/* Pricing plan cards: 10px corners */
+.pr-card { border-radius: 10px; }
