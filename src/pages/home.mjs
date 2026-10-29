@@ -166,7 +166,7 @@ const rules = `
   <div class="wrap rl" data-rules>
     <div class="rl__copy">
       <h2 id="rules-h" class="h2" data-reveal>Commission Rules That Fit Your Store</h2>
-      <p class="lead muted rl__sub" data-reveal>Different products. Different margins. Better control.</p>
+      <p class="lead muted rl__sub" data-reveal>Different products. Different margins. Better control. <br>Set a rate per product, a store-wide default and a maximum.</p>
       <div class="rl__list" data-reveal>
         ${RULES.map((r, i) => `<div class="rl__row${i === 0 ? ' is-open' : ''}" data-rule>
           <h3 class="rl__h"><button class="rl__head" type="button" aria-expanded="${i === 0}" aria-controls="rule-${i}"><span class="rl__ic" aria-hidden="true">${r.icon}</span><span class="rl__t">${r.t}</span><span class="rl__pm" aria-hidden="true"></span></button></h3>

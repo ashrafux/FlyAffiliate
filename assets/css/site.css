@@ -2128,3 +2128,4 @@ body.page-home .hdr.is-float::after { display: none; }
 .duo__steps span { width: 20px; height: 20px; border-radius: 0; background: none; }
 .duo__steps svg { width: 20px; height: 20px; }
 @media (max-width: 680px) { .duo__p br { display: none; } }
+@media (max-width: 680px) { .rl__sub br { display: none; } }
