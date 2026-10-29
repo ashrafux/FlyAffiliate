@@ -53,14 +53,12 @@
 
   /* smart header: glass bar floats in after the hero, hides while scrolling down, returns on scroll up */
   const hdr = document.querySelector('.hdr');
-  const bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true'); document.body.appendChild(bar);
   if (hdr) {
     let lastY = scrollY, ticking = false;
     const root = document.documentElement;
     const update = () => {
       ticking = false;
       const y = scrollY, h = root.scrollHeight - innerHeight;
-      bar.style.setProperty('--p', h > 0 ? Math.min(1, y / h) : 0);
       const float = y > (document.body.classList.contains('page-home') ? innerHeight * 0.6 : 80);
       const hide = float && y > lastY + 2 && y > 240 && !document.body.classList.contains('menu-open');
       const show = float && y < lastY - 2;
