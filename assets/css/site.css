@@ -889,9 +889,9 @@ body.page-home .hdr::after { content: ""; position: absolute; left: 0; right: 0;
 .duo__h { font-size: var(--h4); font-weight: 700; letter-spacing: -.035em; line-height: 1.12; }
 .built__q { margin-top: 24px; max-width: 560px; font-family: var(--font-head); font-size: var(--h6); font-weight: 500; letter-spacing: -.02em; line-height: 1.4; color: var(--ink-2); }
 .built__q b { color: var(--ink); font-weight: 600; }
-.built__pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-.built__pills li { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px 0 14px; border-radius: var(--pill); background: var(--bg); font-size: var(--t-sm); }
-.built__pills svg { width: 16px; color: var(--accent); }
+.built__pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.built__pills li { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px 0 10px; border-radius: var(--pill); background: var(--bg); font-size: 14px; }
+.built__pills svg { width: 14px; color: var(--accent); }
 .duo__p { margin-top: 14px; font-size: var(--t-def); color: rgba(255, 255, 255, .8); }
 .duo__steps { display: grid; gap: 10px; margin: 28px 0; }
 .duo__steps li { display: flex; align-items: center; gap: 14px; font-size: var(--t-sm); }
@@ -2119,3 +2119,5 @@ body.page-home .hdr.is-float::after { display: none; }
 @media (max-width: 1279px) { .split-head > :last-child, .au__sub { max-width: 720px; } }
 /* description line breaks are for desktop; phones wrap naturally */
 @media (max-width: 680px) { .split-head p br, .au__sub br { display: none; } }
+.built__q { font-size: var(--t-def); }
+@media (max-width: 680px) { .built__q { font-size: var(--t-def); } }
