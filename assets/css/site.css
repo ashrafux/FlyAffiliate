@@ -2149,3 +2149,7 @@ body.page-home .hdr.is-float::after { display: none; }
 /* Card descriptions: 18px everywhere (matches the home and features cards) */
 .mf__c p, .pr-why p, .pr-pro__cards p { font-size: var(--t-sm); }
 .pr-why h3 { line-height: 1.25; }
+/* Footer CTA note is helper text for the button: small and tucked under it */
+.ftr__note { font-size: 14px; }
+@media (min-width: 901px) { .ftr__card--split .ftr__cta { gap: 12px; } }
+@media (max-width: 900px) { .ftr__cta { row-gap: 10px; } }
