@@ -2175,3 +2175,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .ftr__alt:hover, .ftr__alt:focus-visible { color: #fff; }
 @media (min-width: 901px) { .ftr__card--split .ftr__cta { gap: 24px; } }
 @media (max-width: 900px) { .ftr__cta { row-gap: 16px; } }
+/* Features Dokan card: logo sits right above the heading */
+.dk__card .dk__logo { margin-top: auto; padding-top: 60px; box-sizing: content-box; }
+.dk__card .dk__h { margin-top: 28px; padding-top: 0; }
+@media (max-width: 1024px) { .dk__card .dk__logo { padding-top: 40px; } }
