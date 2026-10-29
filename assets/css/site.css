@@ -1206,7 +1206,7 @@ a:hover .bcard__go svg { transform: translateX(3px); }
 .rl.is-auto .rl__row.is-open .rl__bar { animation: rlBar var(--rl-dur, 6s) linear forwards; }
 .rl.is-paused .rl__row.is-open .rl__bar { animation-play-state: paused; }
 @keyframes rlBar { from { width: 0; } to { width: 100%; } }
-.rl__vis { position: relative; display: grid; aspect-ratio: 5 / 5.6; border-radius: 28px; background: #1b2230; }
+.rl__vis { position: relative; display: grid; aspect-ratio: 1 / .98; border-radius: 28px; background: #1b2230; }
 .rl__panel { position: relative; grid-area: 1 / 1; border-radius: inherit; padding: clamp(18px, 2.4vw, 30px); display: flex; flex-direction: column; justify-content: space-between; gap: 20px; opacity: 0; transform: scale(.98); transition: opacity .5s var(--ease), transform .7s var(--ease); pointer-events: none; }
 .rl__panel.is-on { opacity: 1; transform: none; }
 .rl__panel { background: #1b2230 center / cover no-repeat; }
@@ -2106,3 +2106,15 @@ body.page-home .hdr.is-float::after { display: none; }
 
 /* Section main headings use the H3 size everywhere (tags stay <h2> for document outline / SEO) */
 .h2, .h2xl, .statement { font-size: var(--h3); line-height: 1.1; }
+
+/* Heading rows with a description on the right: 140px between heading and description */
+@media (max-width: 1279px) { .split-head, .au__head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 16px; } .au__sub { justify-self: start; } }
+@media (min-width: 1280px) {
+  .split-head, .au__head { grid-template-columns: fit-content(62%) minmax(0, 1fr); column-gap: 140px; justify-content: start; }
+  .split-head > :last-child, .au__sub { justify-self: start; max-width: 460px; }
+  .split-head > :first-child .h2, .split-head > .h2, .au__head .h2 { width: fit-content; }
+}
+@media (min-width: 1025px) { .split-head > :last-child, .au__sub { max-width: none; } }
+@media (max-width: 1279px) { .split-head > :last-child, .au__sub { max-width: 720px; } }
+/* description line breaks are for desktop; phones wrap naturally */
+@media (max-width: 680px) { .split-head p br, .au__sub br { display: none; } }

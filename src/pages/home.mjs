@@ -103,8 +103,8 @@ const audience = `
 <section class="sec" id="audience" aria-labelledby="aud-h">
   <div class="wrap">
     <div class="au__head">
-      <h2 id="aud-h" class="h2" data-reveal>Turn Your Audience Into Sales</h2>
-      <p class="au__sub" data-reveal>Give the people who recommend your products a way to earn from every sale they bring.</p>
+      <h2 id="aud-h" class="h2" data-reveal>Turn Your Audience <br>Into Sales</h2>
+      <p class="au__sub" data-reveal>Give the people who recommend your products <br>a way to earn from every sale they bring.</p>
     </div>
     <div class="au" data-reveal-stagger>
       <article class="au__card au__photo">
@@ -140,8 +140,8 @@ const ledger = `
 <section class="sec" id="ledger" aria-labelledby="led-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="led-h" class="h2" data-reveal>Every Commission, Clearly Tracked</h2>
-      <p class="lead muted" data-reveal>From the first referral to the final payout, keep everything in one place.</p>
+      <h2 id="led-h" class="h2" data-reveal>Every Commission, <br>Clearly Tracked</h2>
+      <p class="lead muted" data-reveal>From the first referral to the final payout, <br>keep every commission in one clear place.</p>
     </div>
     ${flow(['Referral', 'Visit', 'Order', 'Commission', 'Payout'])}
     <figure class="work" data-reveal>
@@ -225,8 +225,8 @@ const hold = `
 <section class="sec" id="hold" aria-labelledby="hold-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="hold-h" class="h2" data-reveal>Hold Commissions Until They’re Ready</h2>
-      <p class="lead muted" data-reveal>Don’t pay commissions before the sale is ready. Set a hold period and let order status guide the commission lifecycle.</p>
+      <h2 id="hold-h" class="h2" data-reveal>Hold Commissions <br>Until They’re Ready</h2>
+      <p class="lead muted" data-reveal>Don’t pay commissions before the sale is ready. Set a hold <br>period and let order status guide the commission lifecycle.</p>
     </div>
     <div class="proc proc--icons" data-proc data-reveal>${procCards(HOLD, false, HOLD_ICONS)}
     </div>
@@ -274,8 +274,8 @@ const reports = `
 <section class="sec sec--dark" id="reports" aria-labelledby="rep-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="rep-h" class="h2" data-reveal>Know What’s Driving Your Affiliate Sales</h2>
-      <p class="lead muted" data-reveal>See the numbers behind your program. Track the revenue affiliates bring in, what their commissions cost, and which partners perform best.</p>
+      <h2 id="rep-h" class="h2" data-reveal>Know What’s Driving <br>Your Affiliate Sales</h2>
+      <p class="lead muted" data-reveal>See the numbers behind your program: the revenue affiliates <br>bring in, what commissions cost, and who performs best.</p>
     </div>
     <div class="rb" data-reveal-stagger>
       <article class="rb__tile rb__tile--wide rb__tile--orange">
@@ -310,8 +310,8 @@ const dashboard = `
 <section class="sec" id="dashboard" aria-labelledby="dash-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="dash-h" class="h2" data-reveal>Give Affiliates Their Own Dashboard</h2>
-      <p class="lead muted" data-reveal>Give affiliates the information they need without the back-and-forth.</p>
+      <h2 id="dash-h" class="h2" data-reveal>Give Affiliates Their <br>Own Dashboard</h2>
+      <p class="lead muted" data-reveal>Give affiliates their links, earnings and payouts in one place, <br>so they get what they need without the back-and-forth.</p>
     </div>
     <div class="ad">
       <div class="ad__card" data-reveal>
@@ -342,8 +342,8 @@ const payouts = `
 <section class="sec sec--dark" id="payouts" aria-labelledby="pay-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="pay-h" class="h2" data-reveal>Make Payouts<br>Easier to Manage</h2>
-      <p class="lead muted" data-reveal>Turn unpaid commissions<br>into organized payouts.</p>
+      <h2 id="pay-h" class="h2" data-reveal>Make Payouts <br>Easier to Manage</h2>
+      <p class="lead muted" data-reveal>Turn unpaid commissions into organized payouts. <br>Choose who to pay, review the totals, and keep the records.</p>
     </div>
     <div class="plan" data-reveal>
       <div class="plan__l" aria-hidden="true">
@@ -382,8 +382,8 @@ const woo = `
 <section class="sec" id="woocommerce" aria-labelledby="woo-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="woo-h" class="h2" data-reveal>Built for<br>WooCommerce</h2>
-      <p class="lead muted" data-reveal>Add affiliate marketing to<br>the store you already have.</p>
+      <h2 id="woo-h" class="h2" data-reveal>Built for <br>WooCommerce</h2>
+      <p class="lead muted" data-reveal>Add affiliate marketing to the store you already have. <br>Referred orders, products and checkout all stay in WooCommerce.</p>
     </div>
     <div class="clients">
       <div class="clients__tiles" data-reveal-stagger>
@@ -427,8 +427,8 @@ const dokan = `
   <div class="wrap">
     <p class="soon" data-reveal>Coming Soon</p>
     <div class="split-head">
-      <h2 id="mkt-h" class="h2" data-reveal>One Marketplace. Many Affiliate Opportunities.</h2>
-      <p class="lead muted" data-reveal>One marketplace. Multiple vendor sales networks.</p>
+      <h2 id="mkt-h" class="h2" data-reveal>One Marketplace. <br>Many Affiliate Opportunities.</h2>
+      <p class="lead muted" data-reveal>One marketplace. Multiple vendor sales networks. <br>Each vendor grows its own affiliate team.</p>
     </div>
     <div class="mk2" data-reveal aria-hidden="true">
       <div class="mk2__hub"><span>${ic.store}</span>Your Dokan marketplace</div>

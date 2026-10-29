@@ -55,8 +55,8 @@ const principles = `
 <section class="sec" id="principles" aria-labelledby="pr-h">
   <div class="wrap">
     <div class="split-head split-head--flush">
-      <div>${eyebrow('How we build')}<h2 id="pr-h" class="h2" data-reveal>What Guides FlyAffiliate</h2></div>
-      <p class="lead muted" data-reveal>Four ideas behind every feature we ship.</p>
+      <div>${eyebrow('How we build')}<h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2></div>
+      <p class="lead muted" data-reveal>Four ideas behind every feature we ship, <br>from owning your data to keeping things clear.</p>
     </div>
     <div class="svc" data-accordion>
       ${PRINCIPLES.map(([t, d, tags, icon, art], i) => `
@@ -77,8 +77,8 @@ const family = `
   <div class="wrap">
     <div class="shead" data-reveal>${eyebrow('The weDevs family')}${bracket('WordPress products')}</div>
     <div class="split-head">
-      <h2 id="fam-h" class="h2" data-reveal>Built by the Team Behind Dokan</h2>
-      <p class="lead muted" data-reveal>FlyAffiliate is built by weDevs, the team behind Dokan and other WordPress products.</p>
+      <h2 id="fam-h" class="h2" data-reveal>Built by the Team <br>Behind Dokan</h2>
+      <p class="lead muted" data-reveal>FlyAffiliate is built by weDevs, the team behind <br>Dokan and other WordPress products.</p>
     </div>
     <ul class="fam" data-reveal-stagger>
       ${FAMILY.map(n => `<li><span>${n}</span></li>`).join('')}

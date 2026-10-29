@@ -62,8 +62,8 @@ const quick = `
   <div class="wrap">
     <div class="shead" data-reveal>${eyebrow('Quick start')}${bracket('01 — 04')}</div>
     <div class="split-head">
-      <h2 id="qs-h" class="h2" data-reveal>Up and Running in Four Steps</h2>
-      <p class="lead muted" data-reveal>The shortest path from installing the plugin to your first affiliate payout.</p>
+      <h2 id="qs-h" class="h2" data-reveal>Up and Running <br>in Four Steps</h2>
+      <p class="lead muted" data-reveal>The shortest path from installing the plugin <br>to your first affiliate payout.</p>
     </div>
     <div class="proc" data-proc data-reveal>${procCards(QUICK)}
     </div>
