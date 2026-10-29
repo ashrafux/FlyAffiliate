@@ -1940,7 +1940,7 @@ body.page-home .hdr.is-float::after { display: none; }
 .au__photo-in { position: relative; margin-top: auto; padding: clamp(26px, 2.6vw, 38px); display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .au__big { font-family: var(--font-head); font-size: var(--h4); font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
 .au__pd { font-size: var(--t-sm); color: rgba(255, 255, 255, .78); }
-.au__t { font-family: var(--font-head); font-size: var(--h5); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
+.au__t { font-family: var(--font-head); font-size: var(--h4); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
 .au__d { margin-top: 14px; max-width: 360px; font-size: var(--t-sm); line-height: 1.6; color: var(--ink-2); }
 .au__k { font-family: var(--font-head); font-size: var(--t-sm); font-weight: 500; }
 .au__k span { color: var(--ink-2); font-weight: 400; }
