@@ -2170,3 +2170,8 @@ body.page-home .hdr.is-float::after { display: none; }
 .tk__go::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .tk__card:hover .tk__go, .tk__go:focus-visible { background: var(--accent); color: #fff; transform: rotate(45deg); box-shadow: none; }
 .tk__card:hover { cursor: pointer; }
+/* Footer CTA: second action is a tertiary button, 24px under the main one */
+.ftr__alt { color: rgba(255, 255, 255, .8); font-size: 16px; }
+.ftr__alt:hover, .ftr__alt:focus-visible { color: #fff; }
+@media (min-width: 901px) { .ftr__card--split .ftr__cta { gap: 24px; } }
+@media (max-width: 900px) { .ftr__cta { row-gap: 16px; } }

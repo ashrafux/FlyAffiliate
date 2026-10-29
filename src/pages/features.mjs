@@ -340,7 +340,7 @@ const flowSec = `
 <section class="sec" id="workflow" aria-labelledby="fw-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="fw-h" class="h2" data-reveal>From Click to Commission <br>to Payout</h2>
+      <h2 id="fw-h" class="h2" data-reveal>From Click to <br>Commission to Payout</h2>
       <p class="lead muted" data-reveal>Six steps run your whole program, from the first <br>affiliate signup to the payout you send.</p>
     </div>
     <div class="wv" data-reveal>
