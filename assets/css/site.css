@@ -2153,3 +2153,14 @@ body.page-home .hdr.is-float::after { display: none; }
 .ftr__note { font-size: 14px; }
 @media (min-width: 901px) { .ftr__card--split .ftr__cta { gap: 12px; } }
 @media (max-width: 900px) { .ftr__cta { row-gap: 10px; } }
+/* Features tracking header uses the split-head row */
+.tk__head.split-head { display: grid; align-items: end; }
+.tk__head.split-head .tk__h { max-width: none; }
+.split-head + .pr-table, .split-head + .pr-why, .split-head + .wv { margin-top: 0; }
+#compare .pr-table { max-width: none; margin-top: 0; }
+
+/* Features affiliate bento: accent highlights in full primary */
+.page-features .ab__lk:nth-child(2), .page-features .ab__badge, .page-features .ab__tip { background: var(--accent); color: #fff; }
+.page-features .ab__badge { box-shadow: 0 18px 30px -16px rgba(0, 67, 218, .6); }
+.page-features .ab__amount .st--unpaid { background: var(--accent); color: #fff; }
+.page-features .ab__amount .st--unpaid::before { background: #fff; }

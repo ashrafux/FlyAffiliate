@@ -118,12 +118,12 @@ const TRACK = [
 const trackSec = (gi) => `
 <section class="sec fgroup tk" id="tracking" aria-labelledby="tracking-h">
   <div class="wrap">
-    <div class="tk__head">
+    <div class="tk__head split-head">
       <div>
         <p class="tk__pill" data-reveal>Tracking</p>
-        <h2 id="tracking-h" class="h2 tk__h" data-reveal>Know Where Every Sale <span class="tk__chip" aria-hidden="true">${ic.link}</span> Came From</h2>
+        <h2 id="tracking-h" class="h2 tk__h" data-reveal>Know Where Every <br>Sale <span class="tk__chip" aria-hidden="true">${ic.link}</span> Came From</h2>
       </div>
-      
+      <p class="lead muted" data-reveal>Give every affiliate a link, then follow each visit and order <br>back to the person who sent it, right on your own site.</p>
     </div>
     <div class="tk__grid" data-reveal-stagger>
       ${TRACK.map(([t, d, icon, strip], k) => `<article class="tk__card${k === 1 ? ' tk__card--dark' : ''}">
@@ -339,8 +339,9 @@ const STEPS = [
 const flowSec = `
 <section class="sec" id="workflow" aria-labelledby="fw-h">
   <div class="wrap">
-    <div class="wv__head">
-      <h2 id="fw-h" class="h2" data-reveal>From Click to Commission to Payout</h2>
+    <div class="split-head">
+      <h2 id="fw-h" class="h2" data-reveal>From Click to Commission <br>to Payout</h2>
+      <p class="lead muted" data-reveal>Six steps run your whole program, from the first <br>affiliate signup to the payout you send.</p>
     </div>
     <div class="wv" data-reveal>
       <svg class="wv__path" viewBox="0 0 1200 250" preserveAspectRatio="none" aria-hidden="true"><path d="M164 60 C200.0 60 200.0 190 236 190 M364 190 C400.0 190 400.0 60 436 60 M564 60 C600.0 60 600.0 190 636 190 M764 190 C800.0 190 800.0 60 836 60 M964 60 C1000.0 60 1000.0 190 1036 190" vector-effect="non-scaling-stroke"/></svg>

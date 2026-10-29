@@ -117,7 +117,10 @@ const cell = v => v === 1 ? `<span class="pr-yes">${ic.check}<span class="sr-onl
 const compare = `
 <section class="sec" id="compare" aria-labelledby="cmp-h">
   <div class="wrap">
-    <h2 id="cmp-h" class="h3 pr-center" data-reveal>Free vs Pro</h2>
+    <div class="split-head">
+      <h2 id="cmp-h" class="h2" data-reveal>Free vs Pro, <br>Side by Side</h2>
+      <p class="lead muted" data-reveal>Everything the free plugin does, plus what Pro adds <br>for paying your affiliates through PayPal.</p>
+    </div>
     <div class="pr-table" data-reveal>
       <table>
         <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col" class="pr-table__pro">Pro</th></tr></thead>
@@ -136,7 +139,10 @@ const WHY = [
 const why = `
 <section class="sec" id="why" aria-labelledby="why-h">
   <div class="wrap">
-    <h2 id="why-h" class="h2 pr-center" data-reveal>Built to Run Your Program the Right Way</h2>
+    <div class="split-head">
+      <h2 id="why-h" class="h2" data-reveal>Built to Run Your <br>Program the Right Way</h2>
+      <p class="lead muted" data-reveal>Every plan starts with safe defaults, data that stays <br>on your site and a ledger you can trust.</p>
+    </div>
     <ul class="pr-why" data-reveal-stagger>${WHY.map(([t, d, i]) => `<li><span class="pr-ic" aria-hidden="true">${i}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ul>
   </div>
 </section>`;
