@@ -2135,3 +2135,6 @@ body.page-home .hdr.is-float::after { display: none; }
 /* FAQ intro: two-line title and description */
 .faq__l .muted { max-width: none; font-size: var(--t-sm); line-height: 1.6; }
 @media (max-width: 680px) { .faq__l .muted br { display: none; } }
+/* Footer CTA heading stays at the H2 size */
+.ftr__tag { font-size: var(--h2); line-height: 1.08; }
+@media (max-width: 680px) { .ftr__tag br { display: none; } }
