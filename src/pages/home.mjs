@@ -342,8 +342,8 @@ const payouts = `
 <section class="sec sec--dark" id="payouts" aria-labelledby="pay-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="pay-h" class="h2" data-reveal>Make Payouts Easier to Manage</h2>
-      <p class="lead muted" data-reveal>Turn unpaid commissions into organized payouts.</p>
+      <h2 id="pay-h" class="h2" data-reveal>Make Payouts<br>Easier to Manage</h2>
+      <p class="lead muted" data-reveal>Turn unpaid commissions<br>into organized payouts.</p>
     </div>
     <div class="plan" data-reveal>
       <div class="plan__l" aria-hidden="true">
@@ -382,8 +382,8 @@ const woo = `
 <section class="sec" id="woocommerce" aria-labelledby="woo-h">
   <div class="wrap">
     <div class="split-head">
-      <h2 id="woo-h" class="h2" data-reveal>Built for WooCommerce</h2>
-      <p class="lead muted" data-reveal>Add affiliate marketing to the store you already have.</p>
+      <h2 id="woo-h" class="h2" data-reveal>Built for<br>WooCommerce</h2>
+      <p class="lead muted" data-reveal>Add affiliate marketing to<br>the store you already have.</p>
     </div>
     <div class="clients">
       <div class="clients__tiles" data-reveal-stagger>
