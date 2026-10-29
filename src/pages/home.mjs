@@ -493,7 +493,7 @@ export const FAQS = [
   ['Does FlyAffiliate use a third-party affiliate network?', 'No. FlyAffiliate runs directly on your WordPress site.'],
   ['Is FlyAffiliate free?', 'Yes. FlyAffiliate is available as a free WordPress plugin.'],
 ];
-export const faqBlock = ({ id = 'faq', title = 'Frequently Asked Questions', sub = '', items = FAQS, cta = '' } = {}) => `
+export const faqBlock = ({ id = 'faq', title = 'Frequently Asked <br>Questions', sub = 'Quick answers about setup, tracking, <br>commissions and payouts in FlyAffiliate.', items = FAQS, cta = '' } = {}) => `
 <section class="sec" id="${id}" aria-labelledby="${id}-h">
   <div class="wrap faq">
     <div class="faq__l">

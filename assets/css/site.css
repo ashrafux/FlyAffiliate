@@ -2129,3 +2129,9 @@ body.page-home .hdr.is-float::after { display: none; }
 .duo__steps svg { width: 20px; height: 20px; }
 @media (max-width: 680px) { .duo__p br { display: none; } }
 @media (max-width: 680px) { .rl__sub br { display: none; } }
+/* Built by tags: two on the first line, Dokan on the second */
+.built__pills { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; justify-items: start; }
+@media (max-width: 680px) { .built__pills { grid-template-columns: max-content; } }
+/* FAQ intro: two-line title and description */
+.faq__l .muted { max-width: none; font-size: var(--t-sm); line-height: 1.6; }
+@media (max-width: 680px) { .faq__l .muted br { display: none; } }

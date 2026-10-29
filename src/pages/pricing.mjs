@@ -179,5 +179,5 @@ export default () => page({
   desc: 'Simple pricing for FlyAffiliate. Every feature in every plan, a free plugin forever, and a one-time lifetime option.',
   cur: 'Pricing',
   bodyClass: 'page-pricing',
-  body: [hero, plans, free, pro, compare, why, math, guarantee, faqBlock({ id: 'faq', title: 'Pricing Questions', items: FAQ })].join('\n'),
+  body: [hero, plans, free, pro, compare, why, math, guarantee, faqBlock({ id: 'faq', title: 'Pricing <br>Questions', sub: 'Plans, licenses, upgrades and refunds, <br>answered before you buy.', items: FAQ })].join('\n'),
 });
