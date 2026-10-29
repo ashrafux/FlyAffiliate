@@ -238,7 +238,7 @@ export const footer = (cta = {}) => `
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__card art art--cta${cta.trust || cta.btn2 ? '' : ' ftr__card--split'}" data-reveal>
-      <div class="ftr__copy"><h2 class="h3 ftr__tag">${cta.h || 'Start Your Affiliate <br>Program'}</h2><p class="ftr__p">${cta.p || 'Your products already have people talking about them. Give them a way to promote your store and earn from the sales they generate.'}</p></div>
+      <div class="ftr__copy"><h2 class="h3 ftr__tag">${cta.h || 'Start Your <br>Affiliate Program'}</h2><p class="ftr__p">${cta.p || 'Your products already have people talking about them. Give them a way to promote your store and earn from the sales they generate.'}</p></div>
       <div class="ftr__cta">${cta.btn || btn('Start Your Affiliate Program', CTA_URL, '', ' target="_blank" rel="noopener"')}${cta.btn2 || ''}<p class="ftr__note">${cta.note ?? 'Free WordPress plugin.'}</p></div>${cta.trust ? `<ul class="ftr__trust">${cta.trust.map(t => `<li>${ic.check}${t}</li>`).join('')}</ul>` : ''}
     </div>
     <div class="ftr__row">
