@@ -90,7 +90,7 @@ const uiWooOrder = () => `
 const wpIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M4.5 8.5 9 20m-.5-11.5L13 20l3-9m-3.5-2.5L17 20M7 8.5h4m2 0h4" stroke-linecap="round"/></svg>';
 const AUD = [
   ['Bring Affiliates On Board', 'Simple registration and email activation.', ic.user],
-  ['Give Every Affiliate a Link', 'Unique referral links for your store, pages and products.', ic.link],
+  ['Give Every <br>Affiliate a Link', 'Unique referral links for your store, pages and products.', ic.link],
   ['Track Referred Sales', 'Connect affiliate referrals to WooCommerce orders.', ic.cart],
   ['Keep It in WordPress', 'Manage your entire program from your own site.', wpIcon],
 ];
