@@ -42,12 +42,16 @@
   const targets = $$('[data-reveal], [data-reveal-stagger], [data-split], [data-lines]');
   if (reduce || !('IntersectionObserver' in window)) targets.forEach(t => t.classList.add('is-in'));
   else {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { const t = e.target; t.classList.add('is-in'); io.unobserve(t); setTimeout(() => t.classList.add('rv-done'), 2200); }
-    }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
-    targets.forEach(t => io.observe(t));
+    /* replays on every scroll: an element plays its reveal when it enters the view,
+       and resets once it has fully left the screen, so it plays again next time it comes in */
+    const timers = new WeakMap();
+    const show = t => { if (t.classList.contains('is-in')) return; t.classList.add('is-in'); timers.set(t, setTimeout(() => t.classList.add('rv-done'), 2200)); };
+    const reset = t => { clearTimeout(timers.get(t)); t.classList.remove('is-in', 'rv-done'); };
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(e.target); }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    const out = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting && e.target.classList.contains('is-in')) reset(e.target); }), { threshold: 0 });
+    targets.forEach(t => { io.observe(t); out.observe(t); });
     /* the last rows of the footer can sit inside the IO bottom margin: reveal them once the page bottom is reached */
-    const atEnd = () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) targets.forEach(t => { if (!t.classList.contains('is-in')) { t.classList.add('is-in'); io.unobserve(t); setTimeout(() => t.classList.add('rv-done'), 2200); } }); };
+    const atEnd = () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) targets.forEach(t => { const r = t.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) show(t); }); };
     addEventListener('scroll', atEnd, { passive: true });
   }
 

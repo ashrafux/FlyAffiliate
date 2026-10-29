@@ -2179,3 +2179,4 @@ body.page-home .hdr.is-float::after { display: none; }
 .dk__card .dk__logo { margin-top: auto; padding-top: 60px; box-sizing: content-box; }
 .dk__card .dk__h { margin-top: 28px; padding-top: 0; }
 @media (max-width: 1024px) { .dk__card .dk__logo { padding-top: 40px; } }
+.dk__card .dk__logo { width: clamp(120px, 10vw, 150px); }
