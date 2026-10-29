@@ -472,7 +472,7 @@ const team = `
       </div>
       <div class="duo__start" id="start">
         <h2 id="start-h" class="duo__h">Start Your <br>Affiliate Program</h2>
-        <p class="duo__p">Turn recommendations into revenue.</p>
+        <p class="duo__p">Turn recommendations into revenue with an affiliate <br>program that runs right inside your WordPress store.</p>
         <ol class="duo__steps" data-reveal-stagger>${[['Give your affiliates a link.', ic.link], ['Track the sales.', ic.chart], ['Manage the commissions.', ic.coin]].map(([t, i]) => `<li><span aria-hidden="true">${i}</span>${t}</li>`).join('')}</ol>
         ${btn('Start Your Affiliate Program', CTA_URL, 'white', ext)}
       </div>
