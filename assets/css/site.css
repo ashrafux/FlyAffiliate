@@ -2184,3 +2184,8 @@ body.page-home .hdr.is-float::after { display: none; }
 .pr-card:not(.pr-card--pop) .pr-card__list svg { background: #e3f6ea; color: #1f8a4c; }
 /* Pricing plan cards: 10px corners */
 .pr-card { border-radius: 10px; }
+/* Pricing free plan: green button and green checks */
+.pr-free__l .btn { --b: #1f8a4c; --f: #fff; --cb: #fff; --cf: #1f8a4c; }
+.pr-free__l .btn:hover, .pr-free__l .btn:focus-visible { --b: #176c3b; }
+.pr-free__l .btn:hover .btn__i { background: #fff; color: #176c3b; }
+.pr-free__r li svg { color: #1f8a4c; }
