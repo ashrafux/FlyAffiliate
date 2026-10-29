@@ -452,7 +452,7 @@ const workflow = `
       <div class="wf__l">
         <h2 id="wf-h" class="h2">Everything in One WordPress Dashboard</h2>
         <p class="wf__sub">No spreadsheets. No separate affiliate platform.</p>
-        <p class="wf__foot"><i aria-hidden="true"></i>Run your affiliate program from WordPress.</p>
+        <p class="wf__foot"><i aria-hidden="true">${ic.check}</i>Run your affiliate program from WordPress.</p>
       </div>
       <ol class="wf__steps" data-reveal-stagger>${STEPS.map(([s, icon]) => `<li><span class="wf__ic" aria-hidden="true">${icon}</span><b>${s}</b></li>`).join('')}</ol>
     </div>
