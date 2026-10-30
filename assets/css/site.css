@@ -2318,3 +2318,16 @@ body.page-home .hdr.is-float::after { display: none; }
   .abt-mf__c:last-child { border-bottom: 0; }
   .abt-mf__t { margin-top: 36px; }
 }
+
+/* About principles: hover — soft blue glow in the cell, icon tilts, tags fill */
+.abt-mf__c { position: relative; isolation: isolate; transition: background-color .5s var(--ease); }
+.abt-mf__c::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(120% 90% at 0% 0%, rgba(0, 67, 218, .32), rgba(0, 67, 218, 0) 60%); opacity: 0; transition: opacity .5s var(--ease); pointer-events: none; }
+.abt-mf__ic { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.abt-mf__t { transition: transform .5s var(--ease); }
+.abt-mf__tags span { transition: background-color .4s var(--ease), color .4s var(--ease), box-shadow .4s var(--ease); }
+.abt-mf__c:hover { background: rgba(255, 255, 255, .03); }
+.abt-mf__c:hover::before { opacity: 1; }
+.abt-mf__c:hover .abt-mf__ic { transform: rotate(-8deg) scale(1.08); box-shadow: 0 16px 34px -12px rgba(0, 67, 218, .8); }
+.abt-mf__c:hover .abt-mf__t { transform: translateX(6px); }
+.abt-mf__c:hover .abt-mf__tags span { background: #fff; color: var(--ink); box-shadow: none; }
+@media (hover: none) { .abt-mf__c:hover .abt-mf__t { transform: none; } }
