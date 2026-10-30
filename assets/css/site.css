@@ -2290,3 +2290,4 @@ body.page-home .hdr.is-float::after { display: none; }
 }
 /* About: contact card → footer CTA, 30px apart */
 .page-about .ftr { padding-top: 30px; }
+.abt-contact__send { align-self: flex-start; margin-top: 8px; border: 0; cursor: pointer; }

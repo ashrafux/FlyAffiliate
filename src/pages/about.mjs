@@ -119,7 +119,7 @@ const contact = `
         <label class="sr-only" for="c-name">Name</label><input id="c-name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
         <label class="sr-only" for="c-email">Email</label><input id="c-email" class="field" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required>
         <label class="sr-only" for="c-msg">Message</label><textarea id="c-msg" class="field field--area" name="message" placeholder="Your message here…" rows="4"></textarea>
-        <button class="btn btn--block" type="submit"><span class="btn__t">Send Message</span><span class="btn__i" aria-hidden="true">${ic.arrow}</span></button>
+        <button class="btn abt-contact__send" type="submit"><span class="btn__t">Send Message</span><span class="btn__i" aria-hidden="true">${ic.arrow}</span></button>
         <p class="form__note" data-form-note data-ok="Thanks — message received. (Demo form: nothing was sent.)" hidden role="status"></p>
       </form>
     </div>
