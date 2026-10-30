@@ -70,19 +70,20 @@ const principles = `
       <h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2>
       <p class="lead muted" data-reveal>Four ideas behind every feature we ship, <br>from owning your data to keeping things clear.</p>
     </div>
-    <ul class="abt-pr" data-reveal-stagger>
-      ${PRINCIPLES.map(([t, d, tags, icon], i) => `<li class="abt-pr__c${i === 0 ? ' is-acc' : ''}">
-        <span class="abt-ic" aria-hidden="true">${icon}</span>
-        <h3 class="abt-pr__t">${t}</h3>
-        <p>${d}</p>
-        <span class="abt-tags">${tags.map(x => `<span>${x}</span>`).join('')}</span>
-      </li>`).join('\n      ')}
-    </ul>
+    <div class="abt-mf" data-reveal>
+      <ul class="abt-mf__g" data-reveal-stagger>
+        ${PRINCIPLES.map(([t, d, tags, icon]) => `<li class="abt-mf__c">
+          <div class="abt-mf__top"><span class="abt-mf__ic" aria-hidden="true">${icon}</span><span class="abt-mf__tags">${tags.map(x => `<span>${x}</span>`).join('')}</span></div>
+          <h3 class="abt-mf__t">${t}</h3>
+          <p>${d}</p>
+        </li>`).join('\n        ')}
+      </ul>
+    </div>
   </div>
 </section>`;
 
 // 4. weDevs family — Dokan first with its logo, FlyAffiliate highlighted, weDevs.com as the way out
-const FAMILY = ['WP User Frontend', 'WP ERP', 'weDocs', 'WP Project Manager', 'weMail', 'wePOS', 'Appsero'];
+const FAMILY = [['wpuf', 'WP User Frontend'], ['wp-erp', 'WP ERP'], ['wedocs', 'weDocs'], ['wp-pm', 'WP Project Manager'], ['wemail', 'weMail'], ['wepos', 'wePOS'], ['appsero', 'Appsero']];
 const family = `
 <section class="sec" id="family" aria-labelledby="fam-h">
   <div class="wrap">
@@ -91,10 +92,10 @@ const family = `
       <p class="lead muted" data-reveal>FlyAffiliate is built by weDevs, the team behind <br>Dokan and other WordPress products.</p>
     </div>
     <ul class="abt-fam" data-reveal-stagger>
-      <li class="abt-fam__dokan"><img src="/assets/img/dokan-logo.svg" alt="Dokan" width="150" height="41"><small>Multivendor marketplace</small></li>
-      ${FAMILY.map(n => `<li><span>${n}</span></li>`).join('')}
-      <li class="abt-fam__me"><span>FlyAffiliate</span><small>The newest member</small></li>
-      <li class="abt-fam__more"><a href="https://wedevs.com"${ext}><span>weDevs.com</span><small>See all products ${ic.arrow}</small></a></li>
+      <li class="abt-fam__dokan"><img class="abt-fam__logo" src="/assets/img/brands/dokan.svg" alt="Dokan"><small>Multivendor marketplace</small></li>
+      ${FAMILY.map(([f, n]) => `<li><img class="abt-fam__logo abt-fam__logo--${f}" src="/assets/img/brands/${f}.svg" alt="${n}"></li>`).join('')}
+      <li class="abt-fam__me"><img class="abt-fam__logo" src="/assets/img/flyaffiliate-logo-white.svg" alt="FlyAffiliate"><small>The newest member</small></li>
+      <li class="abt-fam__more"><a href="https://wedevs.com"${ext}><img class="abt-fam__logo" src="/assets/img/brands/wedevs-white.svg" alt="weDevs"><small>See all products ${ic.arrow}</small></a></li>
     </ul>
   </div>
 </section>`;
