@@ -1,111 +1,129 @@
-import { page, btn, eyebrow, bracket, chips, pad, ic, CTA_URL } from '../lib.mjs';
+import { page, btn, ic, CTA_URL } from '../lib.mjs';
 
-// Draft copy — the Google Doc's About Us tab was empty. Facts used: built by weDevs, the team behind Dokan.
+// About — redesigned in the home/features language: split-head rows, white cards on the grey canvas, art panels, primary used sparingly.
+// Facts used: built by weDevs, the team behind Dokan; runs on WordPress + WooCommerce; Dokan vendor programs are coming soon.
+const ext = ' target="_blank" rel="noopener"';
+
+// 1. Hero — heading left, intro + actions right, photo banner with a glass belief card and three product facts
 const hero = `
-<section class="phero" aria-labelledby="a-h">
+<section class="abt-hero" aria-labelledby="a-h">
   <div class="wrap">
-    <div class="phero__grid">
-      <div class="phero__l">${eyebrow('Let’s introduce')}</div>
-      <div class="phero__r">
-        <h1 id="a-h" class="phero__h" data-reveal><span aria-hidden="true">— </span>We build affiliate marketing that lives inside your WordPress store, not in someone else’s network.</h1>
-        <div class="phero__row" data-reveal><span class="chip-rate"><i>${ic.store}</i>Built by weDevs — the team behind Dokan</span></div>
+    <p class="abt-pill" data-reveal>About FlyAffiliate</p>
+    <div class="abt-hero__row">
+      <h1 id="a-h" class="abt-hero__h" data-reveal>Affiliate Marketing <br>That Lives in Your Store</h1>
+      <div class="abt-hero__r" data-reveal>
+        <p class="abt-hero__p">We build affiliate marketing that runs inside your <br>WordPress store, not in someone else’s network.</p>
+        <div class="abt-hero__btns">${btn('Start Your Affiliate Program', CTA_URL, '', ext)}${btn('Explore Features', '/features/', 'tertiary')}</div>
       </div>
     </div>
-    <div class="abanner art art--hero" data-reveal aria-hidden="true"></div>
-    <div class="astats" data-reveal-stagger>
-      <div><p class="eyebrow">Affiliate networks required</p><b>00</b></div>
-      <div><p class="eyebrow">Commission statuses</p><b>04</b></div>
-      <div><p class="eyebrow">Steps from click to payout</p><b>06</b></div>
+    <div class="abt-banner art art--hero" data-reveal>
+      <div class="abt-belief">
+        <p class="abt-belief__t">Your affiliates. Your referrals. Your commissions. <span>Your data.</span></p>
+        <p class="abt-belief__by"><span class="abt-belief__ic" aria-hidden="true">${ic.store}</span>Built by weDevs, the team behind Dokan</p>
+      </div>
+      <ul class="abt-facts" aria-label="FlyAffiliate at a glance">
+        <li><b>0</b><span>Affiliate networks required</span></li>
+        <li><b>4</b><span>Clear commission statuses</span></li>
+        <li><b>6</b><span>Steps from click to payout</span></li>
+      </ul>
     </div>
   </div>
 </section>`;
 
+// 2. Story — why we built it: art statement card + two plain cards
 const story = `
 <section class="sec" id="story" aria-labelledby="story-h">
   <div class="wrap">
-    <div class="intro__grid intro__grid--top">
-      <div class="intro__l">${eyebrow('Why we built it')}</div>
-      <div class="intro__r">
-        <h2 id="story-h" class="statement" data-reveal><span class="dash" aria-hidden="true">—</span> The people who already love your products are your best sales channel.</h2>
-        <div class="astory" data-reveal>
-          <p>Customers, creators, and partners recommend products every day. FlyAffiliate gives store owners a simple way to reward them for it — without signing up for an outside affiliate network.</p>
-          <p>It runs directly on WordPress. Affiliates get a link, sales are tracked to WooCommerce orders, commissions follow clear rules, and payouts stay organized — with every record kept on your own site.</p>
-        </div>
-      </div>
+    <div class="split-head">
+      <h2 id="story-h" class="h2" data-reveal>Why We Built <br>FlyAffiliate</h2>
+      <p class="lead muted" data-reveal>Store owners kept asking for a simple way to reward <br>the people who already recommend their products.</p>
+    </div>
+    <div class="abt-story" data-reveal-stagger>
+      <article class="abt-story__big art art--workflow">
+        <p class="abt-story__q">The people who already love your products are your best sales channel.</p>
+      </article>
+      <article class="abt-card">
+        <span class="abt-ic" aria-hidden="true">${ic.user}</span>
+        <h3 class="abt-card__t">Reward the People <br>Who Recommend You</h3>
+        <p>Customers, creators and partners recommend products every day. FlyAffiliate gives them a link and a fair share of the sales they bring.</p>
+      </article>
+      <article class="abt-card">
+        <span class="abt-ic" aria-hidden="true">${ic.wallet}</span>
+        <h3 class="abt-card__t">Keep Every Record <br>on Your Own Site</h3>
+        <p>Sales are tracked to WooCommerce orders, commissions follow clear rules, and payouts stay organized inside WordPress.</p>
+      </article>
     </div>
   </div>
 </section>`;
 
-const quote = `
-<section class="sec" id="belief" aria-label="What we believe">
-  <div class="wrap aquote" data-reveal>
-    <span class="aquote__mark" aria-hidden="true">“</span>
-    <p class="aquote__t">Your affiliates. Your referrals. Your commissions. Your data. It all belongs with your store.</p>
-    <p class="aquote__by"><span class="av" style="--h:18">FA</span><span><b>The FlyAffiliate team</b><small>weDevs</small></span></p>
-  </div>
-</section>`;
-
+// 3. Principles — four cards, the first one highlighted
 const PRINCIPLES = [
-  ['Own Your Data', 'FlyAffiliate runs on your WordPress site, so affiliate accounts, referrals, and commission records stay with you.', ['First-party', 'No network'], ic.shield, 'sand'],
-  ['Built on WooCommerce', 'Commissions are tied to real WooCommerce orders and calculated per item, with support for both checkout types.', ['Orders', 'Classic + block'], ic.cart, 'peach'],
-  ['Made for Marketplaces', 'From the team behind Dokan: vendors can run their own affiliate programs with their own rules.', ['Dokan', 'Vendors'], ic.store, 'dune'],
-  ['Clear Over Clever', 'Four statuses, a hold period, and payouts you can review first. You always know who you’re paying and why.', ['Statuses', 'CSV records'], ic.check, 'stone'],
+  ['Own Your Data', 'Affiliate accounts, referrals and commission records live on your WordPress site.', ['First-party', 'No network'], ic.shield],
+  ['Built on WooCommerce', 'Commissions are tied to real orders and calculated per item, on classic and block checkout.', ['Orders', 'Classic + block'], ic.cart],
+  ['Made for Marketplaces', 'From the team behind Dokan. Vendor affiliate programs are coming soon.', ['Dokan', 'Vendors'], ic.store],
+  ['Clear Over Clever', 'Four statuses, a hold period, and payouts you review first. You always know who you pay and why.', ['Statuses', 'CSV records'], ic.check],
 ];
 const principles = `
 <section class="sec" id="principles" aria-labelledby="pr-h">
   <div class="wrap">
-    <div class="split-head split-head--flush">
-      <div>${eyebrow('How we build')}<h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2></div>
+    <div class="split-head">
+      <h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2>
       <p class="lead muted" data-reveal>Four ideas behind every feature we ship, <br>from owning your data to keeping things clear.</p>
     </div>
-    <div class="svc" data-accordion>
-      ${PRINCIPLES.map(([t, d, tags, icon, art], i) => `
-      <div class="svc__row${i === 0 ? ' is-open' : ''}">
-        <h3 class="svc__h"><button class="svc__head" type="button" aria-expanded="${i === 0}" aria-controls="pr-${i}"><span class="svc__t">${t}</span><span class="svc__ic" aria-hidden="true">${ic.plus}</span></button></h3>
-        <div class="svc__body" id="pr-${i}" role="region"><div class="svc__in">
-          <div class="svc__copy"><p>${d}</p>${chips(tags)}</div>
-          <div class="svc__vis art art--${art}"><span class="svc__glyph">${icon}</span></div>
-        </div></div>
-      </div>`).join('')}
+    <div class="abt-mf" data-reveal>
+      <ul class="abt-mf__g" data-reveal-stagger>
+        ${PRINCIPLES.map(([t, d, tags, icon]) => `<li class="abt-mf__c">
+          <div class="abt-mf__top"><span class="abt-mf__ic" aria-hidden="true">${icon}</span><span class="abt-mf__tags">${tags.map(x => `<span>${x}</span>`).join('')}</span></div>
+          <h3 class="abt-mf__t">${t}</h3>
+          <p>${d}</p>
+        </li>`).join('\n        ')}
+      </ul>
     </div>
   </div>
 </section>`;
 
-const FAMILY = ['Dokan', 'WP User Frontend', 'WP ERP', 'weDocs', 'WP Project Manager', 'weMail', 'wePOS', 'Appsero'];
+// 4. weDevs family — Dokan first with its logo, FlyAffiliate highlighted, weDevs.com as the way out
+const FAMILY = [['wpuf', 'WP User Frontend'], ['wp-erp', 'WP ERP'], ['wedocs', 'weDocs'], ['wp-pm', 'WP Project Manager'], ['wemail', 'weMail'], ['wepos', 'wePOS'], ['appsero', 'Appsero']];
 const family = `
 <section class="sec" id="family" aria-labelledby="fam-h">
   <div class="wrap">
-    <div class="shead" data-reveal>${eyebrow('The weDevs family')}${bracket('WordPress products')}</div>
     <div class="split-head">
       <h2 id="fam-h" class="h2" data-reveal>Built by the Team <br>Behind Dokan</h2>
       <p class="lead muted" data-reveal>FlyAffiliate is built by weDevs, the team behind <br>Dokan and other WordPress products.</p>
     </div>
-    <ul class="fam" data-reveal-stagger>
-      ${FAMILY.map(n => `<li><span>${n}</span></li>`).join('')}
-      <li class="fam--me"><span>FlyAffiliate<i>.</i></span><small>The newest member</small></li>
-      <li class="fam--more"><a href="https://wedevs.com" target="_blank" rel="noopener"><span>weDevs.com</span><small>See all products ${ic.arrow}</small></a></li>
+    <ul class="abt-fam" data-reveal-stagger>
+      <li class="abt-fam__dokan"><img class="abt-fam__logo" src="/assets/img/brands/dokan.svg" alt="Dokan"><small>Multivendor marketplace</small></li>
+      ${FAMILY.map(([f, n]) => `<li><img class="abt-fam__logo abt-fam__logo--${f}" src="/assets/img/brands/${f}.svg" alt="${n}"></li>`).join('')}
+      <li class="abt-fam__me"><img class="abt-fam__logo" src="/assets/img/flyaffiliate-logo-white.svg" alt="FlyAffiliate"><small>The newest member</small></li>
+      <li class="abt-fam__more"><a href="https://wedevs.com"${ext}><img class="abt-fam__logo" src="/assets/img/brands/wedevs-white.svg" alt="weDevs"><small>See all products ${ic.arrow}</small></a></li>
     </ul>
-    <p class="caption" data-reveal><span class="dot" aria-hidden="true"></span>Built for WordPress. Built for WooCommerce. Built for Dokan.</p>
   </div>
 </section>`;
 
+// 5. Contact — one split card: blue info half, white form half
 const contact = `
-<section class="sec sec--dark contact" id="contact" aria-labelledby="c-h">
-  <div class="wrap contact__grid">
-    <div class="contact__l">
-      ${eyebrow('Contact')}
-      <h2 id="c-h" class="h2xl" data-reveal>Let’s Talk</h2>
-      <p class="lead contact__p" data-reveal>Questions about FlyAffiliate, your store, or your marketplace? Send us a note.</p>
-      <div class="contact__meta" data-reveal><p class="muted">Company</p><a class="contact__big" href="https://wedevs.com" target="_blank" rel="noopener">weDevs</a></div>
+<section class="sec" id="contact" aria-labelledby="c-h">
+  <div class="wrap">
+    <div class="abt-contact" data-reveal>
+      <div class="abt-contact__l">
+        <h2 id="c-h" class="abt-contact__h">Let’s Talk</h2>
+        <p class="abt-contact__p">Questions about FlyAffiliate, your store, or your <br>marketplace? Send us a note.</p>
+        <ul class="abt-contact__list">
+          <li><span aria-hidden="true">${ic.chat}</span>Product and setup questions</li>
+          <li><span aria-hidden="true">${ic.store}</span>WooCommerce and Dokan stores</li>
+          <li><span aria-hidden="true">${ic.mail}</span>We reply by email</li>
+        </ul>
+        <p class="abt-contact__co">Company <a href="https://wedevs.com"${ext}>weDevs</a></p>
+      </div>
+      <form class="abt-contact__form form" data-demo-form>
+        <p class="abt-contact__ct">Have a question in mind?</p>
+        <label class="sr-only" for="c-name">Name</label><input id="c-name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <label class="sr-only" for="c-email">Email</label><input id="c-email" class="field" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required>
+        <label class="sr-only" for="c-msg">Message</label><textarea id="c-msg" class="field field--area" name="message" placeholder="Your message here…" rows="4"></textarea>
+        <button class="btn abt-contact__send" type="submit"><span class="btn__t">Send Message</span><span class="btn__i" aria-hidden="true">${ic.arrow}</span></button>
+        <p class="form__note" data-form-note data-ok="Thanks — message received. (Demo form: nothing was sent.)" hidden role="status"></p>
+      </form>
     </div>
-    <form class="contact__card form" data-demo-form data-reveal>
-      <p class="contact__ct">Have a question in mind?</p>
-      <label class="sr-only" for="c-name">Name</label><input id="c-name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
-      <label class="sr-only" for="c-email">Email</label><input id="c-email" class="field" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required>
-      <label class="sr-only" for="c-msg">Message</label><textarea id="c-msg" class="field field--area" name="message" placeholder="Your message here…" rows="4"></textarea>
-      <button class="btn btn--block" type="submit"><span class="btn__t">Submit</span><span class="btn__i" aria-hidden="true">${ic.arrow}</span></button>
-      <p class="form__note" data-form-note data-ok="Thanks — message received. (Demo form: nothing was sent.)" hidden role="status"></p>
-    </form>
   </div>
 </section>`;
 
@@ -113,5 +131,6 @@ export default () => page({
   title: 'About — FlyAffiliate',
   desc: 'FlyAffiliate is built by weDevs, the team behind Dokan and other WordPress products. Affiliate marketing that runs on your own WordPress site.',
   cur: 'About',
-  body: [hero, story, quote, principles, family, contact].join('\n'),
+  bodyClass: 'page-about',
+  body: [hero, story, principles, family, contact].join('\n'),
 });
