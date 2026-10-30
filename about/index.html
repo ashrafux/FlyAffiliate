@@ -12,10 +12,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Lato:wght@400;700&amp;display=swap">
-<link rel="stylesheet" href="/assets/css/site.css?v=160">
+<link rel="stylesheet" href="/assets/css/site.css?v=161">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="">
+<body class="page-about">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hdr">
@@ -44,119 +44,126 @@
 </div>
 <main id="main">
 
-<section class="phero" aria-labelledby="a-h">
+<section class="abt-hero" aria-labelledby="a-h">
   <div class="wrap">
-    <div class="phero__grid">
-      <div class="phero__l"><p class="eyebrow">Let’s introduce</p></div>
-      <div class="phero__r">
-        <h1 id="a-h" class="phero__h" data-reveal><span aria-hidden="true">— </span>We build affiliate marketing that lives inside your WordPress store, not in someone else’s network.</h1>
-        <div class="phero__row" data-reveal><span class="chip-rate"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M5.5 12v8h13v-8M10 20v-5h4v5"/></svg></i>Built by weDevs — the team behind Dokan</span></div>
+    <p class="abt-pill" data-reveal>About FlyAffiliate</p>
+    <div class="abt-hero__row">
+      <h1 id="a-h" class="abt-hero__h" data-reveal>Affiliate Marketing <br>That Lives in Your Store</h1>
+      <div class="abt-hero__r" data-reveal>
+        <p class="abt-hero__p">We build affiliate marketing that runs inside your <br>WordPress store, not in someone else’s network.</p>
+        <div class="abt-hero__btns"><a class="btn" href="https://wordpress.org/plugins/search/flyaffiliate/" target="_blank" rel="noopener"><span class="btn__t">Start Your Affiliate Program</span><span class="btn__i" aria-hidden="true"><svg viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8h24M19 1.5 25.5 8 19 14.5"/></svg></span></a><a class="btn btn--tertiary" href="/features/"><span class="btn__t">Explore Features</span></a></div>
       </div>
     </div>
-    <div class="abanner art art--hero" data-reveal aria-hidden="true"></div>
-    <div class="astats" data-reveal-stagger>
-      <div><p class="eyebrow">Affiliate networks required</p><b>00</b></div>
-      <div><p class="eyebrow">Commission statuses</p><b>04</b></div>
-      <div><p class="eyebrow">Steps from click to payout</p><b>06</b></div>
+    <div class="abt-banner art art--hero" data-reveal>
+      <div class="abt-belief">
+        <p class="abt-belief__t">Your affiliates. Your referrals. Your commissions. <span>Your data.</span></p>
+        <p class="abt-belief__by"><span class="abt-belief__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M5.5 12v8h13v-8M10 20v-5h4v5"/></svg></span>Built by weDevs, the team behind Dokan</p>
+      </div>
+      <ul class="abt-facts" aria-label="FlyAffiliate at a glance">
+        <li><b>0</b><span>Affiliate networks required</span></li>
+        <li><b>4</b><span>Clear commission statuses</span></li>
+        <li><b>6</b><span>Steps from click to payout</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="sec" id="story" aria-labelledby="story-h">
   <div class="wrap">
-    <div class="intro__grid intro__grid--top">
-      <div class="intro__l"><p class="eyebrow">Why we built it</p></div>
-      <div class="intro__r">
-        <h2 id="story-h" class="statement" data-reveal><span class="dash" aria-hidden="true">—</span> The people who already love your products are your best sales channel.</h2>
-        <div class="astory" data-reveal>
-          <p>Customers, creators, and partners recommend products every day. FlyAffiliate gives store owners a simple way to reward them for it — without signing up for an outside affiliate network.</p>
-          <p>It runs directly on WordPress. Affiliates get a link, sales are tracked to WooCommerce orders, commissions follow clear rules, and payouts stay organized — with every record kept on your own site.</p>
-        </div>
-      </div>
+    <div class="split-head">
+      <h2 id="story-h" class="h2" data-reveal>Why We Built <br>FlyAffiliate</h2>
+      <p class="lead muted" data-reveal>Store owners kept asking for a simple way to reward <br>the people who already recommend their products.</p>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="belief" aria-label="What we believe">
-  <div class="wrap aquote" data-reveal>
-    <span class="aquote__mark" aria-hidden="true">“</span>
-    <p class="aquote__t">Your affiliates. Your referrals. Your commissions. Your data. It all belongs with your store.</p>
-    <p class="aquote__by"><span class="av" style="--h:18">FA</span><span><b>The FlyAffiliate team</b><small>weDevs</small></span></p>
+    <div class="abt-story" data-reveal-stagger>
+      <article class="abt-story__big art art--workflow">
+        <p class="abt-story__q">The people who already love your products are your best sales channel.</p>
+      </article>
+      <article class="abt-card">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5" stroke-linecap="round"/></svg></span>
+        <h3 class="abt-card__t">Reward the People <br>Who Recommend You</h3>
+        <p>Customers, creators and partners recommend products every day. FlyAffiliate gives them a link and a fair share of the sales they bring.</p>
+      </article>
+      <article class="abt-card">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/><path d="M16 13.5h1.5" stroke-linecap="round"/></svg></span>
+        <h3 class="abt-card__t">Keep Every Record <br>on Your Own Site</h3>
+        <p>Sales are tracked to WooCommerce orders, commissions follow clear rules, and payouts stay organized inside WordPress.</p>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="principles" aria-labelledby="pr-h">
   <div class="wrap">
-    <div class="split-head split-head--flush">
-      <div><p class="eyebrow">How we build</p><h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2></div>
+    <div class="split-head">
+      <h2 id="pr-h" class="h2" data-reveal>What Guides <br>FlyAffiliate</h2>
       <p class="lead muted" data-reveal>Four ideas behind every feature we ship, <br>from owning your data to keeping things clear.</p>
     </div>
-    <div class="svc" data-accordion>
-      
-      <div class="svc__row is-open">
-        <h3 class="svc__h"><button class="svc__head" type="button" aria-expanded="true" aria-controls="pr-0"><span class="svc__t">Own Your Data</span><span class="svc__ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 3v14M3 10h14"/></svg></span></button></h3>
-        <div class="svc__body" id="pr-0" role="region"><div class="svc__in">
-          <div class="svc__copy"><p>FlyAffiliate runs on your WordPress site, so affiliate accounts, referrals, and commission records stay with you.</p><ul class="tags"><li>First-party</li><li>No network</li></ul></div>
-          <div class="svc__vis art art--sand"><span class="svc__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 19 6v5.5c0 4.3-2.9 7.7-7 9-4.1-1.3-7-4.7-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10" stroke-linecap="round"/></svg></span></div>
-        </div></div>
-      </div>
-      <div class="svc__row">
-        <h3 class="svc__h"><button class="svc__head" type="button" aria-expanded="false" aria-controls="pr-1"><span class="svc__t">Built on WooCommerce</span><span class="svc__ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 3v14M3 10h14"/></svg></span></button></h3>
-        <div class="svc__body" id="pr-1" role="region"><div class="svc__in">
-          <div class="svc__copy"><p>Commissions are tied to real WooCommerce orders and calculated per item, with support for both checkout types.</p><ul class="tags"><li>Orders</li><li>Classic + block</li></ul></div>
-          <div class="svc__vis art art--peach"><span class="svc__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.2 11h10.8L20.5 7H6.4"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg></span></div>
-        </div></div>
-      </div>
-      <div class="svc__row">
-        <h3 class="svc__h"><button class="svc__head" type="button" aria-expanded="false" aria-controls="pr-2"><span class="svc__t">Made for Marketplaces</span><span class="svc__ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 3v14M3 10h14"/></svg></span></button></h3>
-        <div class="svc__body" id="pr-2" role="region"><div class="svc__in">
-          <div class="svc__copy"><p>From the team behind Dokan: vendors can run their own affiliate programs with their own rules.</p><ul class="tags"><li>Dokan</li><li>Vendors</li></ul></div>
-          <div class="svc__vis art art--dune"><span class="svc__glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M5.5 12v8h13v-8M10 20v-5h4v5"/></svg></span></div>
-        </div></div>
-      </div>
-      <div class="svc__row">
-        <h3 class="svc__h"><button class="svc__head" type="button" aria-expanded="false" aria-controls="pr-3"><span class="svc__t">Clear Over Clever</span><span class="svc__ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 3v14M3 10h14"/></svg></span></button></h3>
-        <div class="svc__body" id="pr-3" role="region"><div class="svc__in">
-          <div class="svc__copy"><p>Four statuses, a hold period, and payouts you can review first. You always know who you’re paying and why.</p><ul class="tags"><li>Statuses</li><li>CSV records</li></ul></div>
-          <div class="svc__vis art art--stone"><span class="svc__glyph"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 10.5 3.2 3L15 6.5"/></svg></span></div>
-        </div></div>
-      </div>
-    </div>
+    <ul class="abt-pr" data-reveal-stagger>
+      <li class="abt-pr__c is-acc">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 19 6v5.5c0 4.3-2.9 7.7-7 9-4.1-1.3-7-4.7-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10" stroke-linecap="round"/></svg></span>
+        <h3 class="abt-pr__t">Own Your Data</h3>
+        <p>Affiliate accounts, referrals and commission records live on your WordPress site.</p>
+        <span class="abt-tags"><span>First-party</span><span>No network</span></span>
+      </li>
+      <li class="abt-pr__c">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.2 11h10.8L20.5 7H6.4"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg></span>
+        <h3 class="abt-pr__t">Built on WooCommerce</h3>
+        <p>Commissions are tied to real orders and calculated per item, on classic and block checkout.</p>
+        <span class="abt-tags"><span>Orders</span><span>Classic + block</span></span>
+      </li>
+      <li class="abt-pr__c">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M5.5 12v8h13v-8M10 20v-5h4v5"/></svg></span>
+        <h3 class="abt-pr__t">Made for Marketplaces</h3>
+        <p>From the team behind Dokan. Vendor affiliate programs are coming soon.</p>
+        <span class="abt-tags"><span>Dokan</span><span>Vendors</span></span>
+      </li>
+      <li class="abt-pr__c">
+        <span class="abt-ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 10.5 3.2 3L15 6.5"/></svg></span>
+        <h3 class="abt-pr__t">Clear Over Clever</h3>
+        <p>Four statuses, a hold period, and payouts you review first. You always know who you pay and why.</p>
+        <span class="abt-tags"><span>Statuses</span><span>CSV records</span></span>
+      </li>
+    </ul>
   </div>
 </section>
 
 <section class="sec" id="family" aria-labelledby="fam-h">
   <div class="wrap">
-    <div class="shead" data-reveal><p class="eyebrow">The weDevs family</p><p class="bracket">[ WordPress products ]</p></div>
     <div class="split-head">
       <h2 id="fam-h" class="h2" data-reveal>Built by the Team <br>Behind Dokan</h2>
       <p class="lead muted" data-reveal>FlyAffiliate is built by weDevs, the team behind <br>Dokan and other WordPress products.</p>
     </div>
-    <ul class="fam" data-reveal-stagger>
-      <li><span>Dokan</span></li><li><span>WP User Frontend</span></li><li><span>WP ERP</span></li><li><span>weDocs</span></li><li><span>WP Project Manager</span></li><li><span>weMail</span></li><li><span>wePOS</span></li><li><span>Appsero</span></li>
-      <li class="fam--me"><span>FlyAffiliate<i>.</i></span><small>The newest member</small></li>
-      <li class="fam--more"><a href="https://wedevs.com" target="_blank" rel="noopener"><span>weDevs.com</span><small>See all products <svg viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8h24M19 1.5 25.5 8 19 14.5"/></svg></small></a></li>
+    <ul class="abt-fam" data-reveal-stagger>
+      <li class="abt-fam__dokan"><img src="/assets/img/dokan-logo.svg" alt="Dokan" width="150" height="41"><small>Multivendor marketplace</small></li>
+      <li><span>WP User Frontend</span></li><li><span>WP ERP</span></li><li><span>weDocs</span></li><li><span>WP Project Manager</span></li><li><span>weMail</span></li><li><span>wePOS</span></li><li><span>Appsero</span></li>
+      <li class="abt-fam__me"><span>FlyAffiliate</span><small>The newest member</small></li>
+      <li class="abt-fam__more"><a href="https://wedevs.com" target="_blank" rel="noopener"><span>weDevs.com</span><small>See all products <svg viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8h24M19 1.5 25.5 8 19 14.5"/></svg></small></a></li>
     </ul>
-    <p class="caption" data-reveal><span class="dot" aria-hidden="true"></span>Built for WordPress. Built for WooCommerce. Built for Dokan.</p>
   </div>
 </section>
 
-<section class="sec sec--dark contact" id="contact" aria-labelledby="c-h">
-  <div class="wrap contact__grid">
-    <div class="contact__l">
-      <p class="eyebrow">Contact</p>
-      <h2 id="c-h" class="h2xl" data-reveal>Let’s Talk</h2>
-      <p class="lead contact__p" data-reveal>Questions about FlyAffiliate, your store, or your marketplace? Send us a note.</p>
-      <div class="contact__meta" data-reveal><p class="muted">Company</p><a class="contact__big" href="https://wedevs.com" target="_blank" rel="noopener">weDevs</a></div>
+<section class="sec" id="contact" aria-labelledby="c-h">
+  <div class="wrap">
+    <div class="abt-contact" data-reveal>
+      <div class="abt-contact__l">
+        <h2 id="c-h" class="abt-contact__h">Let’s Talk</h2>
+        <p class="abt-contact__p">Questions about FlyAffiliate, your store, or your <br>marketplace? Send us a note.</p>
+        <ul class="abt-contact__list">
+          <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8.5A1.5 1.5 0 0 1 19 17h-8l-4.5 3.5V17H5a1.5 1.5 0 0 1-1.5-1.5V7A1.5 1.5 0 0 1 5 5.5Z"/></svg></span>Product and setup questions</li>
+          <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M5.5 12v8h13v-8M10 20v-5h4v5"/></svg></span>WooCommerce and Dokan stores</li>
+          <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 7 7.5 6 7.5-6" stroke-linecap="round"/></svg></span>We reply by email</li>
+        </ul>
+        <p class="abt-contact__co">Company <a href="https://wedevs.com" target="_blank" rel="noopener">weDevs</a></p>
+      </div>
+      <form class="abt-contact__form form" data-demo-form>
+        <p class="abt-contact__ct">Have a question in mind?</p>
+        <label class="sr-only" for="c-name">Name</label><input id="c-name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <label class="sr-only" for="c-email">Email</label><input id="c-email" class="field" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required>
+        <label class="sr-only" for="c-msg">Message</label><textarea id="c-msg" class="field field--area" name="message" placeholder="Your message here…" rows="4"></textarea>
+        <button class="btn btn--block" type="submit"><span class="btn__t">Send Message</span><span class="btn__i" aria-hidden="true"><svg viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8h24M19 1.5 25.5 8 19 14.5"/></svg></span></button>
+        <p class="form__note" data-form-note data-ok="Thanks — message received. (Demo form: nothing was sent.)" hidden role="status"></p>
+      </form>
     </div>
-    <form class="contact__card form" data-demo-form data-reveal>
-      <p class="contact__ct">Have a question in mind?</p>
-      <label class="sr-only" for="c-name">Name</label><input id="c-name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
-      <label class="sr-only" for="c-email">Email</label><input id="c-email" class="field" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required>
-      <label class="sr-only" for="c-msg">Message</label><textarea id="c-msg" class="field field--area" name="message" placeholder="Your message here…" rows="4"></textarea>
-      <button class="btn btn--block" type="submit"><span class="btn__t">Submit</span><span class="btn__i" aria-hidden="true"><svg viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8h24M19 1.5 25.5 8 19 14.5"/></svg></span></button>
-      <p class="form__note" data-form-note data-ok="Thanks — message received. (Demo form: nothing was sent.)" hidden role="status"></p>
-    </form>
   </div>
 </section>
 </main>
@@ -179,6 +186,6 @@
     <div class="ftr__base"><p>© 2026 FlyAffiliate by weDevs. All rights reserved.</p><p>Built for WordPress. Built for WooCommerce. Built for Dokan.</p></div>
   </div>
 </footer>
-<script src="/assets/js/site.js?v=160" defer></script>
+<script src="/assets/js/site.js?v=161" defer></script>
 </body>
 </html>

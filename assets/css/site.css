@@ -2189,3 +2189,102 @@ body.page-home .hdr.is-float::after { display: none; }
 .pr-free__l .btn:hover, .pr-free__l .btn:focus-visible { --b: #176c3b; }
 .pr-free__l .btn:hover .btn__i { background: #fff; color: #176c3b; }
 .pr-free__r li svg { color: #1f8a4c; }
+
+/* ================= About page (redesign) ================= */
+.abt-hero { padding-top: clamp(56px, 7vw, 96px); }
+.abt-pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 14px; border-radius: var(--pill); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); font-family: var(--font-head); font-size: 14px; font-weight: 600; }
+.abt-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.abt-hero__row { display: grid; grid-template-columns: fit-content(62%) minmax(0, 1fr); column-gap: 140px; align-items: end; margin-top: 28px; }
+.abt-hero__h { font-size: var(--h1); font-weight: 700; letter-spacing: -.04em; line-height: 1.06; }
+.abt-hero__p { font-size: var(--t-def); line-height: 1.6; color: var(--ink-2); }
+.abt-hero__btns { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
+.abt-hero__btns .btn--secondary { height: 52px; }
+.abt-banner { position: relative; margin-top: clamp(48px, 5vw, 72px); min-height: clamp(420px, 40vw, 600px); border-radius: 28px; overflow: hidden; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: clamp(20px, 2.6vw, 36px); }
+.abt-banner::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 8, 10, 0) 45%, rgba(8, 8, 10, .55)); pointer-events: none; }
+.abt-belief { position: relative; max-width: 520px; padding: 26px 28px; border-radius: 20px; background: rgba(255, 255, 255, .14); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .24); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); color: #fff; }
+.abt-belief__t { font-family: var(--font-head); font-size: var(--h5); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
+.abt-belief__t span { color: #9fbcff; }
+.abt-belief__by { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 16px; color: rgba(255, 255, 255, .8); }
+.abt-belief__ic { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--ink); flex: none; }
+.abt-belief__ic svg { width: 16px; }
+.abt-facts { position: relative; display: flex; gap: 10px; }
+.abt-facts li { width: 150px; padding: 18px; border-radius: 18px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
+.abt-facts b { font-family: var(--font-head); font-size: var(--h3); font-weight: 700; letter-spacing: -.03em; line-height: 1; color: var(--accent); }
+.abt-facts span { font-size: 14px; line-height: 1.4; color: var(--ink-2); }
+
+.abt-ic { width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--bg); color: var(--ink); }
+.abt-ic svg { width: 22px; height: 22px; }
+.abt-story { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.abt-story__big { min-height: 440px; border-radius: 24px; padding: clamp(26px, 2.6vw, 38px); display: flex; align-items: flex-end; color: #fff; position: relative; overflow: hidden; }
+.abt-story__big::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 6, 30, 0) 30%, rgba(10, 6, 30, .6)); }
+.abt-story__q { position: relative; font-family: var(--font-head); font-size: var(--h4); font-weight: 600; letter-spacing: -.03em; line-height: 1.15; }
+.abt-card { display: flex; flex-direction: column; padding: clamp(26px, 2.6vw, 38px); border-radius: 24px; background: var(--card); }
+.abt-card__t { margin-top: auto; padding-top: 60px; font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+.abt-card p { margin-top: 12px; font-size: var(--t-sm); line-height: 1.55; color: var(--ink-2); }
+
+.abt-pr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.abt-pr__c { display: flex; flex-direction: column; min-height: 400px; padding: clamp(24px, 2.4vw, 32px); border-radius: 24px; background: var(--card); }
+.abt-pr__t { margin-top: auto; padding-top: 48px; font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+.abt-pr__c p { margin-top: 10px; font-size: var(--t-sm); line-height: 1.55; color: var(--ink-2); }
+.abt-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+.abt-tags span { height: 28px; padding: 0 12px; border-radius: var(--pill); background: var(--bg); display: inline-grid; place-items: center; font-family: var(--font-head); font-size: 14px; font-weight: 500; }
+.abt-pr__c.is-acc { background: var(--accent); color: #fff; }
+.abt-pr__c.is-acc p { color: rgba(255, 255, 255, .8); }
+.abt-pr__c.is-acc .abt-ic { background: rgba(255, 255, 255, .16); color: #fff; }
+.abt-pr__c.is-acc .abt-tags span { background: rgba(255, 255, 255, .16); color: #fff; }
+
+.abt-fam { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.abt-fam li { min-height: 150px; border-radius: 20px; background: var(--card); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; padding: 20px; text-align: center; font-family: var(--font-head); font-size: var(--t-def); font-weight: 600; letter-spacing: -.02em; }
+.abt-fam small { font-family: var(--font-body); font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--ink-2); }
+.abt-fam__dokan img { width: 130px; height: auto; }
+.abt-fam__me { background: var(--accent) !important; color: #fff; }
+.abt-fam__me small { color: rgba(255, 255, 255, .8); }
+.abt-fam__more { padding: 0 !important; background: var(--ink) !important; }
+.abt-fam__more a { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; color: #fff; padding: 20px; }
+.abt-fam__more small { display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, .75); }
+.abt-fam__more svg { width: 18px; height: 11px; transition: transform .35s var(--ease); }
+.abt-fam__more a:hover svg { transform: translateX(4px); }
+
+.abt-contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); border-radius: 32px; overflow: hidden; }
+.abt-contact__l { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(32px, 4vw, 56px); background: var(--accent); color: #fff; }
+.abt-contact__h { font-size: var(--h2); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; }
+.abt-contact__p { margin-top: 16px; font-size: var(--t-def); line-height: 1.6; color: rgba(255, 255, 255, .8); }
+.abt-contact__list { display: grid; gap: 14px; margin: 32px 0; }
+.abt-contact__list li { display: flex; align-items: center; gap: 12px; font-size: 16px; }
+.abt-contact__list span { display: grid; }
+.abt-contact__list svg { width: 20px; height: 20px; }
+.abt-contact__co { margin-top: auto; font-size: 14px; color: rgba(255, 255, 255, .7); }
+.abt-contact__co a { margin-left: 6px; font-family: var(--font-head); font-size: 16px; font-weight: 600; color: #fff; }
+.abt-contact__form { display: flex; flex-direction: column; gap: 10px; padding: clamp(32px, 4vw, 56px); background: var(--card); }
+.abt-contact__ct { font-family: var(--font-head); font-size: var(--h6); font-weight: 600; letter-spacing: -.02em; margin-bottom: 14px; }
+
+@media (max-width: 1279px) {
+  .abt-hero__row { grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+}
+@media (max-width: 1024px) {
+  .abt-banner { flex-direction: column; align-items: stretch; justify-content: flex-end; }
+  .abt-facts li { flex: 1; width: auto; }
+  .abt-story { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .abt-story__big { grid-column: 1 / -1; min-height: 360px; }
+  .abt-pr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abt-pr__c { min-height: 320px; }
+  .abt-fam { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .abt-contact { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .abt-hero__h br, .abt-hero__p br, .abt-contact__p br { display: none; }
+  .abt-banner { min-height: 520px; border-radius: 24px; padding: 16px; }
+  .abt-belief { padding: 20px; }
+  .abt-facts { gap: 6px; }
+  .abt-facts li { padding: 14px 12px; }
+  .abt-facts b { font-size: 30px; }
+  .abt-facts span { font-size: 13px; }
+  .abt-story, .abt-pr { grid-template-columns: minmax(0, 1fr); }
+  .abt-story__big { min-height: 300px; }
+  .abt-card__t, .abt-pr__t { padding-top: 32px; }
+  .abt-pr__c { min-height: 0; }
+  .abt-fam { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abt-fam li { min-height: 120px; font-size: var(--t-sm); }
+  .abt-contact { border-radius: 24px; }
+  .abt-contact__l, .abt-contact__form { padding: 28px 24px; }
+}
